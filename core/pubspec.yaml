@@ -12,6 +12,7 @@ dependencies:
   flutter_bloc: ^7.3.0
   flutter_riverpod: 0.14.0+1
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
