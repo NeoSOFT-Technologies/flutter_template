@@ -21,7 +21,7 @@ This project is open source, we welcome any contributions.
 - CI for build release
 - Use SonarQube Analysis & generate reports
 - Crashlytics/Analytics
-- Localisation
+- [Localisation](./localisation/)
 - Routing/Navigations
 - Responsive Framework
 

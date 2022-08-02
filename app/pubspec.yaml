@@ -1,5 +1,5 @@
 name: app
-description: An architecture and widgets for an MVVM inspired architecture in   Flutter. It provides common functionalities required to build a large   application in a understandable manner.
+description: An architecture and widgets for an MVVM inspired architecture in Flutter. It provides common functionalities required to build a large   application in a understandable manner.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dependency_overrides:
+  localisation:
+    path: ../localisation/
   statemanagement_riverpod:
     path: ../statemanagement-riverpod/
   services:
