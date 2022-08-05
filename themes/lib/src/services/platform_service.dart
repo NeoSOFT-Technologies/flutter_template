@@ -1,6 +1,7 @@
 import 'dart:io';
 
 /// An abstraction over the Platform information so that we can have pure unit tests
+
 class PlatformService {
   bool get isIos => Platform.isIOS;
 

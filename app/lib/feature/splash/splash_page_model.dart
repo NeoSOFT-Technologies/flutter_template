@@ -1,3 +1,14 @@
 import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
+import 'package:injectable/injectable.dart';
 
-class SplashViewModel extends BasePageViewModel {}
+@injectable
+class SplashViewModel extends BasePageViewModel {
+
+  final String myBaseUrl;
+
+  SplashViewModel(@factoryParam this.myBaseUrl){
+    print("My First log in Splash ${this.myBaseUrl}");
+  }
+
+
+}

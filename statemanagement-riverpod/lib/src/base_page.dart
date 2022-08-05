@@ -8,17 +8,25 @@ import 'base_widget.dart';
 
 /// Every Page/View should be inherited from this
 abstract class BasePage<VM extends BasePageViewModel> extends StatefulWidget {
-  BasePage({Key? key}) : super(key: key);
+  const BasePage({Key? key}) : super(key: key);
 }
 
 abstract class BasePageState<VM extends BasePageViewModel,
-    T extends BasePage<VM>> extends CoreBasePageState<VM, T> {}
+    T extends BasePage<VM>> extends CoreBasePageState<VM, T> {
+  /// Declare and initialization of viewModel for the page
+  ProviderBase provideBase();
+}
 
 abstract class BaseStatefulPage<VM extends BasePageViewModel,
     B extends BasePage<VM>> extends BasePageState<VM, B> {
   @override
   Widget build(BuildContext context) {
-    return getLayout();
+    return BaseWidget<VM>(
+        providerBase: provideBase(),
+        onModelReady: onBaseModelReady,
+        builder: (BuildContext context, VM? model, Widget? child) {
+          return getLayout();
+        });
   }
 }
 

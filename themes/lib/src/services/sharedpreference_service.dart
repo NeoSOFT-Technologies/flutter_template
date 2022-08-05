@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesService {
-  static SharedPreferencesService? _instance;
+  final SharedPreferences _preferences;
 
-  static Future<SharedPreferencesService> getInstance() async {
-    _instance ??= SharedPreferencesService._(null);
-    return _instance!;
-  }
-
-  final dynamic _preferences;
-
-  //final SharedPreferences _preferences;
-  SharedPreferencesService._(this._preferences);
+  SharedPreferencesService(this._preferences);
 
   static const _ThemeIndexKey = 'user_key';
   static const _UserThemeModeKey = 'user_theme_mode_key';

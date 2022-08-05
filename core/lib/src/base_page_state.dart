@@ -82,7 +82,7 @@ abstract class CoreBasePageState<VM, T extends StatefulWidget> extends State<T> 
   @mustCallSuper
   Widget buildView(BuildContext context, VM model);
 
-  void _onBaseModelReady(VM model) {
+  void onBaseModelReady(VM model) {
     _viewModel = model;
     onModelReady(model);
   }

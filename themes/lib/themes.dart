@@ -3,6 +3,8 @@
 /// More dartdocs go here.
 library themes;
 
-export 'src/themes_base.dart';
+export 'src/theme_builder.dart';
+export 'src/theme_manager.dart';
+export 'src/theme_service.dart';
 
 // TODO: Export any libraries intended for clients of this package.
