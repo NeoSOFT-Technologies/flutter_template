@@ -2,10 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:injectable/injectable.dart';
 import 'package:provider/provider.dart';
 import 'package:rxdart/rxdart.dart';
 
-import 'locator_setup.dart';
+
+import 'di/injection.dart';
 import 'services/platform_service.dart';
 import 'services/sharedpreference_service.dart';
 import 'services/statusbar_service.dart';
@@ -17,15 +19,14 @@ const String DarkTheme = 'dark-theme';
 /// Provides functionality to manage the current theme for the application
 class ThemeManager {
   final SharedPreferencesService _sharedPreferences =
-      locator<SharedPreferencesService>();
-
-  final StatusBarService _statusBarService = locator<StatusBarService>();
-  final PlatformService _platformService = locator<PlatformService>();
+      getIt<SharedPreferencesService>();
+  final StatusBarService _statusBarService = getIt<StatusBarService>();
+  final PlatformService _platformService = getIt<PlatformService>();
 
   /// Has to be called before  we make use of the theme manager
   static Future initialise() async {
     WidgetsFlutterBinding.ensureInitialized();
-    await setupLocator();
+    await configureThemeDependencies();
   }
 
   /// A list of themes that the application can swap to
@@ -75,6 +76,7 @@ class ThemeManager {
     return null;
   }
 
+  @factoryMethod
   ThemeManager({
     this.themes,
     this.statusBarColorBuilder,

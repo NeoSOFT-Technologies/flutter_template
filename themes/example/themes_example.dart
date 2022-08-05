@@ -1,6 +1,5 @@
-import 'package:themes/themes.dart';
+import 'package:themes/src/theme_manager.dart';
 
 void main() {
-  var awesome = Awesome();
-  print('awesome: ${awesome.isAwesome}');
+
 }
