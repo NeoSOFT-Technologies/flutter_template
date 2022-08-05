@@ -24,7 +24,7 @@ This project is open source, we welcome any contributions.
 - [Theme Manager](./themes/)
 - [Localisation](./localisation/)
 - Routing/Navigations
-- Responsive Framework
+- [Responsive Framework](./wiki/responsive-framework/RESPONSIVE_FRAMEWORK.md)
 
 ## Libraries & Tools Used
 
