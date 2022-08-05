@@ -1,4 +1,4 @@
-# Mobile Flutter BoilerPlate
+# Flutter BoilerPlate [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NeoSOFT-Technologies_mobile-flutter&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=NeoSOFT-Technologies_mobile-flutter)
 
 [Flutter](https://flutter.io/) is Google's UI toolkit for building beautiful, natively compiled applications for mobile, web, desktop, and embedded devices from a single codebase.
 
@@ -24,7 +24,7 @@ This project is open source, we welcome any contributions.
 - [Theme Manager](./themes/)
 - [Localisation](./localisation/)
 - Routing/Navigations
-- Responsive Framework
+- [Responsive Framework](./wiki/responsive-framework/RESPONSIVE_FRAMEWORK.md)
 
 ## Libraries & Tools Used
 
