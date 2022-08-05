@@ -82,7 +82,7 @@ class _ThemeBuilderState extends State<ThemeBuilder>
   @override
   void dispose() {
     super.dispose();
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
   }
 
   @override
