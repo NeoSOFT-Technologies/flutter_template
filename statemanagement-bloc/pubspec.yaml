@@ -13,8 +13,8 @@ dependencies:
     sdk: flutter
 
 dependency_overrides:
-  core:
-    path: ../core/
+  statemanagement_core:
+    path: ../statemanagement-core/
 
 dev_dependencies:
   lints: ^2.0.0

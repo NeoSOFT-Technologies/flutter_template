@@ -42,8 +42,8 @@ dependency_overrides:
     path: ../statemanagement-riverpod/
   services:
     path: ../services/
-  core:
-    path: ../core/
+  statemanagement_core:
+    path: ../statemanagement-core/
   injectable: ^1.5.3
 
 dev_dependencies:

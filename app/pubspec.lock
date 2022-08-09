@@ -148,13 +148,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.2"
-  core:
-    dependency: "direct overridden"
-    description:
-      path: "../core"
-      relative: true
-    source: path
-    version: "1.0.0"
   crypto:
     dependency: transitive
     description:
@@ -614,6 +607,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.7.2+1"
+  statemanagement_core:
+    dependency: "direct overridden"
+    description:
+      path: "../statemanagement-core"
+      relative: true
+    source: path
+    version: "1.0.0"
   statemanagement_riverpod:
     dependency: "direct overridden"
     description:

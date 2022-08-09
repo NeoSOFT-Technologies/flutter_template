@@ -1,8 +1,8 @@
-import 'package:core/core.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+import 'package:statemanagement_core/statemanagement_core.dart';
 import 'base_page_view_model.dart';
 import 'base_widget.dart';
 

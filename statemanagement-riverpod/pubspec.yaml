@@ -12,8 +12,8 @@ dependencies:
   flutter_riverpod: 0.14.0+1
 
 dependency_overrides:
-  core:
-    path: ../core/
+  statemanagement_core:
+    path: ../statemanagement-core/
 
 dev_dependencies:
   lints: ^2.0.0
