@@ -5,5 +5,5 @@ import 'injection.config.dart';
 
 final getIt = GetIt.instance;
 
-@InjectableInit(initializerName: r'$initDataGetIt')
-GetIt configureThemeDependencies() => $initDataGetIt(getIt);
+@InjectableInit(initializerName: r'$initDomainGetIt')
+GetIt configureThemeDependencies() => $initDomainGetIt(getIt);
