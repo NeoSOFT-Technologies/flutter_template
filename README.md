@@ -8,10 +8,10 @@ This project is open source, we welcome any contributions.
 
 ## Features
 
-- Clean Architecture
+- [Hexagonal Architecture](./wiki/ARCHITECTURE.md)
 - Adhering to SOLID Principles
 - Repository Pattern for code separations
-- Dependency Injection
+- [Dependency Injection](./dependency-injection/)
 - Network Layer
 - Data Layer
 - Better Logging
