@@ -36,8 +36,8 @@ dependencies:
 dependency_overrides:
   dependency_injection:
     path: ../dependency-injection/
-  database_room:
-    path: ../infrastructure/database-room/
+  database_floor:
+    path: ../infrastructure/database-floor/
   data:
     path: ../core/data/
   domain:

@@ -1,5 +1,5 @@
-abstract class DatabaseProvider{
-  void saveuser();
+abstract class DatabasePort{
+  void saveUser();
   void fetchPosts();
   void reload();
 }

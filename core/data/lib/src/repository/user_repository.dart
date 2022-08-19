@@ -1,7 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:domain/domain.dart';
+import '../out/database_port.dart';
+
 
 class UserRepositoryImpl extends UserRepository {
+  final DatabasePort databaseProvider;
+
+  UserRepositoryImpl(this.databaseProvider);
 
   @override
   Future<Either<NetworkError, User>> loginWithEmail(

@@ -183,10 +183,10 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
-  database_room:
+  database_floor:
     dependency: "direct overridden"
     description:
-      path: "../infrastructure/database-room"
+      path: "../infrastructure/database-floor"
       relative: true
     source: path
     version: "1.0.0"
