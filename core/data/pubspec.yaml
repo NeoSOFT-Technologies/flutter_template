@@ -7,6 +7,8 @@ environment:
   sdk: '>=2.17.6 <3.0.0'
 
 dependencies:
+  dependency_injection:
+    path: ../../dependency-injection/
   domain:
     path: ../domain
   injectable: ^1.5.3

@@ -169,6 +169,41 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.3"
+  dartz:
+    dependency: transitive
+    description:
+      name: dartz
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.10.1"
+  data:
+    dependency: "direct overridden"
+    description:
+      path: "../core/data"
+      relative: true
+    source: path
+    version: "1.0.0"
+  database_room:
+    dependency: "direct overridden"
+    description:
+      path: "../infrastructure/database-room"
+      relative: true
+    source: path
+    version: "1.0.0"
+  dependency_injection:
+    dependency: "direct overridden"
+    description:
+      path: "../dependency-injection"
+      relative: true
+    source: path
+    version: "1.0.0"
+  domain:
+    dependency: "direct overridden"
+    description:
+      path: "../core/domain"
+      relative: true
+    source: path
+    version: "1.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -197,6 +232,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+  floor:
+    dependency: transitive
+    description:
+      name: floor
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.3.0"
+  floor_annotation:
+    dependency: transitive
+    description:
+      name: floor_annotation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.3.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -504,6 +553,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  shared:
+    dependency: transitive
+    description:
+      path: "../core/shared"
+      relative: true
+    source: path
+    version: "1.0.0"
   shared_preferences:
     dependency: transitive
     description:
@@ -593,6 +649,34 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.2"
+  sqflite:
+    dependency: transitive
+    description:
+      name: sqflite
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.3+1"
+  sqflite_common:
+    dependency: transitive
+    description:
+      name: sqflite_common
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.1+1"
+  sqflite_common_ffi:
+    dependency: transitive
+    description:
+      name: sqflite_common_ffi
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.1+1"
+  sqlite3:
+    dependency: transitive
+    description:
+      name: sqlite3
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.8.0"
   stack_trace:
     dependency: transitive
     description:
@@ -642,6 +726,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
+  synchronized:
+    dependency: transitive
+    description:
+      name: synchronized
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0+2"
   term_glyph:
     dependency: transitive
     description:

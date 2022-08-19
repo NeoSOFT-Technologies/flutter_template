@@ -34,6 +34,14 @@ dependencies:
   responsive_framework: ^0.2.0
 
 dependency_overrides:
+  dependency_injection:
+    path: ../dependency-injection/
+  database_room:
+    path: ../infrastructure/database-room/
+  data:
+    path: ../core/data/
+  domain:
+    path: ../core/domain/
   themes:
     path: ../themes/
   localisation:
