@@ -1,6 +1,6 @@
 # Flutter BoilerPlate 
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NeoSOFT-Technologies_mobile-flutter&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=NeoSOFT-Technologies_mobile-flutter)[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/NeoSOFT-Technologies/mobile-flutter)[![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/NeoSOFT-Technologies/mobile-flutter)[![MIT License](https://img.shields.io/badge/license-MIT-purple.svg)](https://github.com/NeoSOFT-Technologies/mobile-flutter)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NeoSOFT-Technologies_mobile-flutter&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=NeoSOFT-Technologies_mobile-flutter) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/NeoSOFT-Technologies/mobile-flutter) [![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/NeoSOFT-Technologies/mobile-flutter) [![MIT License](https://img.shields.io/badge/license-MIT-purple.svg)](https://github.com/NeoSOFT-Technologies/mobile-flutter)
 
 
 
