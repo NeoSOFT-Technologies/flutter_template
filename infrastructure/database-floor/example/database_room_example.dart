@@ -1,4 +1,4 @@
-import 'package:database_room/database_room.dart';
+import 'package:database_floor/floor.dart';
 
 void main() {
   var awesome = Awesome();

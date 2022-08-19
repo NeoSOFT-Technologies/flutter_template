@@ -1,7 +1,7 @@
 /// Support for doing something awesome.
 ///
 /// More dartdocs go here.
-library database_room;
+library database_floor;
 
 export 'src/di/database_dependency_configurator.dart';
 

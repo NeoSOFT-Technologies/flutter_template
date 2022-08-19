@@ -1,4 +1,4 @@
-import 'package:database_room/database_room.dart';
+import 'package:database_floor/floor.dart';
 import 'package:test/test.dart';
 
 void main() {
