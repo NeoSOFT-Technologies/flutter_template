@@ -34,6 +34,14 @@ dependencies:
   responsive_framework: ^0.2.0
 
 dependency_overrides:
+  dependency_injection:
+    path: ../dependency-injection/
+  database_floor:
+    path: ../infrastructure/database-floor/
+  data:
+    path: ../core/data/
+  domain:
+    path: ../core/domain/
   themes:
     path: ../themes/
   localisation:
@@ -42,8 +50,8 @@ dependency_overrides:
     path: ../statemanagement-riverpod/
   services:
     path: ../services/
-  core:
-    path: ../core/
+  statemanagement_core:
+    path: ../statemanagement-core/
   injectable: ^1.5.3
 
 dev_dependencies:
