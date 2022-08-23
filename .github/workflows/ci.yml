@@ -23,19 +23,19 @@ jobs:
 
       - name: Get Dependencies
         run: flutter pub get
-        working-directory: app/
+        working-directory: ${{ matrix.Directory }}
 
       - name: Run build_runner
         run: flutter pub run build_runner build --delete-conflicting-outputs
-        working-directory: app/
+        working-directory: ${{ matrix.Directory }}
 
-      - name: Lint
-        run: flutter analyze --fatal-infos --fatal-warnings
-        working-directory: app/
-
-      - name: Unit tests
-        run: flutter test --exclude-tags=golden
-        working-directory: app/
+#      - name: Lint
+#        run: flutter analyze --fatal-infos --fatal-warnings
+#        working-directory: app/
+#
+#      - name: Unit tests
+#        run: flutter test --exclude-tags=golden
+#        working-directory: app/
 
       - name: Build Android
         run: app/scripts/build.sh apk dev --debug
@@ -44,7 +44,7 @@ jobs:
   build-ios:
     name: Golden Tests and Build iOS
     runs-on: macos-latest
-    needs: [ lint-test-build-android ]
+    #needs: [ lint-test-build-android ]
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v2
@@ -59,11 +59,11 @@ jobs:
 
       - name: Get Dependencies
         run: flutter pub get
-        working-directory: app/
+        working-directory: ${{ matrix.Directory }}
 
       - name: Run build_runner
         run: flutter pub run build_runner build
-        working-directory: app/
+        working-directory: ${{ matrix.Directory }}
 
       - name: Build iOS
         run: scripts/build.sh ios dev --debug --no-codesign
