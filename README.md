@@ -1,8 +1,6 @@
 # Flutter BoilerPlate 
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NeoSOFT-Technologies_mobile-flutter&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=NeoSOFT-Technologies_mobile-flutter) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/NeoSOFT-Technologies/mobile-flutter) [![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/NeoSOFT-Technologies/mobile-flutter) [![MIT License](https://img.shields.io/badge/license-MIT-purple.svg)](https://github.com/NeoSOFT-Technologies/mobile-flutter)
-
-
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NeoSOFT-Technologies_mobile-flutter&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=NeoSOFT-Technologies_mobile-flutter) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/NeoSOFT-Technologies/mobile-flutter) [![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/NeoSOFT-Technologies/mobile-flutter) 
 
 ## Table Of Content
 
@@ -10,20 +8,16 @@
 - [Getting Started](#getting-started)
   * [Requirements](#requirements)
   * [Setup](#setup)
+  * [App Secrets](#app secrets)
 - [Change Package Name](#change-package-name)
-- [Running/Debugger](#running-debugger)
-  * [1. Dev Mode (Development)](#1-mode-dev--development-)
-  * [2. Staging Mode](#2-mode-staging)
-  * [3. Mode Prod (Production)](#3-mode-prod--production-)
-  * [If User VS Code](#if-user-vs-code)
+- [Architecture](#architecture)
+- [Running/Debugger](#flavors)
+  - [Flavors](#flavors)
+  
 - [Features](#Features)
 - [Library / Dependency](#Libraries & Tools Used)
-- [Folder Structure](#folder-structure)
 - [Modules](#Modules)
   * [List Default Modules](#list-default-modules)
-- [Global Config/Variable](#global-config-variable)
-  * [Call Global Variable](#call-global-variable)
-- [Generate Icon Launcher](#generate-icon-launcher)
 
 
 
@@ -80,6 +74,104 @@ And then run this command to the console:
 flutter pub get
 ```
 
+After cloning the repo and follow these steps to setup the project.
+
+#### App Secrets
+
+Sensitive information like api keys, credentials, etc should not be checked into git repos, especially public ones. To keep such data safe the template uses `app_secrets.dart` file. If you want to run the app locally, you will need to create a new file `app_secrets.dart` under [`lib/secrets`](app/lib/secrets). To help with setting up the secrets file, the template inclued a skeleton secrets file. 
+
+#### Get Dependencies
+
+```
+flutter pub get
+```
+
+#### Run Code Generation
+
+```
+bash scripts/generate-all.sh
+```
+
+Read the [scripts documentation](app/scripts/README.md) to learn about all the scrips used in the project.
+
+
+
+## Change Package Name
+
+By default package names:
+
+`com.app.flutter_template`
+
+To change the package name, simply search for all `com.app.flutter_template`, then replace it with the new package name, for example: `com.mycompany.`.
+
+## Architecture
+
+The architecture of the template facilitates separation of concerns and avoids tight coupling between it's various layers. The goal is to have the ability to make changes to individual layers without affecting the entire app. This architecture is an adaptation of concepts from [Hexagonal](./wiki/ARCHITECTURE.md) & [`The Clean Architecture`](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) .
+
+### Layers
+
+The architecture is separated into the following layers
+
+The architecture is separated into the following layers
+
+- [`app`](app/): All UI and state management elements like widgets, pages and view models.
+- [`core`](./core): Core business implementation
+  - [`domain`](core/domain): Use cases for individual pieces of work.
+  - [`data`](core/data): Repositories to manage various data sources.
+  - [`shared`](core/shared): Common items for core module shared between [`domain`](core/domain)  & [`data`](core/data).
+- [`infrastructure`](./infrastructure): Services provide access to external elements such as databases, apis, etc.
+  - [`database-floor`](infrastructure/database-floor): [Floor](https://pub.dev/packages/floor) as the Database provider 
+  - [`network-retrofit`](infrastructure/network-retrofit): [Retrofit](https://pub.dev/packages/retrofit) as the Database provider 
+
+Each layer has a `di` directory to manage Dependency Injection for that layer.
+
+Read the [dependency management documentation](dependency-injection/README.md) to learn about all the scripts used in the project.
+
+## Flavors
+
+The template comes with built-in support for 3 flavors. Each flavor uses a different `main.dart` file.
+
+- Dev - [`main_dev.dart`](app/lib/entrypoints/main_dev.dart)
+- QA - [`main_qa.dart`](app/lib/entrypoints/main_qa.dart)
+- Prod - [`main_prod.dart`](app/lib/entrypoints/main_prod.dart)
+
+You can setup any environment specific values in the respective `main.dart` files.
+
+To run a specific flavor you need to specify the flavor and target file.
+
+```sh
+ flutter run --flavor qa -t lib/entrypoints/main_qa.dart
+```
+
+**To avoid specifying all the flags every time, use the [`run.sh`](app/scripts/README.md#run) script**
+
+Read the [scripts documentation](app/scripts/README.md) to learn about all the scripts used in the project.
+
+### Entities
+
+The layers  `core` and `services provider` within infrastructure each have an `model` directory.
+
+- [`app layer`](https://github.com/wednesday-solutions/flutter_template/blob/main/lib/presentation/entity): We consume the same models used from core/domain as domain wont change in the case of frontend apps.
+- [`core/shared/lib/src/model`](core/shared/lib/src/model): Model classes for performing business logic manipulations. They act as an abstraction to hide the local and remote data models.
+- [`infrastructure/servicename/model`](https://github.com/wednesday-solutions/flutter_template/blob/main/lib/services/entity): Respective service provider contains local models (data classes for the database) and remote models (data classes for the api).
+
+
+
+## Hide Generated Files (Optional)
+
+In-order to hide generated files, navigate to `Android Studio` -> `Preferences` -> `Editor` -> `File Types` and paste the below lines under `ignore files and folders` section:
+
+```dart
+*.config.dart;*.inject.summary;*.inject.dart;*.g.dart;
+```
+
+In Visual Studio Code, navigate to `Preferences` -> `Settings` and search for `Files:Exclude`. Add the following patterns:
+
+```dart
+**/*.inject.summary
+**/*.inject.dart
+**/*.g.dart
+```
 
 ## Features
 
@@ -100,6 +192,8 @@ flutter pub get
 - [Localisation](./localisation/)
 - Routing/Navigations
 - [Responsive Framework](./wiki/responsive-framework/RESPONSIVE_FRAMEWORK.md)
+
+
 
 ## Libraries & Tools Used
 
