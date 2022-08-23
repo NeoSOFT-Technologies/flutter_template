@@ -41,7 +41,7 @@ jobs:
 #        working-directory: app/
 
       - name: Build Android
-        run: app/scripts/build.sh apk dev --debug
+        run: scripts/build.sh apk dev --debug
         working-directory: app/
 
   build-ios:
