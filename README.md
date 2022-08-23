@@ -8,14 +8,14 @@
 - [Getting Started](#getting-started)
   * [Requirements](#requirements)
   * [Setup](#setup)
-  * [App Secrets](#app secrets)
+  * [App Secrets](#app-secrets)
 - [Change Package Name](#change-package-name)
 - [Architecture](#architecture)
 - [Running/Debugger](#flavors)
   - [Flavors](#flavors)
   
 - [Features](#Features)
-- [Library / Dependency](#Libraries & Tools Used)
+- [Library / Dependency](#Libraries-&-Tools-Used)
 - [Modules](#Modules)
   * [List Default Modules](#list-default-modules)
 
@@ -106,7 +106,7 @@ To change the package name, simply search for all `com.app.flutter_template`, th
 
 ## Architecture
 
-The architecture of the template facilitates separation of concerns and avoids tight coupling between it's various layers. The goal is to have the ability to make changes to individual layers without affecting the entire app. This architecture is an adaptation of concepts from [Hexagonal](./wiki/ARCHITECTURE.md) & [`The Clean Architecture`](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) .
+The architecture of the template facilitates separation of concerns and avoids tight coupling between it's various layers. The goal is to have the ability to make changes to individual layers without affecting the entire app. This architecture is an adaptation of concepts from [`Hexagonal`](./wiki/ARCHITECTURE.md) & [`The Clean Architecture`](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) .
 
 ### Layers
 
