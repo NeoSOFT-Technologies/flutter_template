@@ -9,6 +9,9 @@ jobs:
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        Directory: [ app ]
     steps:
       - uses: actions/checkout@v2
         with:

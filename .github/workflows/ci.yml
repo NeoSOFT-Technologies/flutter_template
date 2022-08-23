@@ -8,6 +8,9 @@ jobs:
   lint-test-build-android:
     name: Lint, Test And Build Android
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        Directory: [ app ]
     steps:
       - uses: actions/checkout@v2
 
