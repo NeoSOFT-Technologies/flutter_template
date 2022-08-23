@@ -23,18 +23,23 @@ jobs:
 
       - name: Get Dependencies
         run: flutter pub get
+        working-directory: app/
 
       - name: Run build_runner
         run: flutter pub run build_runner build --delete-conflicting-outputs
+        working-directory: app/
 
       - name: Lint
         run: flutter analyze --fatal-infos --fatal-warnings
+        working-directory: app/
 
       - name: Unit tests
         run: flutter test --exclude-tags=golden
+        working-directory: app/
 
       - name: Build Android
         run: app/scripts/build.sh apk dev --debug
+        working-directory: app/
 
   build-ios:
     name: Golden Tests and Build iOS
@@ -54,9 +59,12 @@ jobs:
 
       - name: Get Dependencies
         run: flutter pub get
+        working-directory: app/
 
       - name: Run build_runner
         run: flutter pub run build_runner build
+        working-directory: app/
 
       - name: Build iOS
         run: scripts/build.sh ios dev --debug --no-codesign
+        working-directory: app/
