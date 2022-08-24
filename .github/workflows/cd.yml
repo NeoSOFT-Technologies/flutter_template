@@ -118,7 +118,7 @@ jobs:
           xcode-version: latest-stable
 
       - name: Bump Build Number
-        run: chmod u+x scripts/bump-build-number.sh && scripts/bump-build-number.sh
+        run: scripts/bump-build-number.sh
         working-directory: ${{ matrix.Directory }}
 
       #      - name: Install the Apple certificate and provisioning profile
