@@ -47,5 +47,5 @@ app.*.map.json
 /android/app/release
 
 # Secrets
-lib/secrets/
+lib/secrets/*
 !lib/secrets/app_secrets.skeleton.dart
