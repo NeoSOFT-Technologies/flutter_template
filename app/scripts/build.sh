@@ -9,9 +9,9 @@ case $2 in
   prod) ENTRYPOINT="entrypoints/main_prod.dart";;
 esac
 
-FLAGS="$1 --flavor $2 -t $GITHUB_WORKSPACE/lib/$ENTRYPOINT $3 $4 $5"
+FLAGS="$1 --flavor $2 -t $GITHUB_WORKSPACE/app/lib/$ENTRYPOINT $3 $4 $5"
 echo "Requested Flavour: $2"
-echo "Setting entrypoint: $GITHUB_WORKSPACE/lib/$ENTRYPOINT"
+echo "Setting entrypoint: $GITHUB_WORKSPACE/app/lib/$ENTRYPOINT"
 echo "Building $1 .......... "
 echo ""
 if [ $1 == ipa ]
