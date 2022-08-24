@@ -1,6 +1,4 @@
-
-
-import '../secrets/app_secrets.dart';
+import 'package:app/secrets/app_secrets.dart';
 
 class FlavorValues {
   final String apiBaseUrl;
