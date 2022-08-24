@@ -8,7 +8,7 @@ on:
 jobs:
   build-android:
     name: Release Android To AppCenter
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     permissions:
       contents: write
     strategy:
@@ -137,6 +137,7 @@ jobs:
 
       - name: Build the signed ipa
         run: chmod u+x scripts/build.sh && scripts/build.sh ipa prod --release
+        working-directory: ${{ matrix.Directory }}
 
   #      - name: Upload the signed ipa to TestFlight
   #        env:
