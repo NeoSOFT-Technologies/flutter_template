@@ -50,7 +50,7 @@ jobs:
         id: decode_keystore
         uses: timheuer/base64-to-file@v1.1
         with:
-          fileName: 'app_keystore.jks'
+          fileName: 'app_key.jks'
           encodedString: ${{ secrets.KEYSTORE }}
 
       - name: Set Flavor Name
