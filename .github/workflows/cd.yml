@@ -20,6 +20,10 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
+
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
