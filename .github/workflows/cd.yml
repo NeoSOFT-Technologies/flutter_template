@@ -81,7 +81,6 @@ jobs:
 
       - name: Create Release and Add APK Artifact
         uses: softprops/action-gh-release@v1
-        working-directory: ${{ matrix.Directory }}
         with:
           tag_name: ${{ env.tag_name }}
           files: |
