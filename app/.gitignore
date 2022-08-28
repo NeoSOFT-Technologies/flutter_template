@@ -46,6 +46,10 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Pub
+/coverage
+/debug-info
+
 # Secrets
 lib/secrets/*
 !lib/secrets/app_secrets.skeleton.dart
