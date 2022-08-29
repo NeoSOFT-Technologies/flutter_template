@@ -28,6 +28,13 @@ jobs:
         with:
           channel: 'stable'
 
+      - name: 'Install Tools'
+        run: |
+            ./.github/workflows/scripts/install-tools.sh
+
+      - name: 'Bootstrap Workspace'
+        run: melos bootstrap
+
       - name: Setup app_secrets.dart
         env:
           APP_SECRETS: ${{ secrets.APP_SECRETS }}
@@ -35,16 +42,13 @@ jobs:
         run: echo -n $APP_SECRETS | base64 --decode > $APP_SECRETS_PATH
 
       - name: Get Dependencies
-        run: flutter pub get
-        working-directory: ${{ matrix.Directory }}
+        run: melos run get
 
       - name: Run build_runner
-        run: flutter pub run build_runner build --delete-conflicting-outputs
-        working-directory: ${{ matrix.Directory }}
+        run: melos run generate
 
       - name: Bump Build Number
-        run: scripts/bump-build-number.sh
-        working-directory: ${{ matrix.Directory }}
+        run: app/scripts/bump-build-number.sh
 
       - name: Decode Keystore
         id: decode_keystore
@@ -54,12 +58,10 @@ jobs:
           encodedString: ${{ secrets.KEYSTORE }}
 
       - name: Set Flavor Name
-        run: scripts/set-flavor-and-apk-path-to-env.sh
-        working-directory: ${{ matrix.Directory }}
+        run: app/scripts/set-flavor-and-apk-path-to-env.sh
 
       - name: Build APK
-        run: scripts/build.sh apk $FLAVOR_NAME --release --obfuscate --split-debug-info=debug-info
-        working-directory: ${{ matrix.Directory }}
+        run: app/scripts/build.sh apk $FLAVOR_NAME --release --obfuscate --split-debug-info=debug-info
         env:
           KEY_STORE_PATH: ${{ steps.decode_keystore.outputs.filePath }}
           RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
@@ -76,8 +78,7 @@ jobs:
       #          notifyTesters: true
 
       - name: Add Tag Name to ENV
-        run: scripts/gh-action-read-and-set-version-env.sh
-        working-directory: ${{ matrix.Directory }}
+        run: app/scripts/gh-action-read-and-set-version-env.sh
 
       - name: Create Release and Add APK Artifact
         uses: softprops/action-gh-release@v1
@@ -85,9 +86,10 @@ jobs:
           tag_name: ${{ env.tag_name }}
           files: |
             ${{ env.APK_PATH }}
-            debug-info/app.android-arm.symbols
-            debug-info/app.android-arm64.symbols
-            debug-info/app.android-x64.symbols
+            app/debug-info/app.android-arm.symbols
+            app/debug-info/app.android-arm64.symbols
+            app/debug-info/app.android-x64.symbols
+
   build-ios:
     name: Release iOS to TestFlight
     runs-on: macos-latest
@@ -103,6 +105,13 @@ jobs:
         with:
           channel: 'stable'
 
+      - name: 'Install Tools'
+        run: |
+            ./.github/workflows/scripts/install-tools.sh
+
+      - name: 'Bootstrap Workspace'
+        run: melos bootstrap
+
       - name: Setup app_secrets.dart
         env:
           APP_SECRETS: ${{ secrets.APP_SECRETS }}
@@ -110,20 +119,18 @@ jobs:
         run: echo -n $APP_SECRETS | base64 --decode > $APP_SECRETS_PATH
 
       - name: Get Dependencies
-        run: flutter pub get
-        working-directory: ${{ matrix.Directory }}
+        run: melos run get
 
       - name: Run build_runner
-        run: flutter pub run build_runner build --delete-conflicting-outputs
-        working-directory: ${{ matrix.Directory }}
+        run: melos run generate
 
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable
 
       - name: Bump Build Number
-        run: scripts/bump-build-number.sh
-        working-directory: ${{ matrix.Directory }}
+        run: app/scripts/bump-build-number.sh
+
 
       #      - name: Install the Apple certificate and provisioning profile
       #        env:
@@ -139,9 +146,8 @@ jobs:
           PLIST_PATH: ${{ runner.temp }}/options.plist
         run: echo -n "$PLIST" | base64 --decode --output $PLIST_PATH
 
-      - name: Build the signed ipa
-        run: chmod u+x scripts/build.sh && scripts/build.sh ipa prod --release
-        working-directory: ${{ matrix.Directory }}
+#      - name: Build the signed ipa
+#        run: chmod u+x app/scripts/build.sh && app/scripts/build.sh ipa prod --release
 
   #      - name: Upload the signed ipa to TestFlight
   #        env:
@@ -156,9 +162,6 @@ jobs:
     if: |
       always() &&
       (needs.build-android.result == 'success' || needs.build-ios.result == 'success')
-    strategy:
-      matrix:
-        Directory: [ app ]
     steps:
       - uses: actions/checkout@v2
         # Replace with your Personal Access Token
@@ -166,13 +169,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Bump Version
-        run: scripts/bump-build-number.sh
-        working-directory: ${{ matrix.Directory }}
+        run: app/scripts/bump-build-number.sh
 
       - name: Configure Git
         run: |
           git config user.name "Github Actions CD"
           git config user.email "<>"
       - name: Commit Version Change
-        run: scripts/commit-version.sh
-        working-directory: ${{ matrix.Directory }}
+        run: app/scripts/commit-version.sh
