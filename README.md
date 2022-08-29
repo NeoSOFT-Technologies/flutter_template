@@ -73,13 +73,15 @@ git clone git@github.com/NeoSOFT-Technologies/mobile-flutter.git
 
 The next step is to open the folder that has been downloaded / cloned into a cli application such as `bash`, `cmd`, `terminal` .
 
-And then run this command to the console:
+After cloning the repo and follow these steps to setup the project.
+
+Each layer of the architecture is a separate flutter package. The template uses [`melos`](https://melos.invertase.dev/) to manage all package and performing actions like linting and running tests accross all packages. You can setup `melos` from [here](https://melos.invertase.dev/getting-started). 
+
+Melos can be installed as a global package,
 
 ``` bash
-flutter pub get
+dart pub global activate melos
 ```
-
-After cloning the repo and follow these steps to setup the project.
 
 #### App Secrets
 
@@ -88,14 +90,13 @@ Sensitive information like api keys, credentials, etc should not be checked into
 #### Get Dependencies
 
 ```bash
-flutter pub get
+melos run get
 ```
 
 #### Run Code Generation
 
 ```bash
-bash cd app/
-bash scripts/generate-all.sh
+melos run generate
 ```
 
 #### Setup Hooks
@@ -195,7 +196,7 @@ In Visual Studio Code, navigate to `Preferences` -> `Settings` and search for `F
 - Data Layer
 - Better Logging
 - Automatic Error Handling
-- Flavors Sample
+- Built-in support for 3 [`flavors`](https://docs.flutter.dev/deployment/flavors) - `dev`, `qa` and `prod`.
 - Unit & Integration Tests
 - CI for build release
 - Use SonarQube Analysis & generate reports
@@ -206,6 +207,7 @@ In Visual Studio Code, navigate to `Preferences` -> `Settings` and search for `F
 - [Responsive Framework](./wiki/responsive-framework/RESPONSIVE_FRAMEWORK.md)
 - Pre-commit Checks
   - Dart Analysis
+  - [`Flutter Lints`](https://pub.dev/packages/flutter_lints) for linting.
   - [Dart Fix](https://github.com/dart-lang/sdk/blob/main/pkg/dartdev/doc/dart-fix.md)
   - Flutter Format
 
