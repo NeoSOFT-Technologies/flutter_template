@@ -38,7 +38,8 @@ jobs:
 #        run: melos run test-golden
 
       - name: Build Android
-        run: app/scripts/build.sh apk dev --debug
+        run: scripts/build.sh apk dev --debug
+        working-directory: app/
 
 
   build-ios:
@@ -74,4 +75,5 @@ jobs:
 #        run: melos run test-golden
 
       - name: Build iOS
-        run: app/scripts/build.sh ios dev --debug --no-codesign
+        run: scripts/build.sh ios dev --debug --no-codesign
+        working-directory: app/
