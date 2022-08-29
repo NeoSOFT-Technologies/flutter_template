@@ -48,7 +48,8 @@ jobs:
         run: melos run generate
 
       - name: Bump Build Number
-        run: app/scripts/bump-build-number.sh
+        run: scripts/bump-build-number.sh
+        working-directory: app/
 
       - name: Decode Keystore
         id: decode_keystore
@@ -58,10 +59,12 @@ jobs:
           encodedString: ${{ secrets.KEYSTORE }}
 
       - name: Set Flavor Name
-        run: app/scripts/set-flavor-and-apk-path-to-env.sh
+        run: scripts/set-flavor-and-apk-path-to-env.sh
+        working-directory: app/
 
       - name: Build APK
-        run: app/scripts/build.sh apk $FLAVOR_NAME --release --obfuscate --split-debug-info=debug-info
+        run: scripts/build.sh apk $FLAVOR_NAME --release --obfuscate --split-debug-info=debug-info
+        working-directory: app/
         env:
           KEY_STORE_PATH: ${{ steps.decode_keystore.outputs.filePath }}
           RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
@@ -78,7 +81,8 @@ jobs:
       #          notifyTesters: true
 
       - name: Add Tag Name to ENV
-        run: app/scripts/gh-action-read-and-set-version-env.sh
+        run: scripts/gh-action-read-and-set-version-env.sh
+        working-directory: app/
 
       - name: Create Release and Add APK Artifact
         uses: softprops/action-gh-release@v1
