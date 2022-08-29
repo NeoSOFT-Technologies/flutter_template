@@ -1,21 +1,21 @@
 enum ErrorType {
   //custom error
-  IOEXCEPTION,
+  iOException,
 
   //Network Error
-  NETWORK,
-  NET_SERVER_MESSAGE,
-  NET_DEFAULT_ERROR,
-  UN_KNOWN,
+  network,
+  netServerMessage,
+  netDefaultError,
+  unknown,
   // UI Errors
-  UI,
-  EMPTY_EMAIL,
-  INVALID_EMAIL,
-  EMPTY_PASSWORD,
+  ui,
+  uiEmptyEmail,
+  uiInvalidEmail,
+  uiEmptyPassword,
 
   //DB ERROR
-  DATABASE,
-  DATABASE_NOT_SUPPORTED,
-  DB_ERROR1,
-  DB_USER_NOT_FOUND,
+  database,
+  databaseNotSupported,
+  databaseError1,
+  databaseUserNotFound,
 }

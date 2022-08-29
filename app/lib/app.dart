@@ -7,5 +7,5 @@ import 'myapp.dart';
 void startApp() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies(DependencyConfigurationContext());
-  runApp(ProviderScope(child: MyApp()));
+  runApp(const ProviderScope(child: MyApp()));
 }

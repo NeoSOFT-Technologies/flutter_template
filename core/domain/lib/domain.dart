@@ -4,6 +4,7 @@
 library domain;
 
 export 'src/di/domain_dependency_configurator.dart';
+export 'package:dartz/dartz.dart';
 
 //repository contracts
 export 'src/repository/user_repository.dart';

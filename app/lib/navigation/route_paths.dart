@@ -1,5 +1,5 @@
 /// Define application navigation path constants to avoid duplication
 class RoutePaths {
-  static const String Splash = '/';
-  static const String Registration = '/registration';
+  static const String splash = '/';
+  static const String registration = '/registration';
 }

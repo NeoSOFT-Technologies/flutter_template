@@ -32,27 +32,26 @@ dependencies:
   flutter_riverpod: 0.14.0+1
   cupertino_icons: ^1.0.2
   responsive_framework: ^0.2.0
-
-dependency_overrides:
+  get_it:
+  injectable:
   dependency_injection:
     path: ../dependency-injection/
   database_floor:
     path: ../infrastructure/database-floor/
   data:
-    path: ../core/data/
+      path: ../core/data/
   domain:
-    path: ../core/domain/
+      path: ../core/domain/
   themes:
-    path: ../themes/
+      path: ../themes/
   localisation:
-    path: ../localisation/
+      path: ../localisation/
   statemanagement_riverpod:
-    path: ../statemanagement-riverpod/
+      path: ../statemanagement-riverpod/
   services:
-    path: ../services/
+      path: ../services/
   statemanagement_core:
-    path: ../statemanagement-core/
-  injectable: ^1.5.3
+      path: ../statemanagement-core/
 
 dev_dependencies:
   flutter_test:

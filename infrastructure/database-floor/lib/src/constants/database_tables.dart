@@ -1,3 +1,3 @@
 class Table {
-  static const String USER = "user";
+  static const String user = "user";
 }

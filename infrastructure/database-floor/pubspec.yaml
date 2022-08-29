@@ -2,16 +2,19 @@ name: database_floor
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
 # homepage: https://www.example.com
+publish_to: none
 
 environment:
   sdk: '>=2.17.6 <3.0.0'
 
 dependencies:
+  get_it:
+  injectable:
+  sqflite:
   dependency_injection:
     path: ../../dependency-injection/
   data:
     path: ../../core/data
-  injectable: ^1.5.3
   floor: ^1.3.0
 
 dev_dependencies:

@@ -19,11 +19,7 @@ class LoginUseCase extends BaseUseCase<BaseError, LoginUseCaseParams, User> {
       (await _userRepository.loginWithEmail(
               email: params.emailOrPhone, password: params.password))
           .fold((l) => Left(l), (result) async {
-        if ((result != null)) {
-          return _userRepository.saveUser(result);
-        } else {
-          return Right(result);
-        }
+        return _userRepository.saveUser(result);
       }),
     );
   }
@@ -43,7 +39,7 @@ class LoginUseCaseParams extends Params {
     if (Validator.isEmpty(emailOrPhone)) {
       return Left(
         AppError(
-          type: ErrorType.EMPTY_EMAIL,
+          type: ErrorType.uiEmptyEmail,
           throwable: Exception(),
           error: ErrorInfo(message: ''),
         ),
@@ -51,7 +47,7 @@ class LoginUseCaseParams extends Params {
     } else if (!Validator.validateEmail(emailOrPhone)) {
       return Left(
         AppError(
-          type: ErrorType.INVALID_EMAIL,
+          type: ErrorType.uiInvalidEmail,
           throwable: Exception(),
           error: ErrorInfo(message: ''),
         ),
@@ -59,7 +55,7 @@ class LoginUseCaseParams extends Params {
     } else if (Validator.isEmpty(password)) {
       return Left(
         AppError(
-          type: ErrorType.EMPTY_PASSWORD,
+          type: ErrorType.uiEmptyPassword,
           throwable: Exception(),
           error: ErrorInfo(message: ''),
         ),

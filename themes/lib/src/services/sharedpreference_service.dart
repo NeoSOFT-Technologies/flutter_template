@@ -6,15 +6,15 @@ class SharedPreferencesService {
 
   SharedPreferencesService(this._preferences);
 
-  static const _ThemeIndexKey = 'user_key';
-  static const _UserThemeModeKey = 'user_theme_mode_key';
+  static const _themeIndexKey = 'user_key';
+  static const _userThemeModeKey = 'user_theme_mode_key';
 
-  int? get themeIndex => _getFromDisk(_ThemeIndexKey);
+  int? get themeIndex => _getFromDisk(_themeIndexKey);
 
-  set themeIndex(int? value) => _saveToDisk(_ThemeIndexKey, value);
+  set themeIndex(int? value) => _saveToDisk(_themeIndexKey, value);
 
   ThemeMode? get userThemeMode {
-    var userThemeString = _getFromDisk(_UserThemeModeKey);
+    var userThemeString = _getFromDisk(_userThemeModeKey);
     if (userThemeString == ThemeMode.dark.toString()) {
       return ThemeMode.dark;
     }
@@ -28,10 +28,10 @@ class SharedPreferencesService {
 
   set userThemeMode(ThemeMode? value) {
     if (value == null) {
-      _saveToDisk(_UserThemeModeKey, value);
+      _saveToDisk(_userThemeModeKey, value);
     } else {
       var userTheme = value.toString();
-      _saveToDisk(_UserThemeModeKey, userTheme);
+      _saveToDisk(_userThemeModeKey, userTheme);
     }
   }
 

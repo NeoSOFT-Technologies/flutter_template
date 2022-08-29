@@ -8,6 +8,7 @@ environment:
 
 
 dependencies:
+  intl:
   flutter:
     sdk: flutter
   flutter_localizations:

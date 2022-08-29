@@ -27,7 +27,7 @@ class ThemeBuilder extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _ThemeBuilderState createState() => _ThemeBuilderState(
+  State<ThemeBuilder> createState() => _ThemeBuilderState(
         ThemeManager(
           themes: themes,
           statusBarColorBuilder: statusBarColorBuilder,

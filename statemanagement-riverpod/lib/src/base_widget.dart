@@ -17,7 +17,7 @@ class BaseWidget<T extends ChangeNotifier> extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _BaseWidget<T> createState() => _BaseWidget<T>();
+  State<BaseWidget<T>> createState() => _BaseWidget<T>();
 }
 
 /// State of StatefulWidget of T type of Viewmodel / ChangeNotifier

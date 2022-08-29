@@ -2,6 +2,7 @@ name: themes
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
 # homepage: https://www.example.com
+publish_to: none
 
 environment:
   sdk: '>=2.17.6 <3.0.0'
@@ -13,6 +14,8 @@ dependencies:
   provider: ^6.0.0
   rxdart: ^0.27.1
   shared_preferences: ^2.0.6
+  get_it:
+  injectable:
   dependency_injection:
     path: ../dependency-injection/
 

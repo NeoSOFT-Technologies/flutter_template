@@ -2,6 +2,7 @@ name: statemanagement_bloc
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
 # homepage: https://www.example.com
+publish_to: none
 
 environment:
   sdk: '>=2.17.6 <3.0.0'
@@ -9,10 +10,10 @@ environment:
 # dependencies:
 #   path: ^1.8.0
 dependencies:
+  bloc:
+  flutter_bloc:
   flutter:
     sdk: flutter
-
-dependency_overrides:
   statemanagement_core:
     path: ../statemanagement-core/
 

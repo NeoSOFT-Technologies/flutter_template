@@ -6,10 +6,10 @@ import 'route_paths.dart';
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case RoutePaths.Splash:
+      case RoutePaths.splash:
         return CupertinoPageRoute(
             builder: (context) => const SplashPage(),
-            settings: const RouteSettings(name: RoutePaths.Splash));
+            settings: const RouteSettings(name: RoutePaths.splash));
 
       default:
         // Replace by Empty Page

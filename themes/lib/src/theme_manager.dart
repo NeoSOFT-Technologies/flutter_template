@@ -1,19 +1,17 @@
 import 'dart:async';
-
+import 'package:injectable/injectable.dart';
+import 'package:get_it/get_it.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:get_it/get_it.dart';
-import 'package:injectable/injectable.dart';
 import 'package:provider/provider.dart';
 import 'package:rxdart/rxdart.dart';
-
 import 'services/platform_service.dart';
 import 'services/sharedpreference_service.dart';
 import 'services/statusbar_service.dart';
 import 'theme_service.dart';
 
-const String SelectedTheme = 'selected-theme';
-const String DarkTheme = 'dark-theme';
+const String selectedTheme = 'selected-theme';
+const String darkTheme = 'dark-theme';
 
 /// Provides functionality to manage the current theme for the application
 class ThemeManager {

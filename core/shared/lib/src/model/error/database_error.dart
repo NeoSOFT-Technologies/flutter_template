@@ -24,13 +24,13 @@ class DatabaseError extends BaseError {
         return AppError(
             error: error,
             throwable: cause,
-            type: ErrorType.DATABASE_NOT_SUPPORTED);
+            type: ErrorType.databaseNotSupported);
       case 2:
         return AppError(
-            error: error, throwable: cause, type: ErrorType.DB_USER_NOT_FOUND);
+            error: error, throwable: cause, type: ErrorType.databaseUserNotFound);
       default:
         return AppError(
-            error: error, throwable: cause, type: ErrorType.DATABASE);
+            error: error, throwable: cause, type: ErrorType.database);
     }
   }
 }

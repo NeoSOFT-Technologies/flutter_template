@@ -6,7 +6,7 @@ class DatabaseMigrations {
             .execute("ALTER TABLE user ADD COLUMN isVerified BOOL DEFAULT 0");
       });
 
-  static final List<Migration> MIGRATIONS = [
+  static final List<Migration> migrations = [
     _dbMigration1To2(),
   ];
 }

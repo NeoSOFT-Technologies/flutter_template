@@ -1,7 +1,6 @@
 import 'package:dependency_injection/dependency_injection.dart';
-import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-
+import 'package:get_it/get_it.dart';
 import 'database_dependency_configurator.config.dart';
 
 //global private function

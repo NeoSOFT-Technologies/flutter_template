@@ -20,25 +20,25 @@ class NetworkError extends BaseError {
     switch (error.code) {
       case 503:
         return AppError(
-            error: error, throwable: cause, type: ErrorType.NET_DEFAULT_ERROR);
+            error: error, throwable: cause, type: ErrorType.netDefaultError);
 
       case 504:
         return AppError(
-            throwable: cause, error: error, type: ErrorType.NET_SERVER_MESSAGE);
+            throwable: cause, error: error, type: ErrorType.netServerMessage);
 
       case 502:
         return AppError(
-            throwable: cause, error: error, type: ErrorType.NET_SERVER_MESSAGE);
+            throwable: cause, error: error, type: ErrorType.netServerMessage);
 
       case 404:
         return AppError(
-            throwable: cause, error: error, type: ErrorType.NET_SERVER_MESSAGE);
+            throwable: cause, error: error, type: ErrorType.netServerMessage);
 
       //so on based on network conditions decided for network error code
 
       default:
         return AppError(
-            throwable: cause, error: error, type: ErrorType.UN_KNOWN);
+            throwable: cause, error: error, type: ErrorType.unknown);
     }
   }
 }

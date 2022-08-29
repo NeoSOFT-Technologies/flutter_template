@@ -1,8 +1,8 @@
 import 'package:data/data.dart';
 import 'package:database_floor/floor.dart';
 import 'package:dependency_injection/dependency_injection.dart';
-import 'package:domain/domain.dart';
 import 'package:get_it/get_it.dart';
+import 'package:domain/domain.dart';
 import 'package:themes/themes.dart';
 
 final getIt = GetIt.instance;

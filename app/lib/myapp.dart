@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:services/services.dart';
 import 'package:localisation/strings.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:themes/themes.dart';
-
 import 'navigation/app_router.dart';
 import 'navigation/route_paths.dart';
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ThemeBuilder(
@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: Strings.delegate.supportedLocales,
           onGenerateTitle: (context) => Strings.of(context).appName,
           debugShowCheckedModeBanner: false,
-          initialRoute: RoutePaths.Splash,
+          initialRoute: RoutePaths.splash,
           theme: regularTheme,
           darkTheme: darkTheme,
           themeMode: themeMode,

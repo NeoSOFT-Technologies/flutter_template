@@ -10,7 +10,7 @@ import 'model/user_entity.dart';
 
 part 'app_database.g.dart';
 
-@Database(version: DatabaseConfig.DB_VERSION, entities: [UserDBEntity])
+@Database(version: DatabaseConfig.dbVersion, entities: [UserDBEntity])
 abstract class AppDatabase extends FloorDatabase {
   UserDao get userDao;
 }

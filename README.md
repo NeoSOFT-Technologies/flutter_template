@@ -94,7 +94,8 @@ flutter pub get
 #### Run Code Generation
 
 ```bash
-bash app/scripts/generate-all.sh
+bash cd app/
+bash scripts/generate-all.sh
 ```
 
 #### Setup Hooks

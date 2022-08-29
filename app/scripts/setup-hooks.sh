@@ -2,7 +2,7 @@
 
 echo Marking all hooks as executable...
 
-find scripts/hooks/ -type f -exec chmod +x {} \;
+find app/scripts/hooks/ -type f -exec chmod +x {} \;
 
 echo All hooks marked as executable
 

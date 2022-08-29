@@ -177,28 +177,28 @@ packages:
     source: hosted
     version: "0.10.1"
   data:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../core/data"
       relative: true
     source: path
     version: "1.0.0"
   database_floor:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../infrastructure/database-floor"
       relative: true
     source: path
     version: "1.0.0"
   dependency_injection:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../dependency-injection"
       relative: true
     source: path
     version: "1.0.0"
   domain:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../core/domain"
       relative: true
@@ -309,7 +309,7 @@ packages:
     source: hosted
     version: "2.1.3"
   get_it:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: get_it
       url: "https://pub.dartlang.org"
@@ -344,7 +344,7 @@ packages:
     source: hosted
     version: "4.0.1"
   injectable:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       name: injectable
       url: "https://pub.dartlang.org"
@@ -393,7 +393,7 @@ packages:
     source: hosted
     version: "2.0.0"
   localisation:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../localisation"
       relative: true
@@ -547,7 +547,7 @@ packages:
     source: hosted
     version: "0.27.5"
   services:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../services"
       relative: true
@@ -692,14 +692,14 @@ packages:
     source: hosted
     version: "0.7.2+1"
   statemanagement_core:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../statemanagement-core"
       relative: true
     source: path
     version: "1.0.0"
   statemanagement_riverpod:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../statemanagement-riverpod"
       relative: true
@@ -748,7 +748,7 @@ packages:
     source: hosted
     version: "0.4.9"
   themes:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../themes"
       relative: true
