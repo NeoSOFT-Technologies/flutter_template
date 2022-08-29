@@ -18,4 +18,3 @@ class FlavorValues {
 
   bool get logSqlStatements => _logSqlStatements;
 }
-

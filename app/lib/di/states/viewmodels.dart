@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../dependencies.dart';
 
-
 final splashViewModelProvider =
     ChangeNotifierProvider.autoDispose<SplashViewModel>(
   (ref) => SplashViewModel(getIt.get<String>(instanceName: "BaseUrl")),

@@ -13,6 +13,6 @@ else
   echo "Static analysis failed. Running dart fix."
   dart fix --apply
   echo "Static analysis failed. Running flutter format"
-  flutter format lib
+  flutter format app/lib
   exit 1
 fi

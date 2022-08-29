@@ -14,6 +14,7 @@ class SplashPage extends BasePage<SplashViewModel> {
 }
 
 class SplashPageState extends BaseStatefulPage<SplashViewModel, SplashPage> {
+  @override
   ProviderBase provideBase() {
     return splashViewModelProvider;
   }

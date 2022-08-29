@@ -69,7 +69,7 @@ class ThemeManager {
   int? get selectedThemeIndex {
     if (themes != null && themes!.isNotEmpty) {
       int? themeIndex = _sharedPreferences.themeIndex;
-      return themeIndex == null ? 0 : themeIndex;
+      return themeIndex ?? 0;
     }
     return null;
   }
@@ -86,7 +86,7 @@ class ThemeManager {
     var hasMultipleThemes = themes != null && themes!.length > 1;
     var hasLightAndDarkThemes = darkTheme != null && lightTheme != null;
     assert(hasMultipleThemes || hasLightAndDarkThemes,
-        '''You have to supply themes if you want to use themes. You have supplied no themes. Don\'t do that. Supply themes.
+        '''You have to supply themes if you want to use themes. You have supplied no themes. Don't do that. Supply themes.
 You can supply either a list of ThemeData objects to the themes property or a lightTheme and a darkTheme to be swapped between.
         ''');
 
@@ -128,13 +128,13 @@ You can supply either a list of ThemeData objects to the themes property or a li
       updateOverlayColors(selectedTheme);
     }
 
-    ThemeModel _currTheme = ThemeModel(
+    ThemeModel currTheme = ThemeModel(
         selectedTheme: selectedTheme,
         darkTheme: darkTheme,
         themeMode: _selectedThemeMode);
 
-    _themesController = BehaviorSubject<ThemeModel>.seeded(_currTheme);
-    _initialTheme = _currTheme;
+    _themesController = BehaviorSubject<ThemeModel>.seeded(currTheme);
+    _initialTheme = currTheme;
 
     ThemeService.getInstance().setThemeManager(this);
   }

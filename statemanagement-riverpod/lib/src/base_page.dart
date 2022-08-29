@@ -40,7 +40,7 @@ abstract class BasePageViewWidget<T extends BasePageViewModel> extends Widget {
 
   @override
   DataProviderElement<T> createElement() =>
-      DataProviderElement<T>(this, this.providerBase);
+      DataProviderElement<T>(this, providerBase);
 }
 
 class DataProviderElement<T extends BasePageViewModel>

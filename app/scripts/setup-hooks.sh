@@ -8,4 +8,4 @@ echo All hooks marked as executable
 
 echo Moving all hooks to .git/hooks/
 
-rsync -P scripts/hooks/* .git/hooks/
+rsync -P app/scripts/hooks/* .git/hooks/

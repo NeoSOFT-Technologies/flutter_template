@@ -8,7 +8,7 @@ class AppRouter {
     switch (settings.name) {
       case RoutePaths.Splash:
         return CupertinoPageRoute(
-            builder: (context) => SplashPage(),
+            builder: (context) => const SplashPage(),
             settings: const RouteSettings(name: RoutePaths.Splash));
 
       default:

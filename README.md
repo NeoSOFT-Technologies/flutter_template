@@ -47,7 +47,7 @@ Here are some things you need to prepare before this Boilerplate setup:
 3. Visual Studio Code (Optional) [Install](https://code.visualstudio.com/)
 4. **Dart** and **Flutter** extensions:
     - **Intellij Platform** users ([Dart](https://plugins.jetbrains.com/plugin/6351-dart), [Flutter](https://plugins.jetbrains.com/plugin/9212-flutter) )
-    - **Visual Studio Code** users ([Dart](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code), [Flutter](https://marketplace.visualstudio.com /items?itemName=Dart-Code.flutter) )
+    - **Visual Studio Code** users ([Dart](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code), [Flutter](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter) )
 
 #### Setup
 
@@ -87,17 +87,23 @@ Sensitive information like api keys, credentials, etc should not be checked into
 
 #### Get Dependencies
 
-```
+```bash
 flutter pub get
 ```
 
 #### Run Code Generation
 
-```
-bash scripts/generate-all.sh
+```bash
+bash app/scripts/generate-all.sh
 ```
 
-Read the [scripts documentation](app/scripts/README.md) to learn about all the scrips used in the project.
+#### Setup Hooks
+
+```bash
+bash app/scripts/setup-hooks.sh
+```
+
+Read the [scripts documentation](app/scripts/README.md) to learn about all the scripts used in the project.
 
 
 
@@ -144,7 +150,7 @@ You can setup any environment specific values in the respective `main.dart` file
 
 To run a specific flavor you need to specify the flavor and target file.
 
-```sh
+```bash
  flutter run --flavor qa -t lib/entrypoints/main_qa.dart
 ```
 
@@ -197,6 +203,11 @@ In Visual Studio Code, navigate to `Preferences` -> `Settings` and search for `F
 - [Localisation](./localisation/)
 - Routing/Navigations
 - [Responsive Framework](./wiki/responsive-framework/RESPONSIVE_FRAMEWORK.md)
+- Pre-commit Checks
+  - Dart Analysis
+  - [Dart Fix](https://github.com/dart-lang/sdk/blob/main/pkg/dartdev/doc/dart-fix.md)
+  - Flutter Format
+
 
 
 
@@ -267,7 +278,7 @@ For the android CD workflow to run, we need to perform the following setup steps
 - Follow these instructions to [generate an upload keystore](https://developer.android.com/studio/publish/app-signing#generate-key). Note down the `store password`, `key alias` and `key password`. You will need these in later steps.
 - Use `openssl` to convert the `jks` file to `Base64`.
 
-```
+```bash
 openssl base64 < app_key.jks | tr -d '\n' | tee app_key_encoded.txt
 ```
 
@@ -305,7 +316,8 @@ We will divide the guide into steps so that it is easier to understand
   - Replace `PROVISIONING PROFILE NAME` with your Provisioning Profile Name (You already created one in Step 2, use that)
   - Replace `TEAM_ID` with your team id. Look at [this](https://stackoverflow.com/a/18727947) answer on "How to find your Team ID"
 
-  <summary><i>Click to View Template</i></summary>
+<details>
+<summary><i>Click to View Template</i></summary>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -338,6 +350,7 @@ We will divide the guide into steps so that it is easier to understand
 </dict>
 </plist>
 ```
+
 </details>
 
   Create a new file called `options.plist` and save the above contents in that file
@@ -364,7 +377,7 @@ We will divide the guide into steps so that it is easier to understand
 
 - To generate a base64 string, use the following command, replacing `FILENAME` with your filename
 
-```
+```bash
 openssl base64 < FILENAME | tr -d '\n' | tee ENCODED_FILENAME.txt
 ```
 

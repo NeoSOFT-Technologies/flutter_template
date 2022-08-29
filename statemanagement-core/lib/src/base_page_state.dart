@@ -32,7 +32,7 @@ abstract class CoreBasePageState<VM, T extends StatefulWidget> extends State<T> 
         backgroundColor: scaffoldBackgroundColor(),
         appBar: buildAppbar(),
         extendBodyBehindAppBar: extendBodyBehindAppBar(),
-        body: buildScaffoldBody(context, _viewModel!),
+        body: buildScaffoldBody(context, _viewModel as VM),
         drawer: buildDrawer(),
         drawerEnableOpenDragGesture: drawerEnableOpenDragGesture(),
         bottomNavigationBar: buildBottomNavigationBar(),

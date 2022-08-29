@@ -6,13 +6,13 @@ import 'base_error.dart';
 class NetworkError extends BaseError {
   NetworkError({
     required int httpError,
-    String message: "",
+    String message = "",
     required Exception cause,
   }) : super(error: ErrorInfo(code: httpError, message: message), cause: cause);
 
   @override
   String getFriendlyMessage() {
-    return "${this.error.message}";
+    return error.message;
   }
 
   @override

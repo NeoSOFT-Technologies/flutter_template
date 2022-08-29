@@ -14,7 +14,7 @@ class DatabaseError extends BaseError {
 
   @override
   String getFriendlyMessage() {
-    return "${error.message}";
+    return error.message;
   }
 
   @override

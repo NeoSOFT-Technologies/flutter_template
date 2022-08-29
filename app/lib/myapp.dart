@@ -13,19 +13,24 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ThemeBuilder(
       themes: [
-        ThemeData(backgroundColor: Colors.red, accentColor: Colors.blue),
+        ThemeData(
+            backgroundColor: Colors.red,
+            colorScheme:
+                ColorScheme.fromSwatch().copyWith(secondary: Colors.blue)),
       ],
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         backgroundColor: Colors.blue[700],
-        accentColor: Colors.yellow[700],
+        colorScheme:
+            ColorScheme.fromSwatch().copyWith(secondary: Colors.yellow[700]),
       ),
       lightTheme: ThemeData(
         brightness: Brightness.light,
         backgroundColor: Colors.blue[300],
-        accentColor: Colors.yellow[300],
+        colorScheme:
+            ColorScheme.fromSwatch().copyWith(secondary: Colors.yellow[300]),
       ),
-      builder: (context, regularTheme, darkTheme, themeMode) =>  MaterialApp(
+      builder: (context, regularTheme, darkTheme, themeMode) => MaterialApp(
           navigatorKey: AppService.navigatorKey,
           builder: (context, widget) => ResponsiveWrapper.builder(
                 ClampingScrollWrapper.builder(context, widget!),
