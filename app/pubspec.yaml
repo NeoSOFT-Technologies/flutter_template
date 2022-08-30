@@ -38,20 +38,22 @@ dependencies:
     path: ../dependency-injection/
   database_floor:
     path: ../infrastructure/database-floor/
+  network_retrofit:
+    path: ../infrastructure/network-retrofit/
   data:
-      path: ../core/data/
+    path: ../core/data/
   domain:
-      path: ../core/domain/
+    path: ../core/domain/
   themes:
-      path: ../themes/
+    path: ../themes/
   localisation:
-      path: ../localisation/
+    path: ../localisation/
   statemanagement_riverpod:
-      path: ../statemanagement-riverpod/
+    path: ../statemanagement-riverpod/
   services:
-      path: ../services/
+    path: ../services/
   statemanagement_core:
-      path: ../statemanagement-core/
+    path: ../statemanagement-core/
 
 dev_dependencies:
   flutter_test:

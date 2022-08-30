@@ -18,8 +18,8 @@ _i1.GetIt $initDataGetIt(_i1.GetIt get,
     {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   final dataModule = _$DataModule();
-  gh.lazySingleton<_i3.UserRepository>(
-      () => dataModule.userRepositoryProvider(get<_i4.DatabasePort>()));
+  gh.lazySingleton<_i3.UserRepository>(() => dataModule.userRepositoryProvider(
+      get<_i4.DatabasePort>(), get<_i4.NetworkPort>()));
   return get;
 }
 

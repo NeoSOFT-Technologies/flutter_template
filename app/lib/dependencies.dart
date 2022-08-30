@@ -4,6 +4,7 @@ import 'package:dependency_injection/dependency_injection.dart';
 import 'package:get_it/get_it.dart';
 import 'package:domain/domain.dart';
 import 'package:themes/themes.dart';
+import 'package:network_retrofit/network_retrofit.dart';
 
 final getIt = GetIt.instance;
 
@@ -12,8 +13,11 @@ final configurators = [
   //configure themes
   ThemesDependencyConfigurator(),
 
-  //configure datasources
+  //configure database sources
   DatabaseDependencyConfigurator(),
+
+  //configure network sources
+  NetworkDependencyConfigurator(),
 
   //configure data layer
   DataDependencyConfigurator(),
