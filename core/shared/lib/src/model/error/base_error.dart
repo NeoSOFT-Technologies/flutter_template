@@ -1,7 +1,6 @@
 import 'package:shared/shared.dart';
 
-abstract class BaseError
-    extends BaseLayerDataTransformer<BaseError, AppError>
+abstract class BaseError extends BaseLayerDataTransformer<BaseError, AppError>
     implements Exception {
   final ErrorInfo error;
   final Exception cause;

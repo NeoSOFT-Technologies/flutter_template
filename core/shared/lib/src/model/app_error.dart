@@ -1,7 +1,6 @@
 import '../const/error_type.dart';
 import 'error_info.dart';
 
-
 class AppError implements Exception {
   ErrorType type;
   ErrorInfo error;

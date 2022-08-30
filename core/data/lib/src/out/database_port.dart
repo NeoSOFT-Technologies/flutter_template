@@ -1,4 +1,4 @@
-abstract class DatabasePort{
+abstract class DatabasePort {
   void saveUser();
   void fetchPosts();
   void reload();

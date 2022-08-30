@@ -9,7 +9,6 @@ _configureMainDependencies(GetIt getIt) => $initGetIt(getIt);
 
 class AppDependencyConfigurator implements DependencyConfigurator {
   @override
-  @InjectableInit(initializerName: r'$initGetIt')
   Future configureDependencies(
       DependencyConfigurationContext context, GetIt getIt) {
     return Future.value(_configureMainDependencies(getIt));

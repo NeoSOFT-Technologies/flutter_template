@@ -5,7 +5,6 @@ class FlavorValues {
   final AppSecrets secrets;
   final bool useFakeData;
   final bool showLogs;
-
   final bool _logSqlStatements;
 
   const FlavorValues({

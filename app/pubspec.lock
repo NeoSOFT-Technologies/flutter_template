@@ -197,6 +197,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  dio:
+    dependency: transitive
+    description:
+      name: dio
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.6"
   domain:
     dependency: "direct main"
     description:
@@ -399,6 +406,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  logger:
+    dependency: transitive
+    description:
+      name: logger
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
   logging:
     dependency: transitive
     description:
@@ -440,6 +454,13 @@ packages:
       name: nested
       url: "https://pub.dartlang.org"
     source: hosted
+    version: "1.0.0"
+  network_retrofit:
+    dependency: "direct main"
+    description:
+      path: "../infrastructure/network-retrofit"
+      relative: true
+    source: path
     version: "1.0.0"
   package_config:
     dependency: transitive
@@ -497,6 +518,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.5.1"
+  pretty_dio_logger:
+    dependency: transitive
+    description:
+      name: pretty_dio_logger
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0-beta-1"
   process:
     dependency: transitive
     description:
@@ -532,6 +560,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.0"
+  retrofit:
+    dependency: transitive
+    description:
+      name: retrofit
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.1+1"
   riverpod:
     dependency: transitive
     description:
