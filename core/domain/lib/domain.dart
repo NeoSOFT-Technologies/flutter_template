@@ -10,5 +10,7 @@ export 'package:dartz/dartz.dart';
 export 'src/repository/user_repository.dart';
 
 //use-cases
+export 'src/usecase/base/params.dart';
 export 'src/usecase/user/login_usecase.dart';
 export 'package:shared/shared.dart';
+
