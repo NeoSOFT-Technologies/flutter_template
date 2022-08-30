@@ -9,8 +9,8 @@ class DatabaseError extends BaseError {
     required int databaseError,
     required Exception cause,
   }) : super(
-      error: ErrorInfo(message: message, code: databaseError),
-      cause: cause);
+            error: ErrorInfo(message: message, code: databaseError),
+            cause: cause);
 
   @override
   String getFriendlyMessage() {
@@ -27,7 +27,9 @@ class DatabaseError extends BaseError {
             type: ErrorType.databaseNotSupported);
       case 2:
         return AppError(
-            error: error, throwable: cause, type: ErrorType.databaseUserNotFound);
+            error: error,
+            throwable: cause,
+            type: ErrorType.databaseUserNotFound);
       default:
         return AppError(
             error: error, throwable: cause, type: ErrorType.database);

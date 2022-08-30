@@ -26,6 +26,7 @@ analyzer:
     - "**.gr.dart"
     - "**/translation_keys.dart"
     - "**/translation_loader.dart"
+    - "lib/src/generated/**"
 
 # For more information about the core and recommended set of lints, see
 # https://dart.dev/go/core-lints

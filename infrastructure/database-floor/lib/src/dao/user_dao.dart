@@ -5,7 +5,6 @@ import 'base/base_dao.dart';
 
 @dao
 abstract class UserDao extends BaseDao<UserDBEntity> {
-
   @Query("SELECT * FROM ${Table.user} ORDER BY firstName ASC")
   Stream<List<UserDBEntity>> getUsers();
 

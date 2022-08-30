@@ -6,7 +6,6 @@ import 'package:injectable/injectable.dart';
 
 @module
 abstract class ThirdPartyServicesModule {
-
   @lazySingleton
   StatusBarService get statusBarService => StatusBarService();
 

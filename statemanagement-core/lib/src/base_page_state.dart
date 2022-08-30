@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-abstract class CoreBasePageState<VM, T extends StatefulWidget> extends State<T> {
+abstract class CoreBasePageState<VM, T extends StatefulWidget>
+    extends State<T> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   bool subscribeVisibilityEvents = false;
@@ -110,5 +111,4 @@ abstract class CoreBasePageState<VM, T extends StatefulWidget> extends State<T> 
 
   /// You can setup load something when model is ready, Ex: Load or fetch some data from remote layer
   void onModelReady(VM model) {}
-
 }

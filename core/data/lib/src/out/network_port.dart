@@ -1,3 +1,3 @@
-abstract class NetworkPort{
+abstract class NetworkPort {
   void fetchPosts();
 }
