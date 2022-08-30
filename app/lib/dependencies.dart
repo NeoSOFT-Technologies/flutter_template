@@ -1,10 +1,11 @@
+import 'package:app/di/app_dependency_configurator.dart';
 import 'package:data/data.dart';
 import 'package:database_floor/floor.dart';
 import 'package:dependency_injection/dependency_injection.dart';
-import 'package:get_it/get_it.dart';
 import 'package:domain/domain.dart';
-import 'package:themes/themes.dart';
+import 'package:get_it/get_it.dart';
 import 'package:network_retrofit/network_retrofit.dart';
+import 'package:themes/themes.dart';
 
 final getIt = GetIt.instance;
 
@@ -24,6 +25,9 @@ final configurators = [
 
   //configure domain layer
   DomainDependencyConfigurator(),
+
+  //main app configurator
+  AppDependencyConfigurator(),
 ];
 
 Future configureDependencies(DependencyConfigurationContext context) async {

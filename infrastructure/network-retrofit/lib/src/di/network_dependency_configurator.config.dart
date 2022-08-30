@@ -20,16 +20,17 @@ _i1.GetIt $initNetworkGetIt(_i1.GetIt get,
     {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   final networkModule = _$NetworkModule();
-  gh.singleton<_i3.BaseOptions>(networkModule.providerBaseConfig());
+  gh.singleton<_i3.BaseOptions>(
+      networkModule.providerBaseConfig(get<String>(instanceName: 'BaseUrl')));
   gh.singleton<_i4.PrettyDioLogger>(networkModule.providerPrettyLogger());
   gh.singleton<List<_i3.Interceptor>>(
       networkModule.providerInterceptors(get<_i4.PrettyDioLogger>()));
-  gh.singleton<_i3.Dio>(networkModule.providerDio(
+  gh.lazySingleton<_i3.Dio>(() => networkModule.providerDio(
       get<_i3.BaseOptions>(), get<List<_i3.Interceptor>>()));
-  gh.singleton<_i5.RetrofitService>(
-      networkModule.providerRetrofitService(get<_i3.Dio>()));
-  gh.singleton<_i6.NetworkPort>(
-      networkModule.providerNetworkService(get<_i5.RetrofitService>()));
+  gh.lazySingleton<_i5.RetrofitService>(
+      () => networkModule.providerRetrofitService(get<_i3.Dio>()));
+  gh.lazySingleton<_i6.NetworkPort>(
+      () => networkModule.providerNetworkService(get<_i5.RetrofitService>()));
   return get;
 }
 

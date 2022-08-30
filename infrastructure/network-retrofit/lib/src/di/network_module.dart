@@ -2,17 +2,16 @@ import 'package:data/data.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:network_retrofit/src/network_adapter.dart';
-import 'package:network_retrofit/src/network_config.dart';
 import 'package:network_retrofit/src/services/retrofit_service.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-
-import '../network_config.dart';
 
 @module
 abstract class NetworkModule {
   @singleton
-  BaseOptions providerBaseConfig() =>
-      BaseOptions(baseUrl: NetworkConfig.baseUrl);
+  BaseOptions providerBaseConfig(
+    @Named('BaseUrl') String url,
+  ) =>
+      BaseOptions(baseUrl: url);
 
   @singleton
   PrettyDioLogger providerPrettyLogger() => PrettyDioLogger(
@@ -30,7 +29,7 @@ abstract class NetworkModule {
   List<Interceptor> providerInterceptors(PrettyDioLogger logger) =>
       <Interceptor>[logger];
 
-  @singleton
+  @lazySingleton
   Dio providerDio(BaseOptions options, List<Interceptor> interceptors) {
     Dio dio = Dio(options);
     dio.interceptors.addAll(
@@ -39,10 +38,10 @@ abstract class NetworkModule {
     return dio;
   }
 
-  @singleton
+  @lazySingleton
   RetrofitService providerRetrofitService(Dio dio) => RetrofitService(dio);
 
-  @singleton
+  @lazySingleton
   NetworkPort providerNetworkService(RetrofitService retrofitService) =>
       NetworkAdapter(retrofitService);
 }

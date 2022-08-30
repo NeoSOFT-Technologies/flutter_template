@@ -30,8 +30,6 @@ Future<_i1.GetIt> $initThemeGetIt(_i1.GetIt get,
       .sharedPreferencesService(get<_i4.SharedPreferences>()));
   gh.lazySingleton<_i6.StatusBarService>(
       () => thirdPartyServicesModule.statusBarService);
-  gh.factory<String>(() => thirdPartyServicesModule.baseUrl,
-      instanceName: 'BaseUrl');
   return get;
 }
 

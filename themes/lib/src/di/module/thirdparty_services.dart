@@ -6,8 +6,6 @@ import 'package:injectable/injectable.dart';
 
 @module
 abstract class ThirdPartyServicesModule {
-  @Named("BaseUrl")
-  String get baseUrl => 'My base url';
 
   @lazySingleton
   StatusBarService get statusBarService => StatusBarService();

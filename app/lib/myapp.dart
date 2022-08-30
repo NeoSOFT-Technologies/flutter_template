@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:localisation/strings.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:services/services.dart';
-import 'package:localisation/strings.dart';
 import 'package:themes/themes.dart';
+
 import 'navigation/app_router.dart';
 import 'navigation/route_paths.dart';
 
@@ -15,20 +16,24 @@ class MyApp extends StatelessWidget {
       themes: [
         ThemeData(
             backgroundColor: Colors.red,
-            colorScheme:
-                ColorScheme.fromSwatch().copyWith(secondary: Colors.blue)),
+            colorScheme: ColorScheme.fromSwatch().copyWith(
+              secondary: Colors.blue,
+              brightness: Brightness.light,
+            )),
       ],
       darkTheme: ThemeData(
-        brightness: Brightness.dark,
         backgroundColor: Colors.blue[700],
-        colorScheme:
-            ColorScheme.fromSwatch().copyWith(secondary: Colors.yellow[700]),
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: Colors.yellow[700],
+          brightness: Brightness.dark,
+        ),
       ),
       lightTheme: ThemeData(
-        brightness: Brightness.light,
         backgroundColor: Colors.blue[300],
-        colorScheme:
-            ColorScheme.fromSwatch().copyWith(secondary: Colors.yellow[300]),
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: Colors.yellow[300],
+          brightness: Brightness.light,
+        ),
       ),
       builder: (context, regularTheme, darkTheme, themeMode) => MaterialApp(
           navigatorKey: AppService.navigatorKey,
