@@ -51,5 +51,6 @@ app.*.map.json
 /debug-info
 
 # Secrets
+!lib/secrets/
 lib/secrets/*
 !lib/secrets/app_secrets.skeleton.dart

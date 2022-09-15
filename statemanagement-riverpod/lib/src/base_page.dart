@@ -17,7 +17,7 @@ abstract class BasePageState<VM extends BasePageViewModel,
 }
 
 abstract class BaseStatefulPage<VM extends BasePageViewModel,
-    B extends BasePage<VM>> extends BasePageState<VM, B> {
+    B extends BasePage<VM>> extends BasePageState<VM, B>  {
   @override
   Widget build(BuildContext context) {
     return BaseWidget<VM>(
