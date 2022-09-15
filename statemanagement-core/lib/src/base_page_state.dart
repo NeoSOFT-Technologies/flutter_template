@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_errors/flutter_errors.dart';
 
-abstract class CoreBasePageState<VM, T extends StatefulWidget>
-    extends State<T> {
+abstract class CoreBasePageState<VM, T extends StatefulWidget> extends State<T>
+    with WidgetsBindingObserver {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   bool subscribeVisibilityEvents = false;
@@ -9,6 +10,27 @@ abstract class CoreBasePageState<VM, T extends StatefulWidget>
   VM? _viewModel;
 
   bool get attached => _viewModel != null;
+
+  final FlutterWidgetBindingObserver stateObserver =
+      FlutterWidgetBindingObserverImpl();
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    stateObserver.didChangeAppLifecycleState(state);
+    super.didChangeAppLifecycleState(state);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

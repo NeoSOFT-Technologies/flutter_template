@@ -1,6 +1,7 @@
 name: statemanagement_core
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
+publish_to: none
 # homepage: https://www.example.com
 
 environment:
@@ -11,12 +12,17 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^7.3.0
   flutter_riverpod: 0.14.0+1
-
+  flutter_errors:
+    git:
+      url: https://github.com/faiyyazs/flutter-errors.git
+      ref: main
+      path: flutter-errors/
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   lints: ^2.0.0
   test: ^1.16.0
+  analyzer: 4.7.0
 
 flutter:
