@@ -5,4 +5,7 @@ import 'package:injectable/injectable.dart';
 abstract class AppModule {
   @Named("BaseUrl")
   String get baseUrl => FlavorConfig.instance.values.apiBaseUrl;
+
+  @Named("ApiKey")
+  String get apiKey => FlavorConfig.instance.values.secrets.thirdpartyApiKey;
 }

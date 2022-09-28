@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:network_retrofit/src/network_adapter.dart';
 import 'package:network_retrofit/src/services/retrofit_service.dart';
+import 'package:network_retrofit/src/util/api_interceptor.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 @module
@@ -26,8 +27,20 @@ abstract class NetworkModule {
       );
 
   @singleton
-  List<Interceptor> providerInterceptors(PrettyDioLogger logger) =>
-      <Interceptor>[logger];
+  ApiInterceptor provideApiInterceptor(
+    @Named("ApiKey") String apiKey,
+  ) =>
+      ApiInterceptor(apiKey);
+
+  @singleton
+  List<Interceptor> providerInterceptors(
+    PrettyDioLogger logger,
+    ApiInterceptor apiInterceptor,
+  ) =>
+      <Interceptor>[
+        logger,
+        apiInterceptor,
+      ];
 
   @lazySingleton
   Dio providerDio(BaseOptions options, List<Interceptor> interceptors) {
@@ -42,6 +55,5 @@ abstract class NetworkModule {
   RetrofitService providerRetrofitService(Dio dio) => RetrofitService(dio);
 
   @lazySingleton
-  NetworkPort providerNetworkService(RetrofitService retrofitService) =>
-      NetworkAdapter(retrofitService);
+  NetworkPort providerNetworkService(RetrofitService retrofitService) => NetworkAdapter(retrofitService);
 }
