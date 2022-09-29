@@ -29,10 +29,7 @@ Future<Either<NetworkError, T>> safeApiCall<T>(Future<T> apiCall) async {
             //"Receive timeout in connection with API server";
             break;
           case DioErrorType.response:
-            if (throwable is DioError) {
-              return Left(getError(apiResponse: throwable.response!));
-            }
-            break;
+            return Left(getError(apiResponse: throwable.response!));
           //"Received invalid status code: ${error.response.statusCode}";
           case DioErrorType.cancel:
             //"Request to API server was cancelled"
@@ -40,8 +37,7 @@ Future<Either<NetworkError, T>> safeApiCall<T>(Future<T> apiCall) async {
           case DioErrorType.other:
             return Left(
               NetworkError(
-                  message:
-                      "Connection to API server failed due to internet connection",
+                  message: "Connection to API server failed due to internet connection",
                   httpError: 503,
                   cause: throwable),
             );
@@ -50,21 +46,16 @@ Future<Either<NetworkError, T>> safeApiCall<T>(Future<T> apiCall) async {
         break;
 
       case IOException:
-        return Left(NetworkError(
-            message: throwable.toString(), httpError: 502, cause: throwable));
+        return Left(NetworkError(message: throwable.toString(), httpError: 502, cause: throwable));
 
       case HttpException:
-        return Left(NetworkError(
-            message: (throwable as HttpException).message,
-            httpError: 502,
-            cause: throwable));
+        return Left(
+            NetworkError(message: (throwable as HttpException).message, httpError: 502, cause: throwable));
 
       default:
-        return Left(NetworkError(
-            message: throwable.toString(), httpError: 502, cause: throwable));
+        return Left(NetworkError(message: throwable.toString(), httpError: 502, cause: throwable));
     }
-    return Left(NetworkError(
-        message: throwable.toString(), httpError: 502, cause: throwable));
+    return Left(NetworkError(message: throwable.toString(), httpError: 502, cause: throwable));
   }
 }
 

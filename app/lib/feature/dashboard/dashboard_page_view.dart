@@ -17,7 +17,7 @@ class DashboardPageView extends BasePageViewWidget<DashboardPageViewModel> {
         child: SizedBox(
           width: 100,
           height: 100,
-          child: const Text("Dashboard weather app"),
+          child: Text("Dashboard weather app"),
         ),
       ),
     );

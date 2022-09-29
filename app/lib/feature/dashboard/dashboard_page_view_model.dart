@@ -1,17 +1,17 @@
 import 'package:domain/domain.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_errors/flutter_errors.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shared/shared.dart';
-import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 import 'package:app/model/resource.dart';
 import 'package:app/utils/request_manager.dart';
+import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 
 @injectable
 class DashboardPageViewModel extends BasePageViewModel {
   final CreateLocationUseCase createLocationUseCase;
   final FlutterExceptionHandlerBinder exceptionHandlerBinder;
 
-  DashboardPageViewModel(this.createLocationUseCase, this.exceptionHandlerBinder) {}
+  DashboardPageViewModel(this.createLocationUseCase, this.exceptionHandlerBinder);
 
   void createLocation({
     required String name,
@@ -29,8 +29,8 @@ class DashboardPageViewModel extends BasePageViewModel {
         createCall: () => createLocationUseCase.execute(params: params),
       ).asFlow().listen((result) {
         if (result.status == Status.success) {
-          print("location name is ${result.data?.name}");
-          print("location id is ${result.data?.locationId}");
+          debugPrint("location name is ${result.data?.name}");
+          debugPrint("location id is ${result.data?.locationId}");
         }
       });
     }).execute();

@@ -1,5 +1,4 @@
 import 'package:domain/domain.dart';
-import 'package:domain/src/repository/weather_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @module

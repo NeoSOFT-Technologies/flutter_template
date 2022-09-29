@@ -1,9 +1,6 @@
-import 'package:dartz/dartz.dart';
 import 'package:domain/domain.dart';
-import 'package:shared/shared.dart';
 
 import '../base/base_usecase.dart';
-import '../base/params.dart';
 
 class CreateLocationUseCase extends BaseUseCase<BaseError, CreateLocationUseCaseParams, Location> {
   final WeatherRepository _weatherRepository;
