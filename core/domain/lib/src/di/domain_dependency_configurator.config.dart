@@ -24,8 +24,14 @@ _i1.GetIt $initDomainGetIt(
     environmentFilter,
   );
   final domainModule = _$DomainModule();
+  gh.lazySingleton<_i3.CheckLocationPermissionUseCase>(() => domainModule
+      .checkLocationPermissionUseCaseProvider(get<_i3.LocationRepository>()));
   gh.lazySingleton<_i3.CreateLocationUseCase>(() =>
       domainModule.createLocationUseCaseProvider(get<_i3.WeatherRepository>()));
+  gh.lazySingleton<_i3.GetLocationUseCase>(() => domainModule
+      .fetchCurrentLocationUseCaseProvider(get<_i3.LocationRepository>()));
+  gh.lazySingleton<_i3.RequestLocationPermissionUseCase>(() => domainModule
+      .requestLocationPermissionUseCaseProvider(get<_i3.LocationRepository>()));
   return get;
 }
 

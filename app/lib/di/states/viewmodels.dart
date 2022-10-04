@@ -1,5 +1,4 @@
 import 'package:app/feature/dashboard/dashboard_page_model.dart';
-import 'package:app/feature/dashboard/dashboard_page_view_model.dart';
 import 'package:app/feature/splash/splash_page_model.dart';
 import 'package:app/feature/tabs/navigation/navigation_page_model.dart';
 import 'package:app/feature/tabs/profile/profile_page_model.dart';
@@ -19,32 +18,36 @@ final splashViewModelProvider =
 );
 
 final homeViewModelProvider =
-ChangeNotifierProvider.autoDispose<HomePageViewModel>(
-        (ref) => HomePageViewModel(),
+    ChangeNotifierProvider.autoDispose<HomePageViewModel>(
+  (ref) => HomePageViewModel(),
 );
 
 final navigationViewModelProvider =
-ChangeNotifierProvider.autoDispose<NavigationViewModel>(
-        (ref) => NavigationViewModel(),
+    ChangeNotifierProvider.autoDispose<NavigationViewModel>(
+  (ref) => NavigationViewModel(),
 );
 
 final profileViewModelProvider =
-ChangeNotifierProvider.autoDispose<ProfileViewModel>(
-        (ref) => ProfileViewModel(),
+    ChangeNotifierProvider.autoDispose<ProfileViewModel>(
+  (ref) => ProfileViewModel(),
 );
 
 final searchViewModelProvider =
-ChangeNotifierProvider.autoDispose<SearchViewModel>(
-        (ref) => SearchViewModel(),
+    ChangeNotifierProvider.autoDispose<SearchViewModel>(
+  (ref) => SearchViewModel(),
 );
 
 final dashboardViewModelProvider =
-ChangeNotifierProvider.autoDispose<DashboardViewModel>(
-        (ref) => DashboardViewModel(),
+    ChangeNotifierProvider.autoDispose<DashboardViewModel>(
+  (ref) => DashboardViewModel(
+      getIt.get<CheckLocationPermissionUseCase>(),
+      getIt.get<RequestLocationPermissionUseCase>(),
+      getIt.get<GetLocationUseCase>(),
+      getIt.get<CreateLocationUseCase>(),
+      getIt.get<FlutterExceptionHandlerBinder>()),
 );
 
-
 final bottomNavigationViewModelProvider =
-ChangeNotifierProvider.autoDispose<BottomNavigationViewModel>(
-        (ref) => BottomNavigationViewModel(),
+    ChangeNotifierProvider.autoDispose<BottomNavigationViewModel>(
+  (ref) => BottomNavigationViewModel(),
 );

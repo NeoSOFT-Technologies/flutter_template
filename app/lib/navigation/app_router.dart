@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
-
+import '../feature/dashboard/dashboard_page.dart';
 import '../feature/splash/splash_page.dart';
-import '../feature/tabs/home/home_page.dart';
 import 'route_paths.dart';
 
 class AppRouter {

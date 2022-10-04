@@ -22,6 +22,11 @@ class HomePageState extends BaseStatefulPage<HomePageViewModel, HomePage> {
   }
 
   @override
+  void onModelReady(HomePageViewModel model) {
+
+  }
+
+  @override
   Color scaffoldBackgroundColor() {
     return Colors.white;
   }

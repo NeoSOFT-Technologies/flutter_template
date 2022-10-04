@@ -98,6 +98,11 @@ class DashboardPageState
               ),
             ));
   }
+  
+  @override
+  void onBaseModelReady(DashboardViewModel model) {
+    model.checkLocationPermission();
+  }
 
   void onTabPressed(DashboardTab tab, BottomNavigationViewModel? model) {
     switch (tab) {
@@ -126,14 +131,13 @@ class CustomTabItem extends StatelessWidget {
   final DashboardTab? selectedTab;
   final Function(DashboardTab currentTab)? onPressed;
 
-  const CustomTabItem(
-      {Key? key,
-      this.theme,
-      this.currentTab = DashboardTab.NONE,
-      this.icon,
-      this.selectedTab,
-      this.title,
-      this.onPressed})
+  const CustomTabItem({Key? key,
+    this.theme,
+    this.currentTab = DashboardTab.NONE,
+    this.icon,
+    this.selectedTab,
+    this.title,
+    this.onPressed})
       : super(key: key);
 
   @override
@@ -179,22 +183,5 @@ class CustomTabItem extends StatelessWidget {
         ],
       ),
     );
-  void onModelReady(DashboardPageViewModel model) {
-    model.exceptionHandlerBinder.bind(context, super.stateObserver);
-    model.createLocation(
-      name: 'Pune',
-      lat:10.1 ,
-      lan: 125.6,
-    );
-  }
-
-  @override
-  bool extendBodyBehindAppBar() {
-    return true;
-  }
-
-  @override
-  Widget buildView(BuildContext context, DashboardPageViewModel model) {
-    return DashboardPageView(provideBase());
   }
 }

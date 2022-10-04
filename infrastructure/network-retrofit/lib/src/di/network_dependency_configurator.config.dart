@@ -32,17 +32,6 @@ _i1.GetIt $initNetworkGetIt(
       networkModule.provideApiInterceptor(get<String>(instanceName: 'ApiKey')));
   gh.singleton<_i4.BaseOptions>(
       networkModule.providerBaseConfig(get<String>(instanceName: 'BaseUrl')));
-  gh.singleton<_i4.PrettyDioLogger>(networkModule.providerPrettyLogger());
-  gh.singleton<List<_i3.Interceptor>>(
-      networkModule.providerInterceptors(get<_i4.PrettyDioLogger>()));
-  gh.lazySingleton<_i3.Dio>(() => networkModule.providerDio(
-        get<_i3.BaseOptions>(),
-        get<List<_i3.Interceptor>>(),
-      ));
-  gh.lazySingleton<_i5.RetrofitService>(
-      () => networkModule.providerRetrofitService(get<_i3.Dio>()));
-  gh.lazySingleton<_i6.NetworkPort>(
-      () => networkModule.providerNetworkService(get<_i5.RetrofitService>()));
   gh.singleton<_i5.PrettyDioLogger>(networkModule.providerPrettyLogger());
   gh.singleton<List<_i4.Interceptor>>(networkModule.providerInterceptors(
     get<_i5.PrettyDioLogger>(),
