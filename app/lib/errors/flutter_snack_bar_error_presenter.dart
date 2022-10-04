@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_errors/flutter_errors.dart';
 
-class FlutterSnackBarErrorPresenter extends SnackBarErrorPresenter<String> {
+class FlutterSnackBarErrorPresenter<T extends String> extends SnackBarErrorPresenter<T> {
   FlutterSnackBarErrorPresenter({super.duration});
 
   @override

@@ -9,12 +9,14 @@ import 'package:flutter_errors/flutter_errors.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../errors/flutter_snack_bar_error_presenter.dart' as _i4;
-import '../errors/flutter_toast_error_presenter.dart' as _i5;
-import '../feature/splash/splash_page_model.dart' as _i6;
-import 'app_module.dart' as _i8;
+import '../errors/flutter_alert_error_presenter.dart' as _i4;
+import '../errors/flutter_snack_bar_error_presenter.dart' as _i6;
+import '../errors/flutter_toast_error_presenter.dart' as _i7;
+import '../feature/splash/splash_page_model.dart' as _i8;
+import '../model/alert_texts.dart' as _i5;
+import 'app_module.dart' as _i10;
 import 'error/errors_module.dart'
-    as _i7; // ignore_for_file: unnecessary_lambdas
+    as _i9; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -30,32 +32,40 @@ _i1.GetIt $initGetIt(
   );
   final errorsModule = _$ErrorsModule();
   final appModule = _$AppModule();
-  gh.lazySingleton<_i3.ExceptionMappers>(
+  gh.lazySingleton<_i3.ExceptionMapperStorage>(
       () => errorsModule.providersGlobalErrors());
-  gh.singleton<_i4.FlutterSnackBarErrorPresenter>(
+  gh.singleton<_i4.FlutterAlertErrorPresenter<_i5.AlertTexts>>(
+      errorsModule.providesFlutterAlertErrorPresenter());
+  gh.singleton<_i6.FlutterSnackBarErrorPresenter<String>>(
       errorsModule.providesSnackBarErrorPresenter());
-  gh.singleton<_i5.FlutterToastErrorPresenter>(
+  gh.singleton<_i7.FlutterToastErrorPresenter<String>>(
       errorsModule.providesToastErrorPresenter());
+  gh.singleton<_i3.SelectorErrorPresenter<Object>>(
+      errorsModule.providesSelectorErrorPresenter(
+    get<_i7.FlutterToastErrorPresenter<String>>(),
+    get<_i6.FlutterSnackBarErrorPresenter<String>>(),
+    get<_i4.FlutterAlertErrorPresenter<_i5.AlertTexts>>(),
+  ));
   gh.factory<String>(
     () => appModule.baseUrl,
     instanceName: 'BaseUrl',
   );
-  gh.singleton<_i3.FlutterExceptionHandlerBinder<dynamic>>(
+  gh.singleton<_i3.FlutterExceptionHandlerBinder<Object>>(
       errorsModule.providerDefaultExceptionHandler(
-    get<_i5.FlutterToastErrorPresenter>(),
-    get<_i3.ExceptionMappers>(),
+    get<_i3.SelectorErrorPresenter<Object>>(),
+    get<_i3.ExceptionMapperStorage>(),
   ));
-  gh.factoryParam<_i6.SplashViewModel, String, dynamic>((
+  gh.factoryParam<_i8.SplashViewModel, String, dynamic>((
     myBaseUrl,
     _,
   ) =>
-      _i6.SplashViewModel(
+      _i8.SplashViewModel(
         myBaseUrl,
-        get<_i3.FlutterExceptionHandlerBinder<dynamic>>(),
+        get<_i3.FlutterExceptionHandlerBinder<Object>>(),
       ));
   return get;
 }
 
-class _$ErrorsModule extends _i7.ErrorsModule {}
+class _$ErrorsModule extends _i9.ErrorsModule {}
 
-class _$AppModule extends _i8.AppModule {}
+class _$AppModule extends _i10.AppModule {}
