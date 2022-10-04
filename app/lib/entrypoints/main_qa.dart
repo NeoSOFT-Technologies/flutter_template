@@ -8,7 +8,7 @@ void main() {
   FlavorConfig.initialize(
     flavor: Flavor.qa,
     values: const FlavorValues(
-      apiBaseUrl: "https://api.openweathermap.org/",
+      apiBaseUrl: "https://api.tomorrow.io/v4/",
       secrets: AppSecrets.appSecretsQA,
     ),
   );

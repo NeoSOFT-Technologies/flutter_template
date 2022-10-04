@@ -34,6 +34,10 @@ class NetworkError extends BaseError {
         return AppError(
             throwable: cause, error: error, type: ErrorType.netServerMessage);
 
+      case 400001:
+        return AppError(
+            throwable: cause, error: error, type: ErrorType.netServerMessage);
+
       //so on based on network conditions decided for network error code
 
       default:

@@ -1,3 +1,4 @@
+import 'package:app/navigation/route_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
@@ -23,6 +24,12 @@ class SplashPageState extends BaseStatefulPage<SplashViewModel, SplashPage> {
   void onModelReady(SplashViewModel model) {
     // bind exception handler here.
     model.exceptionHandlerBinder.bind(context, super.stateObserver);
+    Future.delayed(const Duration(seconds: 2),(){
+      Navigator.pushReplacementNamed(
+        context,
+        RoutePaths.dashboard,
+      );
+    });
   }
 
   @override

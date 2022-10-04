@@ -5,16 +5,18 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:domain/domain.dart' as _i8;
 import 'package:flutter_errors/flutter_errors.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import '../errors/flutter_snack_bar_error_presenter.dart' as _i4;
 import '../errors/flutter_toast_error_presenter.dart' as _i5;
+import '../feature/dashboard/dashboard_page_view_model.dart' as _i7;
 import '../feature/splash/splash_page_model.dart' as _i6;
-import 'app_module.dart' as _i8;
+import 'app_module.dart' as _i10;
 import 'error/errors_module.dart'
-    as _i7; // ignore_for_file: unnecessary_lambdas
+    as _i9; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -40,6 +42,10 @@ _i1.GetIt $initGetIt(
     () => appModule.baseUrl,
     instanceName: 'BaseUrl',
   );
+  gh.factory<String>(
+    () => appModule.apiKey,
+    instanceName: 'ApiKey',
+  );
   gh.singleton<_i3.FlutterExceptionHandlerBinder<dynamic>>(
       errorsModule.providerDefaultExceptionHandler(
     get<_i5.FlutterToastErrorPresenter>(),
@@ -53,9 +59,13 @@ _i1.GetIt $initGetIt(
         myBaseUrl,
         get<_i3.FlutterExceptionHandlerBinder<dynamic>>(),
       ));
+  gh.factory<_i7.DashboardPageViewModel>(() => _i7.DashboardPageViewModel(
+        get<_i8.CreateLocationUseCase>(),
+        get<_i3.FlutterExceptionHandlerBinder<dynamic>>(),
+      ));
   return get;
 }
 
-class _$ErrorsModule extends _i7.ErrorsModule {}
+class _$ErrorsModule extends _i9.ErrorsModule {}
 
-class _$AppModule extends _i8.AppModule {}
+class _$AppModule extends _i10.AppModule {}
