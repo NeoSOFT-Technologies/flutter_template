@@ -1,8 +1,10 @@
 import 'package:app/feature/dashboard/dashboard_page_model.dart';
+import 'package:app/feature/dashboard/dashboard_page_view_model.dart';
 import 'package:app/feature/splash/splash_page_model.dart';
 import 'package:app/feature/tabs/navigation/navigation_page_model.dart';
 import 'package:app/feature/tabs/profile/profile_page_model.dart';
 import 'package:app/feature/tabs/search/search_page_model.dart';
+import 'package:domain/domain.dart';
 import 'package:flutter_errors/flutter_errors.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

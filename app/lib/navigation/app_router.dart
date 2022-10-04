@@ -1,4 +1,3 @@
-import 'package:app/feature/dashboard/dashboard_page.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../feature/splash/splash_page.dart';

@@ -16,6 +16,8 @@ export 'src/model/error_info.dart';
 export 'src/model/user.dart';
 export 'src/model/geo_location.dart';
 export 'src/model/location_permission.dart';
+export 'src/model/location.dart';
+export 'src/model/geometry_location.dart';
 export 'src/shared_base.dart';
 export 'src/utils/mapper/base_layer_transformer.dart';
 

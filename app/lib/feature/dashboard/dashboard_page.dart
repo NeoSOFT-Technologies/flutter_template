@@ -179,5 +179,22 @@ class CustomTabItem extends StatelessWidget {
         ],
       ),
     );
+  void onModelReady(DashboardPageViewModel model) {
+    model.exceptionHandlerBinder.bind(context, super.stateObserver);
+    model.createLocation(
+      name: 'Pune',
+      lat:10.1 ,
+      lan: 125.6,
+    );
+  }
+
+  @override
+  bool extendBodyBehindAppBar() {
+    return true;
+  }
+
+  @override
+  Widget buildView(BuildContext context, DashboardPageViewModel model) {
+    return DashboardPageView(provideBase());
   }
 }

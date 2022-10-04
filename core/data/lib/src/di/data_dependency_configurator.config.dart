@@ -31,6 +31,11 @@ _i1.GetIt $initDataGetIt(
         get<_i4.DatabasePort>(),
         get<_i4.NetworkPort>(),
       ));
+  gh.lazySingleton<_i3.WeatherRepository>(
+      () => dataModule.weatherRepositoryProvider(
+            get<_i4.DatabasePort>(),
+            get<_i4.NetworkPort>(),
+          ));
   return get;
 }
 
