@@ -1,3 +1,14 @@
 {
-  "appName": "MyAppName"
+  "appName": "MyAppName",
+  "goodMorning": "Good \nMorning",
+  "goodAfternoon": "Good \nAfternoon",
+  "goodEvening": "Good \nEvening",
+  "hours": "Hours",
+  "min": "Min",
+  "sec": "Sec",
+  "yourFav": "Your Favourite",
+  "home": "My Home",
+  "search": "Search",
+  "navigation": "Navigation",
+  "profile": "Profile"
 }

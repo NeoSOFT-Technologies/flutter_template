@@ -18,4 +18,8 @@ enum ErrorType {
   databaseNotSupported,
   databaseError1,
   databaseUserNotFound,
+
+
+  //Local Error
+  locationError
 }

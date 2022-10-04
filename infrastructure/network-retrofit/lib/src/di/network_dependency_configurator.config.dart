@@ -16,9 +16,16 @@ import 'network_module.dart' as _i7; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
-_i1.GetIt $initNetworkGetIt(_i1.GetIt get,
-    {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
-  final gh = _i2.GetItHelper(get, environment, environmentFilter);
+_i1.GetIt $initNetworkGetIt(
+  _i1.GetIt get, {
+  String? environment,
+  _i2.EnvironmentFilter? environmentFilter,
+}) {
+  final gh = _i2.GetItHelper(
+    get,
+    environment,
+    environmentFilter,
+  );
   final networkModule = _$NetworkModule();
   gh.singleton<_i3.BaseOptions>(
       networkModule.providerBaseConfig(get<String>(instanceName: 'BaseUrl')));
@@ -26,7 +33,9 @@ _i1.GetIt $initNetworkGetIt(_i1.GetIt get,
   gh.singleton<List<_i3.Interceptor>>(
       networkModule.providerInterceptors(get<_i4.PrettyDioLogger>()));
   gh.lazySingleton<_i3.Dio>(() => networkModule.providerDio(
-      get<_i3.BaseOptions>(), get<List<_i3.Interceptor>>()));
+        get<_i3.BaseOptions>(),
+        get<List<_i3.Interceptor>>(),
+      ));
   gh.lazySingleton<_i5.RetrofitService>(
       () => networkModule.providerRetrofitService(get<_i3.Dio>()));
   gh.lazySingleton<_i6.NetworkPort>(

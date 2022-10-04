@@ -1,6 +1,8 @@
+import 'package:app/feature/dashboard/dashboard_page.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../feature/splash/splash_page.dart';
+import '../feature/tabs/home/home_page.dart';
 import 'route_paths.dart';
 
 class AppRouter {
@@ -10,6 +12,11 @@ class AppRouter {
         return CupertinoPageRoute(
             builder: (context) => const SplashPage(),
             settings: const RouteSettings(name: RoutePaths.splash));
+
+      case RoutePaths.dashboard:
+        return CupertinoPageRoute(
+            builder: (context) => const DashboardPage(),
+            settings: const RouteSettings(name: RoutePaths.dashboard));
 
       default:
         // Replace by Empty Page
