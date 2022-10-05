@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_errors/flutter_errors.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class FlutterToastErrorPresenter extends ToastErrorPresenter<String> {
+class FlutterToastErrorPresenter<T extends String> extends ToastErrorPresenter<T> {
   @override
   void show(Exception throwable, BuildContext context, String data) {
     Fluttertoast.showToast(
