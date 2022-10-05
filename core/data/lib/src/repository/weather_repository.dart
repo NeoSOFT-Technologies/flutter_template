@@ -17,4 +17,19 @@ class WeatherRepositoryImpl extends WeatherRepository {
   }) async {
     return networkPort.createLocation(name: name, lat: lat, lan: lan);
   }
+
+  @override
+  Future<Either<NetworkError, List<Location>>> getLocations() {
+    return networkPort.getLocations();
+  }
+
+  @override
+  Future<Either<NetworkError, WeatherDetail>> getTodayTimeline(Location location) {
+    return networkPort.getTodayTimeline(location);
+  }
+
+  @override
+  Future<Either<NetworkError, WeatherDetail>> getFutureTimeline(Location location) {
+    return networkPort.getFutureTimeLine(location);
+  }
 }

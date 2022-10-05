@@ -17,15 +17,23 @@ import 'module/thirdparty_services.dart'
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
-Future<_i1.GetIt> $initThemeGetIt(_i1.GetIt get,
-    {String? environment, _i2.EnvironmentFilter? environmentFilter}) async {
-  final gh = _i2.GetItHelper(get, environment, environmentFilter);
+Future<_i1.GetIt> $initThemeGetIt(
+  _i1.GetIt get, {
+  String? environment,
+  _i2.EnvironmentFilter? environmentFilter,
+}) async {
+  final gh = _i2.GetItHelper(
+    get,
+    environment,
+    environmentFilter,
+  );
   final thirdPartyServicesModule = _$ThirdPartyServicesModule();
   gh.lazySingleton<_i3.PlatformService>(
       () => thirdPartyServicesModule.platformService);
   await gh.factoryAsync<_i4.SharedPreferences>(
-      () => thirdPartyServicesModule.prefs,
-      preResolve: true);
+    () => thirdPartyServicesModule.prefs,
+    preResolve: true,
+  );
   gh.singleton<_i5.SharedPreferencesService>(thirdPartyServicesModule
       .sharedPreferencesService(get<_i4.SharedPreferences>()));
   gh.lazySingleton<_i6.StatusBarService>(
