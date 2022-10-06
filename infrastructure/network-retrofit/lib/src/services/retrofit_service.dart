@@ -18,17 +18,12 @@ abstract class RetrofitService {
 
   @GET("timelines")
   Future<HttpResponse<TimelineDataEntity>> getTimeline(
-    @Query('location') String location, {
-    @Query('fields') List<String> fields = const [
-      'temperature',
-      'weatherCode',
-      'windSpeed',
-      'humidity',
-    ],
+    @Query('location') String location,
+    @Query('fields') List<String> fields,
     @Query('startTime') String startTime,
     @Query('endTime') String endTime,
-    @Query('timesteps') String timeSteps = '1d',
-  });
+    @Query('timesteps') String timeSteps,
+  );
 
   factory RetrofitService(Dio dio, {String? baseUrl}) {
     return _RetrofitService(dio, baseUrl: dio.options.baseUrl);

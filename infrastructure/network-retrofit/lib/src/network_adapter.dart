@@ -59,7 +59,18 @@ class NetworkAdapter implements NetworkPort {
     Location location,
   ) async {
     var response = await safeApiCall(
-      apiService.getTimeline(location.locationId, startTime: 'now', endTime: 'nowPlus1d'),
+      apiService.getTimeline(
+        location.locationId,
+        const [
+          'temperature',
+          'weatherCode',
+          'windSpeed',
+          'humidity',
+        ],
+        'now',
+        'nowPlus1d',
+        '1d',
+      ),
     );
     return response.fold(
       (l) {
@@ -76,8 +87,15 @@ class NetworkAdapter implements NetworkPort {
     var response = await safeApiCall(
       apiService.getTimeline(
         location.locationId,
-        startTime: 'nowPlus1d',
-        endTime: 'nowPlus7d',
+        const [
+          'temperature',
+          'weatherCode',
+          'windSpeed',
+          'humidity',
+        ],
+        'nowPlus1d',
+        'nowPlus7d',
+        '1d',
       ),
     );
     return response.fold(
