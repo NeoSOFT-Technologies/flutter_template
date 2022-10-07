@@ -10,6 +10,12 @@ import 'package:flutter_errors/flutter_errors.dart' as _i4;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
+import '../errors/flutter_alert_error_presenter.dart' as _i4;
+import '../errors/flutter_snack_bar_error_presenter.dart' as _i6;
+import '../errors/flutter_toast_error_presenter.dart' as _i7;
+import '../feature/splash/splash_page_model.dart' as _i8;
+import '../model/alert_texts.dart' as _i5;
+import 'app_module.dart' as _i10;
 import '../errors/flutter_snack_bar_error_presenter.dart' as _i5;
 import '../errors/flutter_toast_error_presenter.dart' as _i6;
 import '../feature/dashboard/dashboard_page_model.dart' as _i12;
@@ -38,14 +44,25 @@ _i1.GetIt $initGetIt(
   );
   final errorsModule = _$ErrorsModule();
   final appModule = _$AppModule();
+  gh.lazySingleton<_i3.ExceptionMapperStorage>(
   gh.factory<_i3.CountDownViewModel>(
       () => _i3.CountDownViewModel(get<Duration>()));
   gh.lazySingleton<_i4.ExceptionMappers>(
       () => errorsModule.providersGlobalErrors());
+  gh.singleton<_i4.FlutterAlertErrorPresenter<_i5.AlertTexts>>(
+      errorsModule.providesFlutterAlertErrorPresenter());
+  gh.singleton<_i6.FlutterSnackBarErrorPresenter<String>>(
   gh.singleton<_i5.FlutterSnackBarErrorPresenter>(
       errorsModule.providesSnackBarErrorPresenter());
+  gh.singleton<_i7.FlutterToastErrorPresenter<String>>(
   gh.singleton<_i6.FlutterToastErrorPresenter>(
       errorsModule.providesToastErrorPresenter());
+  gh.singleton<_i3.SelectorErrorPresenter<Object>>(
+      errorsModule.providesSelectorErrorPresenter(
+    get<_i7.FlutterToastErrorPresenter<String>>(),
+    get<_i6.FlutterSnackBarErrorPresenter<String>>(),
+    get<_i4.FlutterAlertErrorPresenter<_i5.AlertTexts>>(),
+  ));
   gh.factory<_i7.HomePageViewModel>(() => _i7.HomePageViewModel());
   gh.factory<_i8.NavigationViewModel>(() => _i8.NavigationViewModel());
   gh.factory<_i9.ProfileViewModel>(() => _i9.ProfileViewModel());
@@ -58,17 +75,23 @@ _i1.GetIt $initGetIt(
     () => appModule.apiKey,
     instanceName: 'ApiKey',
   );
+  gh.singleton<_i3.FlutterExceptionHandlerBinder<Object>>(
   gh.singleton<_i4.FlutterExceptionHandlerBinder<dynamic>>(
       errorsModule.providerDefaultExceptionHandler(
+    get<_i3.SelectorErrorPresenter<Object>>(),
+    get<_i3.ExceptionMapperStorage>(),
     get<_i6.FlutterToastErrorPresenter>(),
     get<_i4.ExceptionMappers>(),
   ));
+  gh.factoryParam<_i8.SplashViewModel, String, dynamic>((
   gh.factoryParam<_i11.SplashViewModel, String, dynamic>((
     myBaseUrl,
     _,
   ) =>
+      _i8.SplashViewModel(
       _i11.SplashViewModel(
         myBaseUrl,
+        get<_i3.FlutterExceptionHandlerBinder<Object>>(),
         get<_i4.FlutterExceptionHandlerBinder<dynamic>>(),
       ));
   gh.factory<_i12.DashboardViewModel>(() => _i12.DashboardViewModel(
