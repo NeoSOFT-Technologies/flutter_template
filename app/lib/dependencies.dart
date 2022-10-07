@@ -4,6 +4,7 @@ import 'package:database_floor/floor.dart';
 import 'package:dependency_injection/dependency_injection.dart';
 import 'package:domain/domain.dart';
 import 'package:get_it/get_it.dart';
+import 'package:location_port/location_port.dart';
 import 'package:network_retrofit/network_retrofit.dart';
 import 'package:themes/themes.dart';
 
@@ -30,6 +31,9 @@ final configurators = [
   //configure domain layer
   DomainDependencyConfigurator(),
 
+  //configure location
+
+  LocationDependencyConfigurator(),
 
 ];
 

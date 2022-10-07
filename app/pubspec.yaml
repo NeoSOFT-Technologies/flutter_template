@@ -61,6 +61,8 @@ dependencies:
       path: flutter-errors/
   fluttertoast: ^8.0.9
   flutter_svg: ^1.1.5
+  location_port:
+    path: ../infrastructure/location_port/
 
 dev_dependencies:
   flutter_test:

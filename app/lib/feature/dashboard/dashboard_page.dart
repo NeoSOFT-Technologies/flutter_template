@@ -24,6 +24,13 @@ class DashboardPageState
   }
 
   @override
+  void onModelReady(DashboardViewModel model) {
+    model.exceptionHandlerBinder.bind(context, super.stateObserver);
+    model.checkLocationPermission();
+    super.onModelReady(model);
+  }
+
+  @override
   Widget buildBottomNavigationBar() {
     return BaseWidget(
         providerBase: bottomNavigationViewModelProvider,
@@ -97,11 +104,6 @@ class DashboardPageState
                 ),
               ),
             ));
-  }
-  
-  @override
-  void onBaseModelReady(DashboardViewModel model) {
-    model.checkLocationPermission();
   }
 
   void onTabPressed(DashboardTab tab, BottomNavigationViewModel? model) {
