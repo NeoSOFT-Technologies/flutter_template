@@ -89,7 +89,6 @@ class DashboardPageState
                       child: CustomTabItem(
                         icon: PlatformSvgWidget.asset(
                             AssetIcons.profile.assetName,
-                            color: Colors.grey,
                             width: 33,
                             height: 33),
                         title: Strings.of(context).profile,
@@ -169,10 +168,11 @@ class CustomTabItem extends StatelessWidget {
                   style: const TextStyle(
                     color: Colors.black,
                     fontSize: 14,
+                    fontWeight: FontWeight.bold
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 8),
+                  margin: const EdgeInsets.only(top: 8),
                   child: const Icon(
                     Icons.circle,
                     size: 8,

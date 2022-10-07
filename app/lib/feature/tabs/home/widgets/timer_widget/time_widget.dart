@@ -21,7 +21,7 @@ class TimeWidget extends StatelessWidget {
         Flexible(
           child: Text(timeText ?? '',
             style: const TextStyle(
-              color: Colors.grey,
+              color: Color(0xFFA3ADBE),
               fontSize: 11,
             ),
           ),

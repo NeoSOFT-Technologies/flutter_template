@@ -32,6 +32,6 @@ class AssetIcons {
   ///Vectors
   static const AssetImage home = AssetImage(_vector + "home.svg");
   static const AssetImage navigation = AssetImage(_vector + "navigation.svg");
-  static const AssetImage profile = AssetImage(_vector + "profile.svg");
+  static const AssetImage profile = AssetImage(_vector + "account_avtar.svg");
   static const AssetImage search = AssetImage(_vector + "search.svg");
 }

@@ -27,7 +27,7 @@ class FavouriteWhetherWidget extends StatelessWidget {
             padding: const EdgeInsets.all(28),
             margin: const EdgeInsets.only(top: 25),
             decoration: const BoxDecoration(
-              color: Color.fromRGBO(231, 237, 247, 1),
+              color: Color(0xFFE3EBF4),
               borderRadius: BorderRadius.all(Radius.circular(30)),
             ),
             child: Column(
@@ -42,7 +42,7 @@ class FavouriteWhetherWidget extends StatelessWidget {
                         children: [
                           Text(city ?? '',
                             style: const TextStyle(
-                              color: Colors.blueGrey,
+                              color: Color(0xFFA3ADBE),
                               fontSize: 20,
                               fontWeight: FontWeight.w600,
                             ),
@@ -52,7 +52,7 @@ class FavouriteWhetherWidget extends StatelessWidget {
                             child: Text("${temperature ?? ''}\u00B0",
                               style: const TextStyle(
                                 color: Color.fromRGBO(0,20,126, 1),
-                                fontSize: 50,
+                                fontSize: 55,
                                 fontWeight: FontWeight.bold,
 
                               ),
@@ -63,8 +63,8 @@ class FavouriteWhetherWidget extends StatelessWidget {
                     ),
                      const Image(
                       image:  AssetIcons.bigRain,
-                      height:150,
-                      width: 150,
+                      height:160,
+                      width: 160,
                     ),
                   ],
                 ),

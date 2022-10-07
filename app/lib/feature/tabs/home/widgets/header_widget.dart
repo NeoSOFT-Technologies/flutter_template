@@ -23,7 +23,7 @@ class HeaderWidget extends StatelessWidget {
             padding: const EdgeInsets.only(top: 8.0),
             child: Text(parseDateTime(DateTime.now()),
               style: const TextStyle(
-                color: Colors.grey,
+                color: Color(0XFFA3ADBE),
                 fontSize: 15,
               ),
             ),

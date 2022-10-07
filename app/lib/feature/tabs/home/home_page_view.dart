@@ -12,18 +12,20 @@ class HomePageView extends BasePageViewWidget<HomePageViewModel> {
 
   @override
   Widget build(BuildContext context, model) {
-    return Container(
-      margin: const EdgeInsets.only(top: 60),
-      child: SingleChildScrollView(
-        child:  Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const HeaderWidget(),
-            Container(
-                margin: const EdgeInsets.only(top: 30),
-                child: const WhetherListWidget()),
-            FavouriteWhetherWidget(temperature: "12",city: "Los Angeles",)
-          ],
+    return SafeArea(
+      child: Container(
+        padding: const EdgeInsets.only(top: 20),
+        child: SingleChildScrollView(
+          child:  Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const HeaderWidget(),
+              Container(
+                  margin: const EdgeInsets.only(top: 30),
+                  child: const WhetherListWidget()),
+              FavouriteWhetherWidget(temperature: "12",city: "Los Angeles",)
+            ],
+          ),
         ),
       ),
     );

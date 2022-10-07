@@ -20,7 +20,7 @@ class WhetherItemWidget extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       margin: EdgeInsets.only(left: 25, right: (isLastItem ?? false) ? 25 : 0),
       decoration: const BoxDecoration(
-        color: Color.fromRGBO(231, 237, 247, 1),
+        color: Color(0xFFE3EBF4),
         borderRadius: BorderRadius.all(Radius.circular(30)),
       ),
       child: Column(
@@ -28,13 +28,15 @@ class WhetherItemWidget extends StatelessWidget {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     city ?? '',
                     style: const TextStyle(
-                      color: Colors.blueGrey,
+                      color: Color(0xFFA3ADBE),
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
                     ),
@@ -52,10 +54,13 @@ class WhetherItemWidget extends StatelessWidget {
                   )
                 ],
               ),
-              const Image(
-                image: AssetIcons.sunCloudAngledRain,
-                height: 130,
-                width: 140,
+              Container(
+                margin: const EdgeInsets.only(left: 15),
+                child: const Image(
+                  image: AssetIcons.sunCloudAngledRain,
+                  height: 140,
+                  width: 150,
+                ),
               ),
             ],
           ),
