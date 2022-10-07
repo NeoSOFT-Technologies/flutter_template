@@ -10,15 +10,14 @@ class CheckLocationServiceEnabledUseCase extends BaseUseCase<BaseError, CheckLoc
       );
 
   @override
-  Future<Either<BaseError, bool>> execute({required CheckLocationServiceEnabledUseCaseParams params}) async {
-    return await _locationRepository.isLocationServiceEnabled();
+  Future<Either<BaseError, bool>> execute({required CheckLocationServiceEnabledUseCaseParams params}) {
+    return _locationRepository.isLocationServiceEnabled();
   }
 }
 
 class CheckLocationServiceEnabledUseCaseParams extends Params {
   @override
   Either<AppError, bool> verify() {
-    // TODO: implement verify
-    throw UnimplementedError();
+    return Right(true);
   }
 }

@@ -87,8 +87,12 @@ class DashboardViewModel extends BasePageViewModel {
           CheckLocationPermissionUseCaseParams();
       RequestManager<bool>(
         params,
-        createCall: () =>
-            checkLocationPermissionUseCase.execute(params: params),
+        createCall: () => checkLocationPermissionUseCase
+            .execute(params: params)
+            .onError((error, stackTrace) {
+              debugPrint(error.toString());
+              return Left(error as BaseError);
+        }),
       ).asFlow().listen((result) {
         debugPrint("Location Permission allowed is: ${result.data}");
         if (result.data ?? false) {

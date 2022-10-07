@@ -25,7 +25,7 @@ class NavigationPageView extends BasePageViewWidget<NavigationViewModel> {
           Padding(
             padding:  const EdgeInsets.all(16.0),
             child: Text(
-              Strings.of(context).navigation ?? '',
+              Strings.of(context).navigation,
               style: const TextStyle(
                 color: Colors.black,
                 fontSize: 30,

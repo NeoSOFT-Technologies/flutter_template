@@ -10,15 +10,14 @@ class GetLocationUseCase extends BaseUseCase<BaseError, GetLocationUseCaseParams
       );
 
   @override
-  Future<Either<BaseError, GeoLocation>> execute({required GetLocationUseCaseParams params}) async {
-    return await _locationRepository.getLocation();
+  Future<Either<BaseError, GeoLocation>> execute({required GetLocationUseCaseParams params})  {
+    return  _locationRepository.getLocation();
   }
 }
 
 class GetLocationUseCaseParams extends Params {
   @override
   Either<AppError, bool> verify() {
-    // TODO: implement verify
-    throw UnimplementedError();
+    return Right(true);
   }
 }
