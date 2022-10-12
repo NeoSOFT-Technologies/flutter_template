@@ -55,6 +55,7 @@ app.*.map.json
 *.g.dart
 *.freezed.dart
 *.gr.dart
+*.config.dart
 
 # Pub
 /coverage
