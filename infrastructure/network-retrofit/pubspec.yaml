@@ -29,3 +29,6 @@ dev_dependencies:
   build_runner: ^2.2.0
   retrofit_generator: '>=4.0.0 <5.0.0'
   json_serializable: '>4.4.0'
+
+dependency_overrides:
+  retrofit: '3.0.2'

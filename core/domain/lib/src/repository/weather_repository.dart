@@ -7,4 +7,14 @@ abstract class WeatherRepository {
     required double lat,
     required double lan,
   });
+
+  Future<Either<NetworkError, List<Location>>> getLocations();
+
+  Future<Either<NetworkError, WeatherDetail>> getTodayTimeline(
+    Location location,
+  );
+
+  Future<Either<NetworkError, WeatherDetail>> getFutureTimeline(
+    Location location,
+  );
 }

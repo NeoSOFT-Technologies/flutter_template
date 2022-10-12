@@ -18,6 +18,10 @@ export 'src/model/geo_location.dart';
 export 'src/model/location_permission.dart';
 export 'src/model/location.dart';
 export 'src/model/geometry_location.dart';
+export 'src/model/weather_timeline.dart';
+export 'src/model/weather_enum.dart';
+export 'src/model/weather_detail.dart';
+export 'src/utils/date_formatter.dart';
 export 'src/shared_base.dart';
 export 'src/utils/mapper/base_layer_transformer.dart';
 
