@@ -27,7 +27,7 @@ class DashboardPageState
   @override
   void onModelReady(DashboardPageViewModel model) {
     model.exceptionHandlerBinder.bind(context, super.stateObserver);
-   // model.checkLocationPermission();
+    model.checkLocationPermission();
   }
 
   @override

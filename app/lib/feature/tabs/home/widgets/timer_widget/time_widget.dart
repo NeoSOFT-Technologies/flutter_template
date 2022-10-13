@@ -7,7 +7,6 @@ class TimeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("Timer Value: $timeValue");
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
