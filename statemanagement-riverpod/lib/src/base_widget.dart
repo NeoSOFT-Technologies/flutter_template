@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 /// StatefulWidget for T type of ViewModel / ChangeNotifier
 class BaseWidget<T extends ChangeNotifier> extends StatefulWidget {
   final Widget Function(BuildContext context, T? model, Widget? child) builder;
-  final ProviderBase providerBase;
+  final ProviderBase<T> providerBase;
   final Function(T)? onModelReady;
   final Widget? child;
 
@@ -27,8 +27,8 @@ class _BaseWidget<T extends ChangeNotifier> extends State<BaseWidget<T>> {
   @override
   Widget build(BuildContext context) {
     return Consumer(
-      builder: (context, watch, child) {
-        _model = watch(widget.providerBase as ProviderBase<Object?, T>);
+      builder: (context, ref, child) {
+        _model = ref.watch(widget.providerBase);
         widget.onModelReady?.call(_model!);
         return widget.builder(context, _model, child);
       },
