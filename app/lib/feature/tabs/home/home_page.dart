@@ -17,7 +17,7 @@ class HomePage extends BasePage<HomePageViewModel> {
 
 class HomePageState extends BaseStatefulPage<HomePageViewModel, HomePage> {
   @override
-  ProviderBase provideBase() {
+  ProviderBase<HomePageViewModel> provideBase() {
     return homeViewModelProvider;
   }
 

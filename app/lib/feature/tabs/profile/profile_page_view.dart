@@ -10,7 +10,7 @@ import '../../../utils/asset_icons.dart';
 import '../../../widgets/platform_svg.dart';
 
 class ProfilePageView extends BasePageViewWidget<ProfileViewModel> {
-  ProfilePageView(ProviderBase model) : super(model);
+  ProfilePageView(ProviderBase<ProfileViewModel> model) : super(model);
 
   @override
   Widget build(BuildContext context, model) {

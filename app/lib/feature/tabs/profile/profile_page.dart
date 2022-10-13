@@ -16,7 +16,7 @@ class ProfilePage extends BasePage<ProfileViewModel> {
 
 class ProfilePageState extends BaseStatefulPage<ProfileViewModel, ProfilePage> {
   @override
-  ProviderBase provideBase() {
+  ProviderBase<ProfileViewModel> provideBase() {
     return profileViewModelProvider;
   }
 

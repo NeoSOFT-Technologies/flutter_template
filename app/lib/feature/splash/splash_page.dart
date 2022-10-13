@@ -16,7 +16,7 @@ class SplashPage extends BasePage<SplashViewModel> {
 
 class SplashPageState extends BaseStatefulPage<SplashViewModel, SplashPage> {
   @override
-  ProviderBase provideBase() {
+  ProviderBase<SplashViewModel> provideBase() {
     return splashViewModelProvider;
   }
 
@@ -24,12 +24,13 @@ class SplashPageState extends BaseStatefulPage<SplashViewModel, SplashPage> {
   void onModelReady(SplashViewModel model) {
     // bind exception handler here.
     model.exceptionHandlerBinder.bind(context, super.stateObserver);
-    Future.delayed(const Duration(seconds: 2),(){
+    /*Future.delayed(const Duration(seconds: 2),(){
       Navigator.pushReplacementNamed(
         context,
         RoutePaths.dashboard,
       );
-    });
+    });*/
+    print("SplashPageState onModel ready");
   }
 
   @override

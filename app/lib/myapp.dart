@@ -12,22 +12,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("MyApp count");
     return ThemeBuilder(
       themes: [
         ThemeData(
             textTheme: const TextTheme(
-                bodyLarge: TextStyle(fontFamily: 'Poppins'),
-                bodyMedium: TextStyle(fontFamily: 'Poppins'),
-                bodySmall: TextStyle(fontFamily: 'Poppins'),
-                displayLarge: TextStyle(fontFamily: 'Poppins'),
-                displayMedium: TextStyle(fontFamily: 'Poppins'),
-                displaySmall: TextStyle(fontFamily: 'Poppins'),
-                titleLarge: TextStyle(fontFamily: 'Poppins'),
-                titleMedium: TextStyle(fontFamily: 'Poppins'),
-                titleSmall: TextStyle(fontFamily: 'Poppins'),
-                labelLarge: TextStyle(fontFamily: 'Poppins'),
-                labelMedium: TextStyle(fontFamily: 'Poppins'),
-                labelSmall: TextStyle(fontFamily: 'Poppins'),
+              bodyLarge: TextStyle(fontFamily: 'Poppins'),
+              bodyMedium: TextStyle(fontFamily: 'Poppins'),
+              bodySmall: TextStyle(fontFamily: 'Poppins'),
+              displayLarge: TextStyle(fontFamily: 'Poppins'),
+              displayMedium: TextStyle(fontFamily: 'Poppins'),
+              displaySmall: TextStyle(fontFamily: 'Poppins'),
+              titleLarge: TextStyle(fontFamily: 'Poppins'),
+              titleMedium: TextStyle(fontFamily: 'Poppins'),
+              titleSmall: TextStyle(fontFamily: 'Poppins'),
+              labelLarge: TextStyle(fontFamily: 'Poppins'),
+              labelMedium: TextStyle(fontFamily: 'Poppins'),
+              labelSmall: TextStyle(fontFamily: 'Poppins'),
             ),
             backgroundColor: Colors.red,
             colorScheme: ColorScheme.fromSwatch().copyWith(
@@ -72,7 +73,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: Strings.delegate.supportedLocales,
           onGenerateTitle: (context) => Strings.of(context).appName,
           debugShowCheckedModeBanner: false,
-          initialRoute: RoutePaths.dashboard,
+          initialRoute: RoutePaths.splash,
           theme: regularTheme,
           darkTheme: darkTheme,
           themeMode: themeMode,

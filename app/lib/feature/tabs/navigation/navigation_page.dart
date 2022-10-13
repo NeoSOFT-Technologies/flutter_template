@@ -13,9 +13,10 @@ class NavigationPage extends BasePage<NavigationViewModel> {
   NavigationPageState createState() => NavigationPageState();
 }
 
-class NavigationPageState extends BaseStatefulPage<NavigationViewModel, NavigationPage> {
+class NavigationPageState
+    extends BaseStatefulPage<NavigationViewModel, NavigationPage> {
   @override
-  ProviderBase provideBase() {
+  ProviderBase<NavigationViewModel> provideBase() {
     return navigationViewModelProvider;
   }
 

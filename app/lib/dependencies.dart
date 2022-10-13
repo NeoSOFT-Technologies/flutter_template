@@ -32,7 +32,6 @@ final configurators = [
   DomainDependencyConfigurator(),
 
   //configure location
-
   LocationDependencyConfigurator(),
 
 ];

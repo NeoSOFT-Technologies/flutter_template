@@ -19,7 +19,7 @@ class DashboardPage extends BasePage<DashboardViewModel> {
 class DashboardPageState
     extends BaseStatefulPage<DashboardViewModel, DashboardPage> {
   @override
-  ProviderBase provideBase() {
+  ProviderBase<DashboardViewModel> provideBase() {
     return dashboardViewModelProvider;
   }
 
@@ -27,7 +27,6 @@ class DashboardPageState
   void onModelReady(DashboardViewModel model) {
     model.exceptionHandlerBinder.bind(context, super.stateObserver);
     model.checkLocationPermission();
-    super.onModelReady(model);
   }
 
   @override

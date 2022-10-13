@@ -14,7 +14,7 @@ class SearchPage extends BasePage<SearchViewModel> {
 
 class SearchPageState extends BaseStatefulPage<SearchViewModel, SearchPage> {
   @override
-  ProviderBase provideBase() {
+  ProviderBase<SearchViewModel> provideBase() {
     return searchViewModelProvider;
   }
 

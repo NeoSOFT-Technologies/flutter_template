@@ -8,7 +8,7 @@ import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 import 'home_page_model.dart';
 
 class HomePageView extends BasePageViewWidget<HomePageViewModel> {
-  HomePageView(ProviderBase model) : super(model);
+  HomePageView(ProviderBase<HomePageViewModel> model) : super(model);
 
   @override
   Widget build(BuildContext context, model) {
@@ -16,14 +16,17 @@ class HomePageView extends BasePageViewWidget<HomePageViewModel> {
       child: Container(
         padding: const EdgeInsets.only(top: 20),
         child: SingleChildScrollView(
-          child:  Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const HeaderWidget(),
               Container(
                   margin: const EdgeInsets.only(top: 30),
                   child: const WhetherListWidget()),
-              FavouriteWhetherWidget(temperature: "12",city: "Los Angeles",)
+              FavouriteWhetherWidget(
+                temperature: "12",
+                city: "Los Angeles",
+              )
             ],
           ),
         ),
