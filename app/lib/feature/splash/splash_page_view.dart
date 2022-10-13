@@ -5,7 +5,7 @@ import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 import 'splash_page_model.dart';
 
 class SplashPageView extends BasePageViewWidget<SplashViewModel> {
-  SplashPageView(ProviderBase model) : super(model);
+  SplashPageView(ProviderBase<SplashViewModel> model) : super(model);
 
   @override
   Widget build(BuildContext context, model) {

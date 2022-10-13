@@ -13,7 +13,7 @@ abstract class BasePage<VM extends BasePageViewModel> extends StatefulWidget {
 abstract class BasePageState<VM extends BasePageViewModel,
     T extends BasePage<VM>> extends CoreBasePageState<VM, T> {
   /// Declare and initialization of viewModel for the page
-  ProviderBase provideBase();
+  ProviderBase<VM> provideBase();
 }
 
 abstract class BaseStatefulPage<VM extends BasePageViewModel,
@@ -30,7 +30,7 @@ abstract class BaseStatefulPage<VM extends BasePageViewModel,
 }
 
 abstract class BasePageViewWidget<T extends BasePageViewModel> extends Widget {
-  final ProviderBase providerBase;
+  final ProviderBase<T> providerBase;
 
   BasePageViewWidget(this.providerBase);
 
@@ -44,13 +44,13 @@ abstract class BasePageViewWidget<T extends BasePageViewModel> extends Widget {
 
 class DataProviderElement<T extends BasePageViewModel>
     extends ComponentElement {
-  final ProviderBase providerBase;
+  final ProviderBase<T> providerBase;
 
-  DataProviderElement(BasePageViewWidget widget, this.providerBase)
+  DataProviderElement(BasePageViewWidget<T> widget, this.providerBase)
       : super(widget);
 
   @override
-  BasePageViewWidget get widget => super.widget as BasePageViewWidget;
+  BasePageViewWidget<T> get widget => super.widget as BasePageViewWidget<T>;
 
   @override
   Widget build() {
