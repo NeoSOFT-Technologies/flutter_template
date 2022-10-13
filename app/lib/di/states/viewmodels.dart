@@ -3,6 +3,9 @@ import 'package:app/feature/splash/splash_page_model.dart';
 import 'package:app/feature/tabs/navigation/navigation_page_model.dart';
 import 'package:app/feature/tabs/profile/profile_page_model.dart';
 import 'package:app/feature/tabs/search/search_page_model.dart';
+import 'package:app/feature/weather_detail/weather_detail_page.dart';
+import 'package:app/feature/weather_detail/weather_detail_view_model.dart';
+
 import 'package:domain/domain.dart';
 import 'package:flutter_errors/flutter_errors.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -38,8 +41,8 @@ final searchViewModelProvider =
 );
 
 final dashboardViewModelProvider =
-    ChangeNotifierProvider.autoDispose<DashboardViewModel>(
-  (ref) => DashboardViewModel(
+    ChangeNotifierProvider.autoDispose<DashboardPageViewModel>(
+  (ref) => DashboardPageViewModel(
       getIt.get<CheckLocationPermissionUseCase>(),
       getIt.get<RequestLocationPermissionUseCase>(),
       getIt.get<GetLocationUseCase>(),
@@ -50,4 +53,13 @@ final dashboardViewModelProvider =
 final bottomNavigationViewModelProvider =
     ChangeNotifierProvider.autoDispose<BottomNavigationViewModel>(
   (ref) => BottomNavigationViewModel(),
+);
+
+final weatherDetailViewModelProvider = ChangeNotifierProvider.autoDispose
+    .family<WeatherDetailViewModel, WeatherDetailPageParam>(
+  (ref, param) => WeatherDetailViewModel(
+    param,
+    getIt.get<GetFutureTimelineUseCase>(),
+    getIt.get<FlutterExceptionHandlerBinder>(),
+  ),
 );

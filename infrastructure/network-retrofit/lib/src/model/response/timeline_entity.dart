@@ -33,8 +33,8 @@ class TimelineEntity implements BaseLayerDataTransformer<TimelineEntity, Weather
   @override
   WeatherDetail transform() {
     return WeatherDetail(
-      startTime: DateFormatter.yyyyMMddHHmmss.parse(startTime),
-      endTime: DateFormatter.yyyyMMddHHmmss.parse(endTime),
+      startTime: DateFormatter.yyyyMMddHHmmss.parse(startTime,true),
+      endTime: DateFormatter.yyyyMMddHHmmss.parse(endTime,true),
       weatherTimeline: timelineIntervalEntity.map((e) => e.transform()).toList(),
     );
   }

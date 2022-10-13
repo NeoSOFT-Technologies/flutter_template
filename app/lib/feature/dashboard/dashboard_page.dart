@@ -9,7 +9,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:localisation/strings.dart';
 import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 
-class DashboardPage extends BasePage<DashboardViewModel> {
+class DashboardPage extends BasePage<DashboardPageViewModel> {
   const DashboardPage({Key? key}) : super(key: key);
 
   @override
@@ -17,16 +17,17 @@ class DashboardPage extends BasePage<DashboardViewModel> {
 }
 
 class DashboardPageState
-    extends BaseStatefulPage<DashboardViewModel, DashboardPage> {
+    extends BaseStatefulPage<DashboardPageViewModel, DashboardPage> {
   @override
-  ProviderBase<DashboardViewModel> provideBase() {
+  ProviderBase<DashboardPageViewModel> provideBase() {
+
     return dashboardViewModelProvider;
   }
 
   @override
-  void onModelReady(DashboardViewModel model) {
+  void onModelReady(DashboardPageViewModel model) {
     model.exceptionHandlerBinder.bind(context, super.stateObserver);
-    model.checkLocationPermission();
+   // model.checkLocationPermission();
   }
 
   @override
@@ -118,7 +119,7 @@ class DashboardPageState
   }
 
   @override
-  Widget buildView(BuildContext context, DashboardViewModel model) {
+  Widget buildView(BuildContext context, DashboardPageViewModel model) {
     return DashboardPageView(provideBase());
   }
 }

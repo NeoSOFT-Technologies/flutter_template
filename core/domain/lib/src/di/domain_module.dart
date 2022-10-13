@@ -1,5 +1,4 @@
 import 'package:domain/domain.dart';
-import 'package:domain/src/usecase/weather/get_future_timeline_usecase.dart';
 import 'package:domain/src/usecase/weather/get_locations_usecase.dart';
 import 'package:domain/src/usecase/weather/get_today_timeline_usecase.dart';
 import 'package:injectable/injectable.dart';

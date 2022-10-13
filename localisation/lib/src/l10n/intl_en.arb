@@ -10,5 +10,9 @@
   "home": "My Home",
   "search": "Search",
   "navigation": "Navigation",
-  "profile": "Profile"
+  "profile": "Profile",
+  "todayWeather": "Today\u0027s Weather",
+  "wind": "Wind",
+  "humidity": "Humidity",
+  "futureWeather": "Future weather"
 }
