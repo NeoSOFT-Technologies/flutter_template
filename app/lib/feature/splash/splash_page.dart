@@ -1,4 +1,6 @@
+import 'package:app/feature/weather_detail/weather_detail_page.dart';
 import 'package:app/navigation/route_paths.dart';
+import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
@@ -24,10 +26,21 @@ class SplashPageState extends BaseStatefulPage<SplashViewModel, SplashPage> {
   void onModelReady(SplashViewModel model) {
     // bind exception handler here.
     model.exceptionHandlerBinder.bind(context, super.stateObserver);
-    Future.delayed(const Duration(seconds: 2),(){
+    //TODO needs be remove and add from dashboard
+    Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushReplacementNamed(
         context,
-        RoutePaths.dashboard,
+        RoutePaths.weatherDetail,
+        arguments: WeatherDetailPageParam(
+          Location(
+            locationId: '633191078d244f330e4f238d',
+            name: 'Pune',
+            geometryLocation: GeometryLocation(
+              type: 'Point',
+              coordinates: [105.0, 102.0],
+            ),
+          ),
+        ),
       );
     });
   }

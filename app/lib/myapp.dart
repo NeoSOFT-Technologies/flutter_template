@@ -35,7 +35,8 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
         ),
       ),
-      builder: (context, regularTheme, darkTheme, themeMode) => MaterialApp(
+      builder: (context, regularTheme, darkTheme, themeMode) {
+        return MaterialApp(
           navigatorKey: AppService.navigatorKey,
           builder: (context, widget) => ResponsiveWrapper.builder(
                 ClampingScrollWrapper.builder(context, widget!),
@@ -62,7 +63,8 @@ class MyApp extends StatelessWidget {
           theme: regularTheme,
           darkTheme: darkTheme,
           themeMode: themeMode,
-          onGenerateRoute: AppRouter.generateRoute),
+          onGenerateRoute: AppRouter.generateRoute);
+      },
     );
   }
 }

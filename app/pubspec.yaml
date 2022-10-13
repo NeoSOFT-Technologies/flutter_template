@@ -60,6 +60,8 @@ dependencies:
       ref: main
       path: flutter-errors/
   fluttertoast: ^8.0.9
+  rxdart: ^0.27.5
+  flutter_svg: ^1.0.3
 
 dev_dependencies:
   flutter_test:
@@ -81,8 +83,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/svg/
+    - assets/png/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -29,7 +29,8 @@ class TimelineIntervalEntity implements BaseLayerDataTransformer<TimelineInterva
 
   @override
   WeatherTimeline transform() {
-    throw WeatherTimeline(
+    return WeatherTimeline(
+      dateTime: DateFormatter.yyyyMMddHHmmss.parse(startTime, true),
       wind: intervalValueEntity.windSpeed,
       humidity: intervalValueEntity.humidity,
       temperature: intervalValueEntity.temperature,
