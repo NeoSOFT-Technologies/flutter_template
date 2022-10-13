@@ -59,6 +59,46 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Today's Weather`
+  String get todayWeather {
+    return Intl.message(
+      'Today\'s Weather',
+      name: 'todayWeather',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wind`
+  String get wind {
+    return Intl.message(
+      'Wind',
+      name: 'wind',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Humidity`
+  String get humidity {
+    return Intl.message(
+      'Humidity',
+      name: 'humidity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Future weather`
+  String get futureWeather {
+    return Intl.message(
+      'Future weather',
+      name: 'futureWeather',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

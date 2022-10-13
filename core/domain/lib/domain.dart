@@ -14,5 +14,6 @@ export 'src/repository/weather_repository.dart';
 export 'src/usecase/base/params.dart';
 export 'src/usecase/user/login_usecase.dart';
 export 'src/usecase/weather/create_location_usecase.dart';
+export 'src/usecase/weather/get_future_timeline_usecase.dart';
 export 'package:shared/shared.dart';
 

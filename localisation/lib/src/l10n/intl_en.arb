@@ -1,3 +1,7 @@
 {
-  "appName": "MyAppName"
+  "appName": "MyAppName",
+  "todayWeather": "Today\u0027s Weather",
+  "wind": "Wind",
+  "humidity": "Humidity",
+  "futureWeather": "Future weather"
 }

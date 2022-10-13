@@ -6,11 +6,13 @@ class WeatherTimeline {
   final double humidity;
   final double temperature;
   final WeatherEnum weatherEnum;
+  final DateTime dateTime;
 
   WeatherTimeline({
     this.wind = 0,
     this.humidity = 0,
     this.temperature = 0,
     required this.weatherEnum,
+    required this.dateTime,
   });
 }
