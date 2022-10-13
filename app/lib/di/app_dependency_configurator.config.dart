@@ -5,7 +5,7 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:domain/domain.dart' as _i10;
+import 'package:domain/domain.dart' as _i11;
 import 'package:flutter_errors/flutter_errors.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
@@ -13,12 +13,14 @@ import 'package:injectable/injectable.dart' as _i2;
 import '../errors/flutter_alert_error_presenter.dart' as _i4;
 import '../errors/flutter_snack_bar_error_presenter.dart' as _i6;
 import '../errors/flutter_toast_error_presenter.dart' as _i7;
-import '../feature/dashboard/dashboard_page_view_model.dart' as _i9;
+import '../feature/dashboard/dashboard_page_view_model.dart' as _i12;
 import '../feature/splash/splash_page_model.dart' as _i8;
+import '../feature/weather_detail/weather_detail_page.dart' as _i10;
+import '../feature/weather_detail/weather_detail_view_model.dart' as _i9;
 import '../model/alert_texts.dart' as _i5;
-import 'app_module.dart' as _i12;
+import 'app_module.dart' as _i14;
 import 'error/errors_module.dart'
-    as _i11; // ignore_for_file: unnecessary_lambdas
+    as _i13; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -69,13 +71,18 @@ _i1.GetIt $initGetIt(
         myBaseUrl,
         get<_i3.FlutterExceptionHandlerBinder<Object>>(),
       ));
-  gh.factory<_i9.DashboardPageViewModel>(() => _i9.DashboardPageViewModel(
-        get<_i10.CreateLocationUseCase>(),
+  gh.factory<_i9.WeatherDetailViewModel>(() => _i9.WeatherDetailViewModel(
+        get<_i10.WeatherDetailPageParam>(),
+        get<_i11.GetFutureTimelineUseCase>(),
+        get<_i3.FlutterExceptionHandlerBinder<Object>>(),
+      ));
+  gh.factory<_i12.DashboardPageViewModel>(() => _i12.DashboardPageViewModel(
+        get<_i11.CreateLocationUseCase>(),
         get<_i3.FlutterExceptionHandlerBinder<Object>>(),
       ));
   return get;
 }
 
-class _$ErrorsModule extends _i11.ErrorsModule {}
+class _$ErrorsModule extends _i13.ErrorsModule {}
 
-class _$AppModule extends _i12.AppModule {}
+class _$AppModule extends _i14.AppModule {}

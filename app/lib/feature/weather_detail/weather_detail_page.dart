@@ -20,7 +20,7 @@ class WeatherDetailPage extends BasePage<WeatherDetailViewModel> {
 
 class WeatherDetailPageState extends BaseStatefulPage<WeatherDetailViewModel, WeatherDetailPage> {
   @override
-  ProviderBase provideBase() {
+  ProviderBase<WeatherDetailViewModel> provideBase() {
     return weatherDetailViewModelProvider.call(
       widget.param,
     );

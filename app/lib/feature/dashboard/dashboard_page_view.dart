@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 
 class DashboardPageView extends BasePageViewWidget<DashboardPageViewModel> {
-  DashboardPageView(ProviderBase model) : super(model);
+  DashboardPageView(ProviderBase<DashboardPageViewModel> model) : super(model);
 
   @override
   Widget build(BuildContext context, model) {
