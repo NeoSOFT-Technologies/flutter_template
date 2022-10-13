@@ -26,7 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "futureWeather": MessageLookupByLibrary.simpleMessage("Future weather"),
         "humidity": MessageLookupByLibrary.simpleMessage("Humidity"),
         "todayWeather":
-            MessageLookupByLibrary.simpleMessage("Today\\u0027s Weather"),
+            MessageLookupByLibrary.simpleMessage("Today\'s Weather"),
         "wind": MessageLookupByLibrary.simpleMessage("Wind")
       };
 }

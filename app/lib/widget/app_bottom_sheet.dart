@@ -16,10 +16,6 @@ class AppBottomSheet {
           topRight: Radius.circular(50),
         ),
       ),
-      constraints: BoxConstraints(
-        minWidth: MediaQuery.of(context).size.width - 40,
-        maxWidth: MediaQuery.of(context).size.width - 40,
-      ),
       backgroundColor: Colors.white,
       context: context,
       builder: (BuildContext context) {

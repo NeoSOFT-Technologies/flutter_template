@@ -19,9 +19,9 @@ class FutureWeatherItemWidget extends StatelessWidget {
         right: 8,
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
+            margin: const EdgeInsets.only(top:8),
             height: 80,
             width: 80,
             decoration: BoxDecoration(

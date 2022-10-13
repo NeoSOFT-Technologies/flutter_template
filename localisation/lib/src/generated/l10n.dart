@@ -60,10 +60,10 @@ class Strings {
     );
   }
 
-  /// `Today\u0027s Weather`
+  /// `Today's Weather`
   String get todayWeather {
     return Intl.message(
-      'Today\\u0027s Weather',
+      'Today\'s Weather',
       name: 'todayWeather',
       desc: '',
       args: [],
