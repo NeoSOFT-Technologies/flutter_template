@@ -17,7 +17,7 @@ abstract class BasePageState<VM extends BasePageViewModel,
 }
 
 abstract class BaseStatefulPage<VM extends BasePageViewModel,
-    B extends BasePage<VM>> extends BasePageState<VM, B>  {
+    B extends BasePage<VM>> extends BasePageState<VM, B> {
   @override
   Widget build(BuildContext context) {
     return BaseWidget<VM>(
@@ -32,22 +32,28 @@ abstract class BaseStatefulPage<VM extends BasePageViewModel,
 abstract class BasePageViewWidget<T extends BasePageViewModel> extends Widget {
   final ProviderBase<T> providerBase;
 
-  BasePageViewWidget(this.providerBase);
+  BasePageViewWidget(
+    this.providerBase,
+  );
 
   @protected
   Widget build(BuildContext context, T model);
 
   @override
-  DataProviderElement<T> createElement() =>
-      DataProviderElement<T>(this, providerBase);
+  DataProviderElement<T> createElement() => DataProviderElement<T>(
+        this,
+        providerBase,
+      );
 }
 
 class DataProviderElement<T extends BasePageViewModel>
     extends ComponentElement {
   final ProviderBase<T> providerBase;
 
-  DataProviderElement(BasePageViewWidget<T> widget, this.providerBase)
-      : super(widget);
+  DataProviderElement(
+    BasePageViewWidget<T> widget,
+    this.providerBase,
+  ) : super(widget);
 
   @override
   BasePageViewWidget<T> get widget => super.widget as BasePageViewWidget<T>;
