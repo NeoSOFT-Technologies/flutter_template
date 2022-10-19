@@ -1,7 +1,7 @@
 import 'package:data/data.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:dartz/dartz.dart';
-import 'package:location_port/src/util/position_extension.dart';
+import 'package:location_provider/src/util/position_extension.dart';
 
 class LocationAdapter implements LocationPort {
   @override
