@@ -23,7 +23,7 @@ class HomePageView extends BasePageViewWidget<HomePageViewModel> {
               Container(
                   margin: const EdgeInsets.only(top: 30),
                   child: const WhetherListWidget()),
-              FavouriteWhetherWidget(
+              const FavouriteWhetherWidget(
                 temperature: "12",
                 city: "Los Angeles",
               )

@@ -1,7 +1,7 @@
 import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 
 class BottomNavigationViewModel extends BasePageViewModel {
-  DashboardTab _currentTab = DashboardTab.HOME;
+  DashboardTab _currentTab = DashboardTab.home;
 
   DashboardTab get currentTab => _currentTab;
 
@@ -25,30 +25,30 @@ class DashboardTab {
     return _position.toString();
   }
 
-  static const DashboardTab HOME = DashboardTab._(0);
-  static const DashboardTab SEARCH = DashboardTab._(1);
-  static const DashboardTab NAVIGATION = DashboardTab._(2);
-  static const DashboardTab PROFILE = DashboardTab._(3);
-  static const DashboardTab NONE = DashboardTab._(4);
+  static const DashboardTab home = DashboardTab._(0);
+  static const DashboardTab search = DashboardTab._(1);
+  static const DashboardTab navigation = DashboardTab._(2);
+  static const DashboardTab profile = DashboardTab._(3);
+  static const DashboardTab none = DashboardTab._(4);
 }
 
 extension DashboardTabIntExtension on int {
   DashboardTab mapToTab() {
     switch (this) {
       case 0:
-        return DashboardTab.HOME;
+        return DashboardTab.home;
 
       case 1:
-        return DashboardTab.SEARCH;
+        return DashboardTab.search;
 
       case 2:
-        return DashboardTab.NAVIGATION;
+        return DashboardTab.navigation;
 
       case 3:
-        return DashboardTab.PROFILE;
+        return DashboardTab.profile;
 
       default:
-        return DashboardTab.NONE;
+        return DashboardTab.none;
     }
   }
 }

@@ -33,6 +33,6 @@ class NavigationPageView extends BasePageViewWidget<NavigationViewModel> {
             ),
           ),
         ],),
-    );;
+    );
   }
 }

@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages
 import 'package:intl/intl.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:localisation/strings.dart';
@@ -20,4 +21,3 @@ String parseDateTime(DateTime dateTime) {
 }
 
 String displayStrDigits(int n) => n.toString().padLeft(2, '0');
-

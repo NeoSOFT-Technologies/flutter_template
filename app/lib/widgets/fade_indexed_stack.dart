@@ -15,7 +15,7 @@ class FadeIndexedStack extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _FadeIndexedStackState createState() => _FadeIndexedStackState();
+  State<StatefulWidget> createState() => _FadeIndexedStackState();
 }
 
 class _FadeIndexedStackState extends State<FadeIndexedStack>
