@@ -26,27 +26,24 @@ class SplashPageState extends BaseStatefulPage<SplashViewModel, SplashPage> {
   void onModelReady(SplashViewModel model) {
     // bind exception handler here.
     model.exceptionHandlerBinder.bind(context, super.stateObserver);
-
-    /*
-    //TODO needs be remove and add from dashboard
-    Future.delayed(const Duration(seconds: 2), () {
-
-      Navigator.pushReplacementNamed(
-        context,
-        RoutePaths.weatherDetail,
-        arguments: WeatherDetailPageParam(
-          Location(
-            locationId: '633191078d244f330e4f238d',
-            name: 'Pune',
-            geometryLocation: GeometryLocation(
-              type: 'Point',
-              coordinates: [105.0, 102.0],
+    getViewModel().navigateToDashboard().listen((event) {
+      if (event) {
+        Navigator.pushReplacementNamed(
+          context,
+          RoutePaths.weatherDetail,
+          arguments: WeatherDetailPageParam(
+            Location(
+              locationId: '633191078d244f330e4f238d',
+              name: 'Pune',
+              geometryLocation: GeometryLocation(
+                type: 'Point',
+                coordinates: [105.0, 102.0],
+              ),
             ),
           ),
-        ),
-      );
-    });*/
-    print("SplashPageState onModel ready");
+        );
+      }
+    });
   }
 
   @override
