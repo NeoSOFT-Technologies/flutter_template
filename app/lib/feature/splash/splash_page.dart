@@ -37,7 +37,10 @@ class SplashPageState extends BaseStatefulPage<SplashViewModel, SplashPage> {
               name: 'Pune',
               geometryLocation: GeometryLocation(
                 type: 'Point',
-                coordinates: [105.0, 102.0],
+                coordinates: [
+                  73.856743,
+                  18.520430,
+                ],
               ),
             ),
           ),
