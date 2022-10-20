@@ -1,4 +1,11 @@
-import 'package:app/feature/dashboard/dashboard_page_view_model.dart';
+import 'package:app/di/states/viewmodels.dart';
+import 'package:app/feature/dashboard/bottom_navigation_viewmodel.dart';
+import 'package:app/feature/dashboard/dashboard_page_model.dart';
+import 'package:app/feature/tabs/home/home_page.dart';
+import 'package:app/feature/tabs/navigation/navigation_page.dart';
+import 'package:app/feature/tabs/profile/profile_page.dart';
+import 'package:app/feature/tabs/search/search_page.dart';
+import 'package:app/widgets/fade_indexed_stack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
@@ -8,17 +15,20 @@ class DashboardPageView extends BasePageViewWidget<DashboardPageViewModel> {
 
   @override
   Widget build(BuildContext context, model) {
-    return Container(
-      width: double.maxFinite,
-      height: double.maxFinite,
-      color: Colors.grey,
-      alignment: Alignment.center,
-      child: const Center(
-        child: SizedBox(
-          width: 100,
-          height: 100,
-          child: Text("Dashboard weather app"),
-        ),
+    return BaseWidget<BottomNavigationViewModel>(
+      providerBase: bottomNavigationViewModelProvider,
+      builder: (BuildContext context,
+              BottomNavigationViewModel? bottomNavigationViewModel,
+              Widget? child) =>
+          FadeIndexedStack(
+        duration: const Duration(milliseconds: 500),
+        index: bottomNavigationViewModel?.currentTab.toInt(),
+        children: const <Widget>[
+          HomePage(),
+          SearchPage(),
+          NavigationPage(),
+          ProfilePage()
+        ],
       ),
     );
   }

@@ -13,6 +13,27 @@ abstract class DomainModule {
   }
 
   @lazySingleton
+  GetLocationUseCase fetchCurrentLocationUseCaseProvider(
+    LocationRepository repository,
+  ) {
+    return GetLocationUseCase(repository);
+  }
+
+  @lazySingleton
+  CheckLocationPermissionUseCase checkLocationPermissionUseCaseProvider(
+    LocationRepository repository,
+  ) {
+    return CheckLocationPermissionUseCase(repository);
+  }
+
+  @lazySingleton
+  RequestLocationPermissionUseCase requestLocationPermissionUseCaseProvider(
+    LocationRepository repository,
+  ) {
+    return RequestLocationPermissionUseCase(repository);
+  }
+
+  @lazySingleton
   GetLocationsUseCase getLocationsUseCaseProvider(
     WeatherRepository repository,
   ) {

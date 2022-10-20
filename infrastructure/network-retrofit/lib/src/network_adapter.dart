@@ -93,7 +93,7 @@ class NetworkAdapter implements NetworkPort {
           'windSpeed',
           'humidity',
         ],
-        'now',
+        'nowPlus2d',
         'nowPlus7d',
         '1d',
       ),

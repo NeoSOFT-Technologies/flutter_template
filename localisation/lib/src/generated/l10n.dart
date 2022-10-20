@@ -60,6 +60,116 @@ class Strings {
     );
   }
 
+  /// `Good \nMorning`
+  String get goodMorning {
+    return Intl.message(
+      'Good \nMorning',
+      name: 'goodMorning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Good \nAfternoon`
+  String get goodAfternoon {
+    return Intl.message(
+      'Good \nAfternoon',
+      name: 'goodAfternoon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Good \nEvening`
+  String get goodEvening {
+    return Intl.message(
+      'Good \nEvening',
+      name: 'goodEvening',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hours`
+  String get hours {
+    return Intl.message(
+      'Hours',
+      name: 'hours',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Min`
+  String get min {
+    return Intl.message(
+      'Min',
+      name: 'min',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sec`
+  String get sec {
+    return Intl.message(
+      'Sec',
+      name: 'sec',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Favourite`
+  String get yourFav {
+    return Intl.message(
+      'Your Favourite',
+      name: 'yourFav',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Home`
+  String get home {
+    return Intl.message(
+      'My Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Navigation`
+  String get navigation {
+    return Intl.message(
+      'Navigation',
+      name: 'navigation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Today's Weather`
   String get todayWeather {
     return Intl.message(

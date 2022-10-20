@@ -26,3 +26,17 @@ dev_dependencies:
   injectable_generator: ^1.5.3
 
 flutter:
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/font/Poppins_Regular.ttf
+          weight: 400
+        - asset: assets/font/Poppins_Black.ttf
+          weight: 900
+        - asset: assets/font/Poppins_Bold.ttf
+          weight: 700
+        - asset: assets/font/Poppins_ExtraBold.ttf
+          weight: 800
+        - asset: assets/font/Poppins_SemiBold.ttf
+          weight: 600
