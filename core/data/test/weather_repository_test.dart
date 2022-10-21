@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:data/src/out/database_port.dart';
 import 'package:data/src/out/network_port.dart';
 import 'package:data/src/repository/weather_repository.dart';
