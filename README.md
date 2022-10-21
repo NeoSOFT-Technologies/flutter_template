@@ -4,7 +4,7 @@
 
 
 ## Screenshots
-<img src="screenshots/dashboard.png" alt="dashboard" title="Dashboard Screen"  width="150" /><img src="screenshots/weather_detail_screen.png" alt="weather" title="Weather Screen"  width="150" />
+​    <img src="screenshots/dashboard.png" alt="dashboard" title="Dashboard Screen"  width="150" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="screenshots/weather_detail_screen.png" alt="weather" title="Weather Screen"  width="150" />
 
 ## Table Of Content
 
