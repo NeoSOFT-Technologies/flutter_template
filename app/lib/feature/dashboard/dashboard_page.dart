@@ -26,6 +26,7 @@ class DashboardPageState
   @override
   void onModelReady(DashboardViewModel model) {
     model.exceptionHandlerBinder.bind(context, super.stateObserver);
+    print("OnModel Ready is called of Dashboard");
     model.checkLocationPermission();
     super.onModelReady(model);
   }

@@ -23,6 +23,7 @@ class SplashPageState extends BaseStatefulPage<SplashViewModel, SplashPage> {
   @override
   void onModelReady(SplashViewModel model) {
     // bind exception handler here.
+    print("OnModel Ready is called of splash");
     model.exceptionHandlerBinder.bind(context, super.stateObserver);
     Future.delayed(const Duration(seconds: 2),(){
       Navigator.pushReplacementNamed(

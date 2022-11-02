@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: Strings.delegate.supportedLocales,
           onGenerateTitle: (context) => Strings.of(context).appName,
           debugShowCheckedModeBanner: false,
-          initialRoute: RoutePaths.dashboard,
+          initialRoute: RoutePaths.splash,
           theme: regularTheme,
           darkTheme: darkTheme,
           themeMode: themeMode,
