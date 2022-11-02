@@ -93,7 +93,8 @@ class _ThemeBuilderState extends State<ThemeBuilder>
       case AppLifecycleState.inactive:
         break;
       case AppLifecycleState.resumed:
-        adjustSystemThemeIfNecessary();
+        //Commented until the re-apply bug is solved to avoid restart from start.
+        //adjustSystemThemeIfNecessary();
         break;
       case AppLifecycleState.paused:
         break;

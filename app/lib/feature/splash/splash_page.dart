@@ -1,4 +1,6 @@
+import 'package:app/feature/weather_detail/weather_detail_page.dart';
 import 'package:app/navigation/route_paths.dart';
+import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
@@ -16,7 +18,7 @@ class SplashPage extends BasePage<SplashViewModel> {
 
 class SplashPageState extends BaseStatefulPage<SplashViewModel, SplashPage> {
   @override
-  ProviderBase provideBase() {
+  ProviderBase<SplashViewModel> provideBase() {
     return splashViewModelProvider;
   }
 
@@ -25,11 +27,26 @@ class SplashPageState extends BaseStatefulPage<SplashViewModel, SplashPage> {
     // bind exception handler here.
     print("OnModel Ready is called of splash");
     model.exceptionHandlerBinder.bind(context, super.stateObserver);
-    Future.delayed(const Duration(seconds: 2),(){
-      Navigator.pushReplacementNamed(
-        context,
-        RoutePaths.dashboard,
-      );
+    getViewModel().navigateToDashboard().listen((event) {
+      if (event) {
+        Navigator.pushReplacementNamed(
+          context,
+          RoutePaths.weatherDetail,
+          arguments: WeatherDetailPageParam(
+            Location(
+              locationId: '633191078d244f330e4f238d',
+              name: 'Pune',
+              geometryLocation: GeometryLocation(
+                type: 'Point',
+                coordinates: [
+                  73.856743,
+                  18.520430,
+                ],
+              ),
+            ),
+          ),
+        );
+      }
     });
   }
 

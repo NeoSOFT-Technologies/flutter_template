@@ -31,12 +31,78 @@ class NetworkAdapter implements NetworkPort {
     );
     return response.fold(
       (l) {
-        print("networkAdapter error is ${l.error.code}");
         return Left(l);
       },
       (r) => Right(
         r.data.transform(),
       ),
+    );
+  }
+
+  @override
+  Future<Either<NetworkError, List<Location>>> getLocations() async {
+    var response = await safeApiCall(
+      apiService.getLocations(),
+    );
+    return response.fold(
+      (l) {
+        return Left(l);
+      },
+      (r) => Right(
+        r.data.map((e) => e.transform()).toList(),
+      ),
+    );
+  }
+
+  @override
+  Future<Either<NetworkError, WeatherDetail>> getTodayTimeline(
+    Location location,
+  ) async {
+    var response = await safeApiCall(
+      apiService.getTimeline(
+        location.locationId,
+        const [
+          'temperature',
+          'weatherCode',
+          'windSpeed',
+          'humidity',
+        ],
+        'now',
+        'nowPlus1d',
+        '1d',
+      ),
+    );
+    return response.fold(
+      (l) {
+        return Left(l);
+      },
+      (r) => Right(r.data.transform()),
+    );
+  }
+
+  @override
+  Future<Either<NetworkError, WeatherDetail>> getFutureTimeLine(
+    Location location,
+  ) async {
+    var response = await safeApiCall(
+      apiService.getTimeline(
+        location.locationId,
+        const [
+          'temperature',
+          'weatherCode',
+          'windSpeed',
+          'humidity',
+        ],
+        'nowPlus2d',
+        'nowPlus7d',
+        '1d',
+      ),
+    );
+    return response.fold(
+      (l) {
+        return Left(l);
+      },
+      (r) => Right(r.data.transform()),
     );
   }
 }
