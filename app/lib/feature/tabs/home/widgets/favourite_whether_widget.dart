@@ -4,9 +4,9 @@ import 'package:localisation/strings.dart';
 import '../../../../utils/asset_icons.dart';
 
 class FavouriteWhetherWidget extends StatelessWidget {
-  String? city;
-  String? temperature;
-  FavouriteWhetherWidget({Key? key,this.city,this.temperature}) : super(key: key);
+  final String? city;
+  final String? temperature;
+  const FavouriteWhetherWidget({Key? key,this.city,this.temperature}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

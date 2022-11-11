@@ -17,8 +17,8 @@ dependencies:
   data:
     path: ../../core/data/
   geolocator: ^9.0.2
-  logger: any  #for logging purpose
   dartz: ^0.10.1
+  logger: any  #for logging purpose
 
 dev_dependencies:
   flutter_test:

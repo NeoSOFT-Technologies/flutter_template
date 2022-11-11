@@ -1,6 +1,5 @@
 
 import 'package:domain/domain.dart';
-import 'package:shared/shared.dart';
 
 abstract class LocationPort {
   Future<Either<LocalError, GeoLocation>> getLocation();

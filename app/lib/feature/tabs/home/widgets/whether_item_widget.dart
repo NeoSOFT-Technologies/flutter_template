@@ -7,11 +7,11 @@ import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 import '../../../../utils/asset_icons.dart';
 
 class WhetherItemWidget extends StatelessWidget {
-  bool? isLastItem;
-  String? city;
-  String? temperature;
+  final bool? isLastItem;
+  final String? city;
+  final String? temperature;
 
-  WhetherItemWidget({Key? key, this.isLastItem, this.city, this.temperature})
+  const WhetherItemWidget({Key? key, this.isLastItem, this.city, this.temperature})
       : super(key: key);
 
   @override

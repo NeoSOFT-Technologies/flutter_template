@@ -1,14 +1,13 @@
 import 'package:app/feature/tabs/search/search_page_model.dart';
 import 'package:app/widgets/platform_svg.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:localisation/strings.dart';
 import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 
 import '../../../utils/asset_icons.dart';
 
 class SearchPageView extends BasePageViewWidget<SearchViewModel> {
-  SearchPageView(super.providerBase);
+  SearchPageView(super.providerBase, {Key? key}) : super(key: key);
 
 
   @override

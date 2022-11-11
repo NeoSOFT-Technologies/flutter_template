@@ -1,6 +1,3 @@
-import 'package:app/feature/weather_detail/weather_detail_page.dart';
-import 'package:app/themes_setup.dart';
-import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:localisation/strings.dart';
 import 'package:responsive_framework/responsive_framework.dart';

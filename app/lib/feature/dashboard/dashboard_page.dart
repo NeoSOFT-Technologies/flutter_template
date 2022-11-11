@@ -47,7 +47,7 @@ class DashboardPageState
                         icon: PlatformSvgWidget.asset(AssetIcons.home.assetName,
                             color: Colors.grey, width: 33, height: 33),
                         title: Strings.of(context).home,
-                        currentTab: DashboardTab.HOME,
+                        currentTab: DashboardTab.home,
                         selectedTab: model?.currentTab,
                         onPressed: (tab) {
                           onTabPressed(tab, model);
@@ -59,7 +59,7 @@ class DashboardPageState
                         icon: PlatformSvgWidget.asset(AssetIcons.search.assetName,
                             color: Colors.grey, width: 32, height: 32),
                         title: Strings.of(context).search,
-                        currentTab: DashboardTab.SEARCH,
+                        currentTab: DashboardTab.search,
                         selectedTab: model?.currentTab,
                         onPressed: (tab) {
                           onTabPressed(tab, model);
@@ -74,7 +74,7 @@ class DashboardPageState
                             width: 32,
                             height: 32),
                         title: Strings.of(context).navigation,
-                        currentTab: DashboardTab.NAVIGATION,
+                        currentTab: DashboardTab.navigation,
                         selectedTab: model?.currentTab,
                         onPressed: (tab) {
                           onTabPressed(tab, model);
@@ -88,7 +88,7 @@ class DashboardPageState
                             width: 33,
                             height: 33),
                         title: Strings.of(context).profile,
-                        currentTab: DashboardTab.PROFILE,
+                        currentTab: DashboardTab.profile,
                         selectedTab: model?.currentTab,
                         onPressed: (tab) {
                           onTabPressed(tab, model);
@@ -103,13 +103,13 @@ class DashboardPageState
 
   void onTabPressed(DashboardTab tab, BottomNavigationViewModel? model) {
     switch (tab) {
-      case DashboardTab.HOME:
-      case DashboardTab.PROFILE:
-      case DashboardTab.SEARCH:
-      case DashboardTab.NAVIGATION:
+      case DashboardTab.home:
+      case DashboardTab.profile:
+      case DashboardTab.search:
+      case DashboardTab.navigation:
         model?.setCurrentTab(tab);
         break;
-      case DashboardTab.NONE:
+      case DashboardTab.none:
         break;
     }
   }
@@ -135,7 +135,7 @@ class CustomTabItem extends StatelessWidget {
 
   const CustomTabItem({Key? key,
     this.theme,
-    this.currentTab = DashboardTab.NONE,
+    this.currentTab = DashboardTab.none,
     this.icon,
     this.selectedTab,
     this.title,

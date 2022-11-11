@@ -18,6 +18,7 @@ dependencies:
   data:
     path: ../../core/data/
   geolocator: ^9.0.2
+  dartz: ^0.10.1
   logger: any  #for logging purpose
 
 dev_dependencies:

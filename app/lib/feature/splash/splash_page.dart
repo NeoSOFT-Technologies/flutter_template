@@ -1,10 +1,7 @@
-import 'package:app/feature/weather_detail/weather_detail_page.dart';
 import 'package:app/navigation/route_paths.dart';
-import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
-
 import '../../di/states/viewmodels.dart';
 import 'splash_page_model.dart';
 import 'splash_page_view.dart';

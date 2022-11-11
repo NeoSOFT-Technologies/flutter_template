@@ -7,7 +7,7 @@ import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 import 'home_page_model.dart';
 
 class HomePageView extends BasePageViewWidget<HomePageViewModel> {
-  HomePageView(super.providerBase);
+  HomePageView(super.providerBase, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, model) {

@@ -7,7 +7,3 @@ extension GeolocationDataDomainExt on Position {
   GeoLocation mapToDomain() =>
       GeoLocation(longitude: longitude, latitude: latitude);
 }
-
-class hello{
-
-}

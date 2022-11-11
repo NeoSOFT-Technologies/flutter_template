@@ -1,6 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:data/data.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:dartz/dartz.dart';
 import 'package:location_port/src/util/position_extension.dart';
 
 class LocationAdapter implements LocationPort {
@@ -15,20 +15,20 @@ class LocationAdapter implements LocationPort {
         switch (permissionStatus) {
           case LocationPermission.always:
           case LocationPermission.whileInUse:
-            return const Right(LocationPermissions.ALLOWED);
+            return const Right(LocationPermissions.allowed);
 
           case LocationPermission.denied:
-            return const Right(LocationPermissions.DENIED);
+            return const Right(LocationPermissions.denied);
 
           case LocationPermission.unableToDetermine:
-            return const Right(LocationPermissions.UNABLE_TO_DETERMINE);
+            return const Right(LocationPermissions.unableToDetermine);
 
           case LocationPermission.deniedForever:
           default:
-            return const Right(LocationPermissions.DENIED_FOREVER);
+            return const Right(LocationPermissions.deniedForever);
         }
       } else {
-        return const Right(LocationPermissions.SERVICE_DISABLED);
+        return const Right(LocationPermissions.serviceDisabled);
       }
     } catch (exception) {
       return Left(LocalError(cause: exception as Exception,
@@ -72,20 +72,20 @@ class LocationAdapter implements LocationPort {
         switch (permissionStatus) {
           case LocationPermission.always:
           case LocationPermission.whileInUse:
-            return const Right(LocationPermissions.ALLOWED);
+            return const Right(LocationPermissions.allowed);
 
           case LocationPermission.denied:
-            return const Right(LocationPermissions.DENIED);
+            return const Right(LocationPermissions.denied);
 
           case LocationPermission.unableToDetermine:
-            return const Right(LocationPermissions.UNABLE_TO_DETERMINE);
+            return const Right(LocationPermissions.unableToDetermine);
 
           case LocationPermission.deniedForever:
           default:
-            return const Right(LocationPermissions.DENIED_FOREVER);
+            return const Right(LocationPermissions.deniedForever);
         }
       } else {
-        return const Right(LocationPermissions.SERVICE_DISABLED);
+        return const Right(LocationPermissions.serviceDisabled);
       }
     } catch (exception) {
       return Left(LocalError(cause: exception as Exception,

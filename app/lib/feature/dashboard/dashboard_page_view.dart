@@ -7,11 +7,10 @@ import 'package:app/feature/tabs/profile/profile_page.dart';
 import 'package:app/feature/tabs/search/search_page.dart';
 import 'package:app/widgets/fade_indexed_stack.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 
 class DashboardPageView extends BasePageViewWidget<DashboardViewModel> {
-  DashboardPageView(super.providerBase);
+  DashboardPageView(super.providerBase, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, model) {

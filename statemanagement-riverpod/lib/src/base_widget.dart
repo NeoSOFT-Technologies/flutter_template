@@ -18,11 +18,11 @@ class BaseWidget<T extends BaseViewModel> extends ConsumerStatefulWidget {
   }) : super(key: key);
 
   @override
-  _BaseWidget<T> createState() => _BaseWidget<T>();
+  BaseWidgetState<T> createState() => BaseWidgetState<T>();
 }
 
 /// State of StatefulWidget of T type of Viewmodel / ChangeNotifier
-class _BaseWidget<T extends BaseViewModel> extends ConsumerState<BaseWidget<T>> {
+class BaseWidgetState<T extends BaseViewModel> extends ConsumerState<BaseWidget<T>> {
   T? _model;
 
 

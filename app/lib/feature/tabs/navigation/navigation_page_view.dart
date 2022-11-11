@@ -1,6 +1,5 @@
 import 'package:app/feature/tabs/navigation/navigation_page_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:localisation/strings.dart';
 import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 
@@ -8,7 +7,7 @@ import '../../../utils/asset_icons.dart';
 import '../../../widgets/platform_svg.dart';
 
 class NavigationPageView extends BasePageViewWidget<NavigationViewModel> {
-  NavigationPageView(super.providerBase);
+  NavigationPageView(super.providerBase, {Key? key}) : super(key: key);
 
 
   @override

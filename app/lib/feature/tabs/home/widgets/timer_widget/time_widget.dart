@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
 class TimeWidget extends StatelessWidget {
-  String? timeValue;
-  String? timeText;
-  TimeWidget({Key? key,this.timeText,this.timeValue}) : super(key: key);
+  final String? timeValue;
+  final String? timeText;
+  const TimeWidget({Key? key,this.timeText,this.timeValue}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    print("Timer Value: $timeValue");
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
