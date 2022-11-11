@@ -14,7 +14,7 @@ import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 import 'package:themes/themes.dart';
 
 class WeatherDetailPageView extends BasePageViewWidget<WeatherDetailViewModel> {
-  WeatherDetailPageView(ProviderBase<WeatherDetailViewModel> model) : super(model);
+  WeatherDetailPageView(ProviderBase<WeatherDetailViewModel> model, {Key? key}) : super(key: key, model);
 
   @override
   Widget build(BuildContext context, model) {

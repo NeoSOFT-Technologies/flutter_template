@@ -15,12 +15,11 @@ class LocationRepositoryImpl extends LocationRepository {
       switch (permission) {
         case LocationPermissions.allowed:
           return Right(true);
-
+        case LocationPermissions.unableToDetermine:
         case LocationPermissions.denied:
         case LocationPermissions.deniedForever:
         case LocationPermissions.serviceDisabled:
         case LocationPermissions.none:
-        case LocationPermissions.unableToDetermine:
         default:
           return Right(false);
       }
@@ -46,12 +45,11 @@ class LocationRepositoryImpl extends LocationRepository {
       switch (permission) {
         case LocationPermissions.allowed:
           return Right(true);
-
+        case LocationPermissions.unableToDetermine:
         case LocationPermissions.denied:
         case LocationPermissions.deniedForever:
         case LocationPermissions.serviceDisabled:
         case LocationPermissions.none:
-        case LocationPermissions.unableToDetermine:
         default:
           return Right(false);
       }

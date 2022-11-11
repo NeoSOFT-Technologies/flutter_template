@@ -27,7 +27,7 @@ class CountDownViewModel extends BasePageViewModel {
     /*notifyListeners();*/
   }
 
-  final BehaviorSubject<Duration> timerController = BehaviorSubject<Duration>();
+  final PublishSubject<Duration> timerController = PublishSubject<Duration>();
 
 
   void startTimer() {

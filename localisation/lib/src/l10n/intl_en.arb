@@ -14,5 +14,9 @@
   "todayWeather": "Today\u0027s Weather",
   "wind": "Wind",
   "humidity": "Humidity",
-  "futureWeather": "Future weather"
+  "futureWeather": "Future weather",
+  "newYorkStaticText": "New York",
+  "degreeStaticText": "23",
+  "favDegreeStaticText": "12",
+  "losAngelesStaticText": "Los Angeles"
 }

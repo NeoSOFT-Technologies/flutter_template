@@ -1,6 +1,3 @@
-import 'package:app/feature/weather_detail/weather_detail_page.dart';
-import 'package:app/themes_setup.dart';
-import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:localisation/strings.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -9,6 +6,7 @@ import 'package:services/services.dart';
 import 'package:themes/themes.dart';
 
 import 'navigation/app_router.dart';
+import 'navigation/route_paths.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,8 +14,28 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ThemeBuilder(
-      defaultThemeMode: ThemeMode.system,
-      themes: getThemes(),
+      themes: [
+        ThemeData(
+            textTheme: const TextTheme(
+                bodyLarge: TextStyle(fontFamily: 'Poppins'),
+                bodyMedium: TextStyle(fontFamily: 'Poppins'),
+                bodySmall: TextStyle(fontFamily: 'Poppins'),
+                displayLarge: TextStyle(fontFamily: 'Poppins'),
+                displayMedium: TextStyle(fontFamily: 'Poppins'),
+                displaySmall: TextStyle(fontFamily: 'Poppins'),
+                titleLarge: TextStyle(fontFamily: 'Poppins'),
+                titleMedium: TextStyle(fontFamily: 'Poppins'),
+                titleSmall: TextStyle(fontFamily: 'Poppins'),
+                labelLarge: TextStyle(fontFamily: 'Poppins'),
+                labelMedium: TextStyle(fontFamily: 'Poppins'),
+                labelSmall: TextStyle(fontFamily: 'Poppins'),
+            ),
+            backgroundColor: Colors.red,
+            colorScheme: ColorScheme.fromSwatch().copyWith(
+              secondary: Colors.blue,
+              brightness: Brightness.light,
+            )),
+      ],
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
           background: Colors.blue[700],
@@ -61,7 +79,7 @@ class MyApp extends StatelessWidget {
           darkTheme: darkTheme,
           themeMode: themeMode,
           onGenerateRoute: AppRouter.generateRoute,
-          home: WeatherDetailPage(
+          /*home: WeatherDetailPage(
             param: WeatherDetailPageParam(
               Location(
                 locationId: '633191078d244f330e4f238d',
@@ -75,7 +93,8 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+          ),*/
+          initialRoute: RoutePaths.splash,
         );
       },
     );

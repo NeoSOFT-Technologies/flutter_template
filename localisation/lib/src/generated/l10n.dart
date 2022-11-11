@@ -209,6 +209,46 @@ class Strings {
       args: [],
     );
   }
+
+  /// `New York`
+  String get newYorkStaticText {
+    return Intl.message(
+      'New York',
+      name: 'newYorkStaticText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `23`
+  String get degreeStaticText {
+    return Intl.message(
+      '23',
+      name: 'degreeStaticText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `12`
+  String get favDegreeStaticText {
+    return Intl.message(
+      '12',
+      name: 'favDegreeStaticText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Los Angeles`
+  String get losAngelesStaticText {
+    return Intl.message(
+      'Los Angeles',
+      name: 'losAngelesStaticText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

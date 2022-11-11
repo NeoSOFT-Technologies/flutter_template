@@ -8,14 +8,14 @@ import '../../model/resource.dart';
 import '../../utils/request_manager.dart';
 
 @injectable
-class DashboardPageViewModel extends BasePageViewModel {
+class DashboardViewModel extends BasePageViewModel {
   final CheckLocationPermissionUseCase checkLocationPermissionUseCase;
   final RequestLocationPermissionUseCase requestLocationPermissionUseCase;
   final GetLocationUseCase getLocationUseCase;
   final CreateLocationUseCase createLocationUseCase;
   final FlutterExceptionHandlerBinder exceptionHandlerBinder;
 
-  DashboardPageViewModel(
+  DashboardViewModel(
       this.checkLocationPermissionUseCase,
       this.requestLocationPermissionUseCase,
       this.getLocationUseCase,

@@ -15,10 +15,10 @@ class FadeIndexedStack extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _FadeIndexedStackState();
+  FadeIndexedStackState createState() => FadeIndexedStackState();
 }
 
-class _FadeIndexedStackState extends State<FadeIndexedStack>
+class FadeIndexedStackState extends State<FadeIndexedStack>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 

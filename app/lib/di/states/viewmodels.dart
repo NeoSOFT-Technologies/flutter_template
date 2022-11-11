@@ -41,8 +41,8 @@ final searchViewModelProvider =
 );
 
 final dashboardViewModelProvider =
-    ChangeNotifierProvider.autoDispose<DashboardPageViewModel>(
-  (ref) => DashboardPageViewModel(
+    ChangeNotifierProvider.autoDispose<DashboardViewModel>(
+  (ref) => DashboardViewModel(
       getIt.get<CheckLocationPermissionUseCase>(),
       getIt.get<RequestLocationPermissionUseCase>(),
       getIt.get<GetLocationUseCase>(),

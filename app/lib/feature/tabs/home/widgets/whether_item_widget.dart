@@ -11,8 +11,7 @@ class WhetherItemWidget extends StatelessWidget {
   final String? city;
   final String? temperature;
 
-  const WhetherItemWidget(
-      {Key? key, this.isLastItem, this.city, this.temperature})
+  const WhetherItemWidget({Key? key, this.isLastItem, this.city, this.temperature})
       : super(key: key);
 
   @override
@@ -67,19 +66,24 @@ class WhetherItemWidget extends StatelessWidget {
           ),
           Expanded(
             child: BaseWidget<CountDownViewModel>(
-                providerBase: ChangeNotifierProvider<CountDownViewModel>(
-                  (ref) => CountDownViewModel(Duration(
-                      hours: DateTime.now().hour,
-                      minutes: DateTime.now().minute,
-                      seconds: DateTime.now().second)),
+                providerBase:
+                ChangeNotifierProvider<CountDownViewModel>(
+                      (ref) {
+                        return CountDownViewModel(Duration(hours: DateTime
+                          .now()
+                          .hour, minutes: DateTime
+                          .now()
+                          .minute, seconds: DateTime
+                          .now().
+                          second));
+                      },
                 ),
                 onModelReady: (model) {
                   model.startTimer();
                 },
                 builder: (context, model, child) {
                   return CountDownTimerWidget(
-                    timerController: model?.timerController,
-                  );
+                    timerController: model?.timerController,);
                 }),
           )
         ],

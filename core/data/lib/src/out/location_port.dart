@@ -1,3 +1,4 @@
+
 import 'package:domain/domain.dart';
 
 abstract class LocationPort {
