@@ -8,7 +8,8 @@ import '../../../utils/asset_icons.dart';
 import '../../../widgets/platform_svg.dart';
 
 class NavigationPageView extends BasePageViewWidget<NavigationViewModel> {
-  NavigationPageView(ProviderBase model) : super(model);
+  NavigationPageView(super.providerBase);
+
 
   @override
   Widget build(BuildContext context, model) {

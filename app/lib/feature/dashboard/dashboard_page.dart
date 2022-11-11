@@ -18,15 +18,10 @@ class DashboardPage extends BasePage<DashboardViewModel> {
 
 class DashboardPageState
     extends BaseStatefulPage<DashboardViewModel, DashboardPage> {
-  @override
-  ProviderBase provideBase() {
-    return dashboardViewModelProvider;
-  }
 
   @override
   void onModelReady(DashboardViewModel model) {
     model.exceptionHandlerBinder.bind(context, super.stateObserver);
-    print("OnModel Ready is called of Dashboard");
     model.checkLocationPermission();
     super.onModelReady(model);
   }
@@ -122,6 +117,11 @@ class DashboardPageState
   @override
   Widget buildView(BuildContext context, DashboardViewModel model) {
     return DashboardPageView(provideBase());
+  }
+
+  @override
+  ProviderBase<DashboardViewModel> provideBase() {
+    return dashboardViewModelProvider;
   }
 }
 

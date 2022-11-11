@@ -15,20 +15,20 @@ class LocationAdapter implements LocationPort {
         switch (permissionStatus) {
           case LocationPermission.always:
           case LocationPermission.whileInUse:
-            return const Right(LocationPermissions.allowed);
+            return const Right(LocationPermissions.ALLOWED);
 
           case LocationPermission.denied:
-            return const Right(LocationPermissions.denied);
+            return const Right(LocationPermissions.DENIED);
 
           case LocationPermission.unableToDetermine:
-            return const Right(LocationPermissions.unableToDetermine);
+            return const Right(LocationPermissions.UNABLE_TO_DETERMINE);
 
           case LocationPermission.deniedForever:
           default:
-            return const Right(LocationPermissions.deniedForever);
+            return const Right(LocationPermissions.DENIED_FOREVER);
         }
       } else {
-        return const Right(LocationPermissions.serviceDisabled);
+        return const Right(LocationPermissions.SERVICE_DISABLED);
       }
     } catch (exception) {
       return Left(LocalError(cause: exception as Exception,
@@ -72,20 +72,20 @@ class LocationAdapter implements LocationPort {
         switch (permissionStatus) {
           case LocationPermission.always:
           case LocationPermission.whileInUse:
-            return const Right(LocationPermissions.allowed);
+            return const Right(LocationPermissions.ALLOWED);
 
           case LocationPermission.denied:
-            return const Right(LocationPermissions.denied);
+            return const Right(LocationPermissions.DENIED);
 
           case LocationPermission.unableToDetermine:
-            return const Right(LocationPermissions.unableToDetermine);
+            return const Right(LocationPermissions.UNABLE_TO_DETERMINE);
 
           case LocationPermission.deniedForever:
           default:
-            return const Right(LocationPermissions.deniedForever);
+            return const Right(LocationPermissions.DENIED_FOREVER);
         }
       } else {
-        return const Right(LocationPermissions.serviceDisabled);
+        return const Right(LocationPermissions.SERVICE_DISABLED);
       }
     } catch (exception) {
       return Left(LocalError(cause: exception as Exception,

@@ -16,10 +16,7 @@ class HomePage extends BasePage<HomePageViewModel> {
 }
 
 class HomePageState extends BaseStatefulPage<HomePageViewModel, HomePage> {
-  @override
-  ProviderBase provideBase() {
-    return homeViewModelProvider;
-  }
+
 
   @override
   void onModelReady(HomePageViewModel model) {
@@ -35,5 +32,10 @@ class HomePageState extends BaseStatefulPage<HomePageViewModel, HomePage> {
   @override
   Widget buildView(BuildContext context, HomePageViewModel model) {
     return HomePageView(provideBase());
+  }
+
+  @override
+  ProviderBase<HomePageViewModel> provideBase() {
+    return homeViewModelProvider;
   }
 }

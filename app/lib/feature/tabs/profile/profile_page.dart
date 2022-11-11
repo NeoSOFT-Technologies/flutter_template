@@ -15,13 +15,15 @@ class ProfilePage extends BasePage<ProfileViewModel> {
 }
 
 class ProfilePageState extends BaseStatefulPage<ProfileViewModel, ProfilePage> {
-  @override
-  ProviderBase provideBase() {
-    return profileViewModelProvider;
-  }
+
 
   @override
   Widget buildView(BuildContext context, ProfileViewModel model) {
     return ProfilePageView(provideBase());
+  }
+
+  @override
+  ProviderBase<ProfileViewModel> provideBase() {
+    return profileViewModelProvider;
   }
 }

@@ -8,7 +8,8 @@ import 'package:statemanagement_riverpod/statemanagement_riverpod.dart';
 import '../../../utils/asset_icons.dart';
 
 class SearchPageView extends BasePageViewWidget<SearchViewModel> {
-  SearchPageView(ProviderBase model) : super(model);
+  SearchPageView(super.providerBase);
+
 
   @override
   Widget build(BuildContext context, model) {

@@ -12,7 +12,6 @@ class CountDownTimerWidget extends StatelessWidget {
     return StreamBuilder<Duration>(
       stream: timerController as Stream<Duration>?,
       builder: (context, snapshot) {
-        if (snapshot.hasData && (snapshot.data is Duration)) {
           return Container(
             margin: const EdgeInsets.only(top: 20),
             padding:
@@ -42,9 +41,6 @@ class CountDownTimerWidget extends StatelessWidget {
               ],
             ),
           );
-        } else {
-          return Container();
-        }
       },
     );
   }

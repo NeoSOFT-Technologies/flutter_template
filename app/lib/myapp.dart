@@ -9,6 +9,7 @@ import 'package:services/services.dart';
 import 'package:themes/themes.dart';
 
 import 'navigation/app_router.dart';
+import 'navigation/route_paths.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -81,7 +82,7 @@ class MyApp extends StatelessWidget {
           darkTheme: darkTheme,
           themeMode: themeMode,
           onGenerateRoute: AppRouter.generateRoute,
-          home: WeatherDetailPage(
+          /*home: WeatherDetailPage(
             param: WeatherDetailPageParam(
               Location(
                 locationId: '633191078d244f330e4f238d',
@@ -95,7 +96,8 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+          ),*/
+          initialRoute: RoutePaths.splash,
         );
       },
     );

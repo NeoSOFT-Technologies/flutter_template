@@ -68,14 +68,15 @@ class WhetherItemWidget extends StatelessWidget {
             child: BaseWidget<CountDownViewModel>(
                 providerBase:
                 ChangeNotifierProvider<CountDownViewModel>(
-                      (ref) =>
-                      CountDownViewModel(Duration(hours: DateTime
+                      (ref) {
+                        return CountDownViewModel(Duration(hours: DateTime
                           .now()
                           .hour, minutes: DateTime
                           .now()
                           .minute, seconds: DateTime
                           .now().
-                          second)),
+                          second));
+                      },
                 ),
                 onModelReady: (model) {
                   model.startTimer();

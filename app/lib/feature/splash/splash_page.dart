@@ -25,27 +25,10 @@ class SplashPageState extends BaseStatefulPage<SplashViewModel, SplashPage> {
   @override
   void onModelReady(SplashViewModel model) {
     // bind exception handler here.
-    print("OnModel Ready is called of splash");
     model.exceptionHandlerBinder.bind(context, super.stateObserver);
     getViewModel().navigateToDashboard().listen((event) {
       if (event) {
-        Navigator.pushReplacementNamed(
-          context,
-          RoutePaths.weatherDetail,
-          arguments: WeatherDetailPageParam(
-            Location(
-              locationId: '633191078d244f330e4f238d',
-              name: 'Pune',
-              geometryLocation: GeometryLocation(
-                type: 'Point',
-                coordinates: [
-                  73.856743,
-                  18.520430,
-                ],
-              ),
-            ),
-          ),
-        );
+        Navigator.pushReplacementNamed(context, RoutePaths.dashboard);
       }
     });
   }

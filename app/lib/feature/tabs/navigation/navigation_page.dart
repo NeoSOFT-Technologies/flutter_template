@@ -14,13 +14,14 @@ class NavigationPage extends BasePage<NavigationViewModel> {
 }
 
 class NavigationPageState extends BaseStatefulPage<NavigationViewModel, NavigationPage> {
-  @override
-  ProviderBase provideBase() {
-    return navigationViewModelProvider;
-  }
 
   @override
   Widget buildView(BuildContext context, NavigationViewModel model) {
     return NavigationPageView(provideBase());
+  }
+
+  @override
+  ProviderBase<NavigationViewModel> provideBase() {
+    return navigationViewModelProvider;
   }
 }

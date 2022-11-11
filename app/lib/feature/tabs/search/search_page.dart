@@ -13,14 +13,16 @@ class SearchPage extends BasePage<SearchViewModel> {
 }
 
 class SearchPageState extends BaseStatefulPage<SearchViewModel, SearchPage> {
-  @override
-  ProviderBase provideBase() {
-    return searchViewModelProvider;
-  }
+
 
 
   @override
   Widget buildView(BuildContext context, SearchViewModel model) {
     return SearchPageView(provideBase());
+  }
+
+  @override
+  ProviderBase<SearchViewModel> provideBase() {
+    return searchViewModelProvider;
   }
 }
