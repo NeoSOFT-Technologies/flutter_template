@@ -11,10 +11,18 @@ abstract class BasePage<VM extends BasePageViewModel> extends StatefulWidget {
 }
 
 abstract class BasePageState<VM extends BasePageViewModel,
-    T extends BasePage<VM>> extends CoreBasePageState<VM, T> {}
+    T extends BasePage<VM>> extends CoreBasePageState<VM, T> {
+  VM provideBloc();
+}
 
 abstract class BaseStatefulPage<VM extends BasePageViewModel,
     B extends BasePage<VM>> extends BasePageState<VM, B> {
+  @override
+  void initState() {
+    onBaseModelReady(provideBloc());
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return getLayout();
