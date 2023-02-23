@@ -1,6 +1,7 @@
 #!/bin/sh
 
 ENTRYPOINT=""
+CURRENT_WORKSPACE=""
 PLIST_LOCATION=$RUNNER_TEMP/options.plist
 
 case $2 in
@@ -9,11 +10,18 @@ case $2 in
   prod) ENTRYPOINT="entrypoints/main_prod.dart";;
 esac
 
-FLAGS="$1 --flavor $2 -t $GITHUB_WORKSPACE/app/lib/$ENTRYPOINT $3 $4 $5"
+if [[ -z "${GITHUB_WORKSPACE}" ]]; then
+  CURRENT_WORKSPACE="lib"
+else
+  CURRENT_WORKSPACE="$GITHUB_WORKSPACE/app/lib"
+fi
+
+FLAGS="$1 --flavor $2 -t  $CURRENT_WORKSPACE/$ENTRYPOINT $3 $4 $5"
 echo "Requested Flavour: $2"
-echo "Setting entrypoint: $GITHUB_WORKSPACE/app/lib/$ENTRYPOINT"
+echo "Setting entrypoint: $CURRENT_WORKSPACE/$ENTRYPOINT"
 echo "Building $1 .......... "
 echo ""
+
 if [ $1 == ipa ]
 then
   sed -i '' "s#.*entrypoints/main.*#import 'package:app/$ENTRYPOINT' as entrypoint;#" lib/main.dart
