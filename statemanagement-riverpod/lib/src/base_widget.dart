@@ -22,7 +22,9 @@ class BaseWidget<T extends BaseViewModel> extends StatefulWidget {
 }
 
 /// State of StatefulWidget of T type of Viewmodel / ChangeNotifier
-class _BaseWidget<T extends BaseViewModel> extends State<BaseWidget<T>> {
+/// It has flutter animation features which is taken from `TickerProviderStateMixin` mixin.
+class _BaseWidget<T extends BaseViewModel> extends State<BaseWidget<T>>
+    with TickerProviderStateMixin {
   T? _model;
 
   @override
