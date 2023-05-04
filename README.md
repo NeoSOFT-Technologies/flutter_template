@@ -94,17 +94,28 @@ especially public ones. To keep such data safe the template uses `app_secrets.da
 want to run the app locally, you will need to create a new file `app_secrets.dart`
 under [`lib/secrets`](app/lib/secrets). To help with setting up the secrets file, the template
 inclued a skeleton secrets file.
+#### Clear Build Cache
+
+```bash
+melos clean
+```
 
 #### Get Dependencies
 
 ```bash
 melos run get
 ```
-
 #### Run Code Generation
+Instead of running 
 
+``melos run generate``
+
+Just use below commands for code generation
 ```bash
-melos run generate
+melos bs
+Or
+melos bootstrap
+
 ```
 
 #### Setup Hooks
