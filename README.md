@@ -117,6 +117,34 @@ Or
 melos bootstrap
 
 ```
+#### Run Test Cases
+
+To run test cases for a specific package
+use following command
+
+
+```bash
+melos test:selective_unit_test
+```
+```
+1) * [Default - Press Enter]
+2) app
+3) localisation
+4) services
+5) statemanagement_bloc
+6) statemanagement_core
+7) statemanagement_riverpod
+8) themes
+? Enter your choice
+```
+You will see the interface described above.
+Pick the package for which you want to execute test cases.
+
+To run all test cases run below command
+
+```bash
+melos test
+```
 
 #### Setup Hooks
 
