@@ -72,7 +72,11 @@ app.*.map.json
 # Secrets
 app/lib/secrets/
 !app/lib/secrets/app_secrets.skeleton.dart
-
+# Omit committing pubspec_overrides.yaml
+pubspec_overrides.yaml
 # Omit committing pubspec.lock for library packages; see
 # https://dart.dev/guides/libraries/private-files#pubspeclock.
 pubspec.lock
+# Omit committing coverage
+coverage
+.idea

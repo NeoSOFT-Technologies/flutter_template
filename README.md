@@ -94,17 +94,56 @@ especially public ones. To keep such data safe the template uses `app_secrets.da
 want to run the app locally, you will need to create a new file `app_secrets.dart`
 under [`lib/secrets`](app/lib/secrets). To help with setting up the secrets file, the template
 inclued a skeleton secrets file.
+#### Clear Build Cache
+
+```bash
+melos clean
+```
 
 #### Get Dependencies
 
 ```bash
 melos run get
 ```
-
 #### Run Code Generation
+Instead of running 
+
+``melos run generate``
+
+Just use below commands for code generation
+```bash
+melos bs
+Or
+melos bootstrap
+
+```
+#### Run Test Cases
+
+To run test cases for a specific package
+use following command
+
 
 ```bash
-melos run generate
+melos test:selective_unit_test
+```
+```
+1) * [Default - Press Enter]
+2) app
+3) localisation
+4) services
+5) statemanagement_bloc
+6) statemanagement_core
+7) statemanagement_riverpod
+8) themes
+? Enter your choice
+```
+You will see the interface described above.
+Pick the package for which you want to execute test cases.
+
+To run all test cases run below command
+
+```bash
+melos test
 ```
 
 #### Setup Hooks

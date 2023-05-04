@@ -12,21 +12,25 @@ packages:
   - statemanagement-riverpod
   - themes
 
+# Run command melos bs or melos bootstrap
+command:
+  bootstrap:
+    hooks:
+      pre: echo `Running flutter pub get`
+      post: melos run generate
+
 scripts:
   clean-all:
     run: melos run build-clean && melos run flutter-clean
-
-  flutter-clean:
-    exec: flutter clean
+    
+  get:
+    run: melos exec flutter pub get
 
   build-clean:
     run: melos exec --scope="app,data,domain,database_floor,network_retrofit,themes" flutter pub run build_runner clean
 
   generate:
     run: melos exec --scope="app,data,domain,database_floor,network_retrofit,themes" -- flutter pub run build_runner build --delete-conflicting-outputs
-
-  get:
-    exec: flutter pub get
 
   tidy:
     run: melos run format && melos run dart-fix
@@ -39,6 +43,33 @@ scripts:
 
   dart-fix:
     exec: dart fix --apply
+    
+  # Build apps for specific platform 
 
+  # customize the target as per your need
+  build_web:
+    run: melos exec --scope="app" flutter build web --release --target=lib/entrypoints/main_prod.dart
+    
+  # To generate the app bundle just replace flutter build apk --split-per-abi with appbundle
+  build_android:
+    run: melos exec --scope="app" flutter build apk --split-per-abi --obfuscate --split-debug-info=app/`$PWD` --flavor nps -t lib/entrypoints/main_prod.dart
+  
+
+
+    # lib/entrypoints/main_qa.dart
+
+
+  # To run all test cases
   test:
-    exec: flutter test --exclude-tags=golden
+    run: melos run test:selective_unit_test --no-select
+    description: Run all Flutter tests in this project.
+
+  
+    
+  # To run the test cases of specific package
+  test:selective_unit_test:
+    run: melos exec --dir-exists="test" --fail-fast -- flutter test --exclude-tags=golden --no-pub --coverage
+    description: "To run test cases of specific package"
+    packageFilters:
+      flutter: true
+      dirExists: "test"
